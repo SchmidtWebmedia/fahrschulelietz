@@ -17,3 +17,6 @@
 /public/fileadmin/user_upload/
 /public/fileadmin/.htaccess
 /public/index.php
+/public/typo3temp/
+/public/fileadmin/_temp_/
+/var/
