@@ -1,0 +1,24 @@
+{
+    "name": "marco-schmidt-webmedia/schmidtwebmedia",
+    "type": "typo3-cms-extension",
+    "description": "Sitepackage from SchmidtWebmedia",
+    "homepage": "https://www.schmidt-webmedia.de",
+    "license": ["GPL-2.0-or-later"],
+    "keywords": ["TYPO3 CMS"],
+    "require": {
+        "typo3/cms-core": "^9.5 || ^10.4 || ^11.5",
+		"typo3/cms-recycler": "^9.5 || ^10.4 || ^11.5",
+        "typo3/cms-redirects": "^9.5 || ^10.4 || ^11.5",
+        "typo3/cms-linkvalidator": "^9.5 || ^10.4 || ^11.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "MarcoSchmidtWebmedia\\Schmidtwebmedia\\": "Classes/"
+        }
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "schmidtwebmedia"
+        }
+    }
+}

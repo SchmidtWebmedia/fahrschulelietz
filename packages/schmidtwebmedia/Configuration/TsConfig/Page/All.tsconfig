@@ -1,0 +1,9 @@
+#
+# PageTS for SchmidtWebmedia
+#
+@import 'EXT:schmidtwebmedia/Configuration/TsConfig/Page/RTE.tsconfig'
+@import 'EXT:schmidtwebmedia/Configuration/TsConfig/Page/TCEFORM.tsconfig'
+@import 'EXT:schmidtwebmedia/Configuration/TsConfig/Page/TCEMAIN.tsconfig'
+@import 'EXT:schmidtwebmedia/Configuration/TsConfig/Page/Mod/WebLayout/BackendLayouts.tsconfig'
+@import 'EXT:schmidtwebmedia/Configuration/TsConfig/Page/BackendPreview.tsconfig'
+@import 'EXT:schmidtwebmedia/Configuration/TsConfig/Page/LinkValidator.tsconfig'

@@ -1,0 +1,13 @@
+plugin.tx_seo {
+	config {
+		xmlSitemap {
+			sitemaps {
+				pages {
+					config {
+						additionalWhere = AND no_index = 0
+					}
+				}
+			}
+		}
+	}
+}

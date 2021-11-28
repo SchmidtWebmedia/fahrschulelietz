@@ -1,0 +1,20 @@
+#New Implementation for LegalMenu
+lib.legalNavigation = FLUIDTEMPLATE
+lib.legalNavigation {
+	templateName = legalNavigation
+	templateRootPaths {
+		10 = EXT:schmidtwebmedia/Resources/Private/Extensions/Menu/Templates/
+	}
+	partialRootPaths {
+		10 = EXT:schmidtwebmedia/Resources/Private/Extensions/Menu/Partials/
+	}
+	dataProcessing {
+		10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+		10 {
+			special = directory
+			special.value = {$schmidtwebmedia.page.navigation.legal}
+			levels = 7
+			as = legalNavi
+		}
+	}
+}

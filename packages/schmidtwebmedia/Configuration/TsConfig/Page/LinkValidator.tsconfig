@@ -1,0 +1,7 @@
+mod.linkvalidator {
+	mail {
+		fromname = TYPO3 Linkvalidator
+		fromemail = no_reply@schmidt-webmedia.de
+		subject = TYPO3 Linkvalidator - Schmidt-Webmedia
+	}
+}

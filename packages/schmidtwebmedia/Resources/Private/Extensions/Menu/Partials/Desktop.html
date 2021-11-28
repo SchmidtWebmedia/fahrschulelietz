@@ -1,0 +1,16 @@
+<ul class="nav header-nav">
+	<f:for each="{mainNavi}" as="item">
+		<f:if condition="{item.current}">
+			<f:then>
+				<li class="nav-item active">
+					<f:render partial="Elements/Link" arguments="{item: item}"/>
+				</li>
+			</f:then>
+			<f:else>
+				<li class="nav-item">
+					<f:render partial="Elements/Link" arguments="{item: item}"/>
+				</li>
+			</f:else>
+		</f:if>
+	</f:for>
+</ul>

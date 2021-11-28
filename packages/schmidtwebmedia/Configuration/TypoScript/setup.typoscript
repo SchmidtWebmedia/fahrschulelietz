@@ -1,0 +1,202 @@
+######################
+#### DEPENDENCIES ####
+######################
+@import 'EXT:fluid_styled_content/Configuration/TypoScript/constants.typoscript'
+
+################
+#### HELPER ####
+################
+@import 'EXT:schmidtwebmedia/Configuration/TypoScript/Helper/DynamicContent.typoscript'
+@import 'EXT:schmidtwebmedia/Configuration/TypoScript/Helper/Settings.typoscript'
+
+@import 'EXT:schmidtwebmedia/Configuration/TypoScript/Extensions'
+@import 'EXT:schmidtwebmedia/Configuration/TypoScript/Menu'
+@import 'EXT:schmidtwebmedia/Configuration/TypoScript/Pages'
+
+lib.copyright = TEXT
+lib.copyright {
+	data = date : U
+	strftime = %Y
+	noTrimWrap = |
+}
+
+##############
+#### PAGE ####
+##############
+page = PAGE
+page {
+    typeNum = 0
+    shortcutIcon = {$schmidtwebmedia.page.settings.favicon}
+	disableAllHeaderCode = 1
+
+    10 = FLUIDTEMPLATE
+    10 {
+        templateName = TEXT
+        templateName {
+            cObject = TEXT
+            cObject {
+                data = pagelayout
+                required = 1
+                case = uppercamelcase
+                split {
+                    token = pagets__
+                    cObjNum = 1
+                    1.current = 1
+                }
+            }
+            ifEmpty = Default
+        }
+				templateRootPaths {
+            0 = EXT:schmidtwebmedia/Resources/Private/Extensions/Page/Templates/
+            1 = {$page.fluidtemplate.templateRootPath}
+        }
+        partialRootPaths {
+            0 = EXT:schmidtwebmedia/Resources/Private/Extensions/Page/Partials
+            1 = {$page.fluidtemplate.partialRootPath}
+        }
+        layoutRootPaths {
+            0 = EXT:schmidtwebmedia/Resources/Private/Extensions/Page/Layouts
+            1 = {$page.fluidtemplate.layoutRootPath}
+        }
+        settings < plugin.tx_schmidtwebmedia.settings
+    }
+
+    meta {
+        viewport = width=device-width, initial-scale=1, shrink-to-fit=no
+        robots = {$schmidtwebmedia.page.meta.robots}
+        apple-mobile-web-app-capable = {$schmidtwebmedia.page.meta.apple-mobile-web-app-capable}
+        description.data = page:description
+        description {
+            override.field = description
+        }
+        author = {$schmidtwebmedia.page.meta.author}
+        author {
+            override.field = author
+        }
+        keywords.data = page:keywords
+        keywords {
+            override.field = keywords
+        }
+
+        # OpenGraph Tags
+        og:title {
+            attribute = property
+            field = title
+        }
+        og:site_name {
+            attribute = property
+            data = TSFE:tmpl|setup|sitetitle
+        }
+        og:description = {$page.meta.description}
+        og:description {
+            attribute = property
+            field = description
+        }
+        og:image {
+            attribute = property
+            stdWrap.cObject = FILES
+            stdWrap.cObject {
+                references {
+                    data = levelfield:-1, media, slide
+                }
+                maxItems = 1
+                renderObj = COA
+                renderObj {
+                    10 = IMG_RESOURCE
+                    10 {
+                        file {
+                            import.data = file:current:uid
+                            treatIdAsReference = 1
+                            width = 1280c
+                            height = 720c
+                        }
+                        stdWrap {
+                            typolink {
+                                parameter.data = TSFE:lastImgResourceInfo|3
+                                returnLast = url
+                                forceAbsoluteUrl = 1
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    includeCSSLibs {
+
+    }
+
+    includeCSS {
+        schmidtwebmedia_layout = EXT:schmidtwebmedia/Resources/Public/css/style.min.css
+    }
+
+    includeJSLibs {
+
+    }
+
+    includeJS {
+
+    }
+
+    includeJSFooterlibs {
+
+    }
+
+    includeJSFooter {
+        schmidtwebmedia_scripts = EXT:schmidtwebmedia/Resources/Public/js/main.min.js
+    }
+}
+
+
+################
+#### CONFIG ####
+################
+config {
+    absRefPrefix = {$schmidtwebmedia.page.settings.baseUrl}
+	absRelPath = /
+	no_cache = {$schmidtwebmedia.page.cache.no_cache}
+    uniqueLinkVars = 1
+    pageTitleFirst = 1
+	pageTitleSeparator = -
+	pageTitleSeparator.noTrimWrap = | | |
+    linkVars = L
+    prefixLocalAnchors = {$config.prefixLocalAnchors}
+    renderCharset = utf-8
+    metaCharset = utf-8
+    doctype = html5
+    removeDefaultJS = {$config.removeDefaultJS}
+    inlineStyle2TempFile = 1
+    admPanel = {$config.admPanel}
+    debug = 0
+	cache_period = {$schmidtwebmedia.page.cache.cache_period}
+    cache_clearAtMidnight = {$schmidtwebmedia.page.cache.cache_clearAtMidnight}
+    sendCacheHeaders = {$schmidtwebmedia.page.cache.sendCacheHeaders}
+	sys_language_uid = 0
+	language = de
+	locale_all = de_DE
+	xhtml_cleaning = all
+	htmlTag_langKey = de-DE
+	xml:lang = "de" lang="de"
+    disablePrefixComment = 1
+    index_enable = 1
+    index_externals = 1
+    index_metatags = 1
+	contentObjectExceptionHandler = {$schmidtwebmedia.page.debug.contentObjectExceptionHandler}
+	frontend_editing = {$schmidtwebmedia.page.settings.frontend_editing}
+
+    // Disable Image Upscaling
+    noScaleUp = 1
+
+    // Compression and Concatenation of CSS and JS Files
+    compressJs = {$schmidtwebmedia.page.settings.compressJs}
+    compressCss = {$schmidtwebmedia.page.settings.compressCss}
+    concatenateJs = {$schmidtwebmedia.page.settings.concatenateJs}
+    concatenateCss = {$schmidtwebmedia.page.settings.concatenateCss}
+}
+
+lib.parseFunc_RTE.externalBlocks.table.stdWrap.HTMLparser.tags.table.fixAttrib.class {
+	list = clean
+	always = 0
+	default =
+}

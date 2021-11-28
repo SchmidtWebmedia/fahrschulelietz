@@ -1,0 +1,27 @@
+<f:if condition="{item.current}">
+	<f:then>
+		<a href="{item.link}" title="{item.data.title}" class="nav-link active">
+			<f:if condition="{item.data.nav_title}">
+				<f:then>
+					{item.data.nav_title}
+				</f:then>
+				<f:else>
+					{item.data.title}
+				</f:else>
+			</f:if>
+		</a>
+	</f:then>
+	<f:else>
+		<a href="{item.link}" title="{item.data.title}" class="nav-link">
+			<f:if condition="{item.data.nav_title}">
+				<f:then>
+					{item.data.nav_title}
+				</f:then>
+				<f:else>
+					{item.data.title}
+				</f:else>
+			</f:if>
+		</a>
+	</f:else>
+</f:if>
+

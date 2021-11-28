@@ -1,0 +1,16 @@
+<header>
+	<div class="container">
+		<nav class="nav">
+			<f:link.page pageUid="1" class="navbar-brand">
+				<f:if condition="{settings.logo}">
+					<f:image src="{settings.logo}" class="img-logo" alt="{settings.pageName} - Logo" title="{settings.pageName} - Logo"></f:image>
+				</f:if>
+			</f:link.page>
+
+			<f:cObject typoscriptObjectPath="lib.mainNavigation"/>
+		</nav>
+	</div>
+</header>
+
+
+

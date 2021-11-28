@@ -1,0 +1,99 @@
+schmidtwebmedia {
+	page {
+		meta {
+			#cat = schmidtwebmedia/page/meta/01; type=string; label=Autor
+			author =
+
+			#cat = schmidtwebmedia/page/meta/01; type=string; label=Robots
+			robots = INDEX,FOLLOW
+
+			#cat = schmidtwebmedia/page/meta/01; type=string; label=Apple Mobile Web App Capable
+			apple-mobile-web-app-capable = no
+		}
+
+		settings {
+			#cat = schmidtwebmedia/page/settings/01; type=string; label=Base Url
+			baseUrl =
+
+			#cat = schmidtwebmedia/page/settings/01; type=string; label=Seitenname
+			pageName =
+
+			#cat = schmidtwebmedia/page/settings/01; type=string; label=Logo
+			logo =
+
+			#cat = schmidtwebmedia/page/settings/01; type=string; label=Favicon
+			favicon =
+
+			#cat = schmidtwebmedia/page/settings/01; type=boolean; label=Compress JS
+			compressJs = 0
+
+			#cat = schmidtwebmedia/page/settings/01; type=boolean; label=Compress CSS
+			compressCss = 0
+
+			#cat = schmidtwebmedia/page/settings/01; type=boolean; label=Concatenate JS
+			concatenateJs = 0
+
+			#cat = schmidtwebmedia/page/settings/01; type=boolean; label=Concatenate CSS
+			concatenateCss = 0
+
+			#cat = schmidtwebmedia/page/settings/01; type=boolean; label=Frontend Editing
+			frontend_editing = 0
+
+			#cat = schmidtwebmedia/page/settings/01; type=boolean; label=Admin Panel
+			admPanel = 1
+		}
+
+		debug {
+			#cat = schmidtwebmedia/page/debug/01; type=boolean; label=Content Object Exception Handler
+			contentObjectExceptionHandler = 0
+		}
+
+		cache {
+			#cat = schmidtwebmedia/page/cache/01; type=int; label=Cache Period
+			cache_period = 86400
+
+			#cat = schmidtwebmedia/page/cache/01; type=boolean; label=Cache clear at Midnight
+			cache_clearAtMidnight = false
+
+			#cat = schmidtwebmedia/page/cache/01; type=boolean; label=No Cache
+			no_cache = 0
+
+			#cat = schmidtwebmedia/page/cache/01; type=boolean; label=Send Cache Headers
+			sendCacheHeaders = 1
+		}
+		navigation {
+			#cat = schmidtwebmedia/page/navigation/01; type=int; label=Root Page
+			main =
+			#cat = schmidtwebmedia/page/navigation/01; type=int; label=Legal Page
+			legal =
+		}
+	}
+
+}
+
+##############################
+#### FLUID STYLED CONTENT ####
+##############################
+styles {
+    templates {
+        layoutRootPath = EXT:schmidtwebmedia/Resources/Private/Extensions/Fluid/Layouts/
+        partialRootPath = EXT:schmidtwebmedia/Resources/Private/Extensions/Fluid/Partials/
+        templateRootPath = EXT:schmidtwebmedia/Resources/Private/Extensions/Fluid/Templates/
+    }
+}
+
+plugin.tx_cceexport.view {
+	layoutRootPath = EXT:schmidtwebmedia/Resources/Private/Extensions/Mask/Layouts/Frontend/
+	partialRootPath = EXT:schmidtwebmedia/Resources/Private/Extensions/Mask/Partials/Frontend/
+	templateRootPath = EXT:schmidtwebmedia/Resources/Private/Extensions/Mask/Templates/Frontend/
+}
+
+##############
+### CONFIG ###
+##############
+config {
+    no_cache = 0
+    removeDefaultJS = 0
+    prefixLocalAnchors = all
+    absRefPrefix = /
+}

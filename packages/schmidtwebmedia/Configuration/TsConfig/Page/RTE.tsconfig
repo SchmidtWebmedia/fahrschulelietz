@@ -1,0 +1,11 @@
+#############
+#### RTE ####
+#############
+RTE {
+    default {
+        preset = schmidtwebmedia
+    }
+}
+
+lib.parseFunc_RTE.nonTypoTagStdWrap.encapsLines.innerStdWrap_all.ifBlank >
+lib.parseFunc_RTE.nonTypoTagStdWrap.encapsLines.innerStdWrap_all.ifBlank =

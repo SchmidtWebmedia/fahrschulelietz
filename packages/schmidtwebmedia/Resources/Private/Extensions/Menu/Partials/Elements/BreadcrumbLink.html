@@ -1,0 +1,10 @@
+<a href="{item.link}" title="{item.data.title}">
+	<f:if condition="{item.data.nav_title}">
+		<f:then>
+			{item.data.nav_title}
+		</f:then>
+		<f:else>
+			{item.data.title}
+		</f:else>
+	</f:if>
+</a>

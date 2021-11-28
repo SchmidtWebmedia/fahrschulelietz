@@ -1,0 +1,20 @@
+#New Implementation for MainMenu
+lib.mainNavigation = FLUIDTEMPLATE
+lib.mainNavigation {
+	templateName = mainNavigation
+	templateRootPaths {
+		10 = EXT:schmidtwebmedia/Resources/Private/Extensions/Menu/Templates/
+	}
+	partialRootPaths {
+		10 = EXT:schmidtwebmedia/Resources/Private/Extensions/Menu/Partials/
+	}
+	dataProcessing {
+		10 = MarcoSchmidtWebmedia\Schmidtwebmedia\DataProcessing\MenuProcessor
+		10 {
+			special = directory
+			special.value = {$schmidtwebmedia.page.navigation.main}
+			levels = 7
+			as = mainNavi
+		}
+	}
+}

@@ -1,0 +1,26 @@
+base: 'https://www.fahrschule-lietz.de'
+baseVariants:
+  -
+    base: 'https://lietz.ddev.site'
+    condition: 'getenv("IS_DDEV_PROJECT") == "true"'
+languages:
+  -
+    title: Deutsch
+    enabled: true
+    languageId: 0
+    base: /
+    typo3Language: de
+    locale: de_DE.UTF-8
+    iso-639-1: de
+    navigationTitle: Deutsch
+    hreflang: de-de
+    direction: ltr
+    flag: de
+    websiteTitle: Fahrschule-Lietz
+rootPageId: 1
+routes:
+  -
+    route: robots.txt
+    type: staticText
+    content: "User-agent: *\r\nDisallow: /typo3/\r\nDisallow: /typo3_src/\r\nAllow: /typo3/sysext/frontend/Resources/Public/*\r\nSitemap: www.fahrschule-lietz.de/sitemap.xml"
+websiteTitle: Fahrschule-Lietz

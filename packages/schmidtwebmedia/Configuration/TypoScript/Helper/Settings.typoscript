@@ -1,0 +1,8 @@
+plugin {
+	tx_schmidtwebmedia {
+		settings {
+			logo = {$schmidtwebmedia.page.settings.logo}
+			pageName = {$schmidtwebmedia.page.settings.pageName}
+		}
+	}
+}

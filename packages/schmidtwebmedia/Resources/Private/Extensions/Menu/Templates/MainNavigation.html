@@ -1,0 +1,30 @@
+<f:if condition="{mainNavi}">
+	<f:render partial="Desktop" arguments="{mainNavi: mainNavi, cssClass: 'nav-link'}" />
+	<button type="button" class="button button-primary button-responsive-menu text-center">
+		<i class="fas fa-bars"></i>
+		Menü
+	</button>
+	<div id="mobile-navigation" class="menu menu-wrapper">
+		<div class="menu menu-content">
+			<button type="button" class="button button-menu-close"><i class="fa fa-times"></i></button>
+			<div class="menu menu-inner">
+				<ul>
+					<f:for each="{mainNavi}" as="item">
+						<f:if condition="{item.current}">
+							<f:then>
+								<li class="active">
+									<f:render partial="Elements/Link" arguments="{item: item}"/>
+								</li>
+							</f:then>
+							<f:else>
+								<li>
+									<f:render partial="Elements/Link" arguments="{item: item}"/>
+								</li>
+							</f:else>
+						</f:if>
+					</f:for>
+				</ul>
+			</div>
+		</div>
+	</div>
+</f:if>
