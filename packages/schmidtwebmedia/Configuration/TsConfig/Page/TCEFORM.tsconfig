@@ -12,5 +12,10 @@ TCEFORM {
                 table-footer = Footer Table
             }
         }
+        header_layout {
+            addItems {
+                footer-title = Footer Titel
+            }
+        }
     }
 }

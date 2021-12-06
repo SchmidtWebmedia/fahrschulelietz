@@ -1,0 +1,33 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+<f:section name="Main">
+
+	<f:if condition="{menu}">
+		<div class="row">
+			<f:for each="{menu}" as="item">
+				<div class="col-12 col-sm-6 col-md-6 col-lg-4">
+					<div class="card">
+						<div class="card-inner">
+								<f:for each="{item.files}" as="mediaElement" iteration="iteration">
+										<a href="{item.link}" class="overview-link-image" title="{item.title}">
+											<f:image image="{mediaElement}" width="350" height="300c" class="card-img-top" />
+										</a>
+								</f:for>
+								<div class="card-body">
+									<span class="card-title">{item.title}</span>
+									<p class="card-text light-text">{item.data.abstract -> f:format.crop(maxCharacters: '115',
+										respectWordBoundaries: '1')}</p>
+								</div>
+								<div class="card-footer">
+									<a href="{item.link}" class="button button-primary button-full" title="{item.data.title}">
+										{item.title}
+									</a>
+								</div>
+						</div>
+					</div>
+				</div>
+			</f:for>
+		</div>
+	</f:if>
+</f:section>
+</html>
