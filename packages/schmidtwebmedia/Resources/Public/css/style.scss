@@ -1,7 +1,11 @@
+@charset "UTF-8";
+@function getIcon($str) {
+  @return unquote("\"")+unquote(str-insert($str, "\\", 1))+unquote("\"");
+}
 /* ==========================================================================
    Default Imports
    ========================================================================== */
-   
+
 @import '_bootstrap/scss/functions';
 @import '_bootstrap/scss/variables';
 
@@ -15,6 +19,471 @@ $grid-breakpoints: (
 		xxl: 1920px
 );
 
-
+@import '_bootstrap/scss/bootstrap-reboot';
+@import '_bootstrap/scss/utilities';
 @import '_bootstrap/scss/mixins';
-@import '_bootstrap/scss/bootstrap';
+@import '_bootstrap/scss/type';
+@import '_bootstrap/scss/bootstrap-grid';
+@import '_bootstrap/scss/images';
+@import '_bootstrap/scss/forms';
+@import '_bootstrap/scss/nav';
+@import '_bootstrap/scss/navbar';
+@import '_bootstrap/scss/pagination';
+@import '_bootstrap/scss/breadcrumb';
+@import '_bootstrap/scss/transitions';
+@import '_bootstrap/scss/tables';
+@import '_bootstrap/scss/button-group';
+@import '_bootstrap/scss/buttons';
+
+
+/* ==========================================================================
+   Colors
+   ========================================================================== */
+
+$primary-color: #f4e601;
+$secondary-color: #8b8b8b;
+$font-color: #333;
+$footer-background: #86A47C;
+$border-color: #f9f8f4;
+
+
+/* ==========================================================================
+   Fonts
+   ========================================================================== */
+
+$font-path: "../fonts";
+@import "font";
+
+/* ==========================================================================
+   FontAwesome
+   ========================================================================== */
+
+$fa-font-path:        "webfonts";
+@import "_fontawesome/scss/fontawesome";
+@import "_fontawesome/scss/solid";
+@import "_fontawesome/scss/regular";
+@import "_fontawesome/scss/brands";
+
+/* ==========================================================================
+   Font-Weight
+   ========================================================================== */
+
+$font-light: 300;
+$font-normal: 400;
+$font-bold: 700;
+
+/* ==========================================================================
+   Font-Size
+   ========================================================================== */
+
+$font-size-normal: 1.25rem;
+$font-size-smaller: ($font-size-normal * 0.8);
+$font-size-small: ($font-size-smaller * 0.8);
+$font-size-bigger: ($font-size-normal * 1.2);
+$font-size-big: ($font-size-bigger * 1.2);
+
+$h1-size: 2.25rem;
+$h2-font-size: ($font-size-normal * 1.2);
+
+
+/* ==========================================================================
+   Shadow
+   ========================================================================== */
+
+$z0: none;
+$z1: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+$z2: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+$z3: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.3);
+$z4: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.3);
+$z5: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.3);
+
+/* ==========================================================================
+   Border sizes
+   ========================================================================== */
+
+$border-wide: 8px;
+$border-width: 100px;
+$border-height: 100px;
+$border-gap: -10px;
+
+/* ==========================================================================
+   General
+   ========================================================================== */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  @include font-size($font-size-normal);
+  color: $font-color;
+  font-family: 'Open Sans', sans-serif;
+
+}
+
+main {
+  margin-bottom: 3rem;
+  flex-shrink: 0;
+  &.default-content {
+	margin-top: 35px;
+  }
+}
+
+p {
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   Headlines
+   ========================================================================== */
+
+h1 {
+  color: $font-color;
+  @include font-size($h1-size);
+}
+
+h2 {
+  font-weight: $font-bold;
+  margin-top: 1.5rem;
+  @include font-size($h2-font-size);
+}
+
+/* ==========================================================================
+   Text sizing
+   ========================================================================== */
+
+.bigger-text {
+  @include font-size($font-size-bigger);
+}
+
+.big-text {
+  @include font-size($font-size-big);
+}
+
+.smaller-text {
+  @include font-size($font-size-smaller);
+}
+
+.small-text {
+  @include font-size($font-size-small);
+}
+
+.light-text {
+  font-weight: $font-light;
+}
+
+/* ==========================================================================
+   Button/Link Default
+   ========================================================================== */
+
+a {
+  color: $font-color;
+  text-decoration: underline;
+  &:hover {
+	color: darken($font-color, 10);
+	text-decoration: underline;
+	text-decoration-color: darken($font-color, 10);
+  }
+}
+
+.btn,
+.button {
+  color: #fff;
+  background-color: #000;
+  border: 1px solid #000;
+  text-transform: uppercase;
+  padding: 10px;
+  margin-top: 15px;
+  display: block;
+  border-radius: 0;
+  width: 100%;
+  text-decoration: none;
+  &:hover {
+	color: #000;
+	background-color: #fff;
+	border: 1px solid #000;
+	text-decoration: none;
+  }
+  &:focus,
+  &:active {
+	outline: none;
+  }
+  &.btn-primary,
+  &.button-primary {
+	background-color: $primary-color;
+	border-color: $primary-color;
+	color: $font-color;
+	box-shadow: $z1;
+	&:hover {
+	  color: $font-color;
+	  background-color: darken($primary-color, 10);
+	  border-color: darken($primary-color, 10);
+	}
+  }
+  &.button-secondary {
+	color: $primary-color;
+	background-color: #fff;
+	border-color: $primary-color;
+	&:hover {
+	  background-color: $primary-color;
+	  color: #fff;
+	}
+  }
+  &.button-primary-outline {
+	border: 1px solid $secondary-color;
+	background-color: transparent;
+	color: $primary-color;
+	&:hover {
+	  color: $primary-color;
+	  background-color: $secondary-color;
+	}
+  }
+}
+
+.btn-group-full {
+  width: 100%;
+}
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+#header {
+  position: fixed;
+  width: 100%;
+  box-shadow: $z5;
+  z-index: 999;
+  transition: background 150ms ease-in-out;
+  background-color: $font-color;
+  padding: 0.5rem 0;
+  .brand-wrapper {
+	background-color: $primary-color;
+	padding: 0.4rem;
+  }
+  .img-brand {
+	height: 50px;
+  }
+
+  .nav {
+	justify-content: space-evenly;
+
+	.nav-item {
+	  border-bottom: 1px solid transparent;
+	  .nav-link {
+		color: #F9F8F4;
+		@include font-size(16px);
+		&,
+		&:hover {
+		  text-decoration: none;
+		}
+	  }
+	  &:hover {
+		border-bottom-color: $primary-color;
+		.nav-link {
+		  color: $primary-color;
+		}
+	  }
+	  &.nav-item-primary {
+		.nav-link {
+		  color: $primary-color;
+		}
+	  }
+	}
+  }
+
+  .navigation-container {
+	display: flex;
+	flex-direction: column;
+	.header-information {
+	  padding-bottom: 0.5rem;
+	  display: flex;
+	  justify-content: space-evenly;
+	  @include font-size(0.8rem);
+	  i {
+		color: $primary-color;
+	  }
+	  .header-information-item--value {
+		color: #F9F8F4;
+		font-weight: $font-weight-light;
+	  }
+	}
+  }
+
+  &.transparent {
+	background-color: rgba(0, 0, 0, 0.5 );
+  }
+}
+
+.title {
+  display: block;
+  @include font-size($h2-font-size);
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+#footer {
+  background-color: $secondary-color;
+  padding-top: 1rem;
+  margin-top: auto;
+  .footer-title {
+	@include font-size($font-size-bigger);
+	padding-bottom: 0.3rem;
+	display: block;
+	margin-bottom: 0.5rem;
+
+	&::after {
+	  content: '';
+	  border-bottom: 3px solid $primary-color;
+	  width: 10%;
+	  display: block;
+	}
+  }
+  .table-footer,
+  .ce-table-table-footer {
+	width: 100%;
+  }
+  .footer-open-hours {
+	margin-bottom: 1rem;
+  }
+
+  .footer-legal {
+	background-color: $font-color;
+	padding-top: 0.5rem;
+	@include font-size($font-size-smaller);
+	&,
+	.nav-item .nav-link,
+	.link-social{
+	  color: #F9F8F4;
+	}
+	.text-muted {
+	  padding: 0.5rem;
+	  line-height: 24px;
+	  display: block;
+	}
+  }
+}
+
+/* ==========================================================================
+   Content - General
+   ========================================================================== */
+#container section {
+  background-color: #ffffff;
+  padding: 1rem;
+  box-shadow: $z5;
+  border: 1px solid #ddd;
+}
+
+
+/* ==========================================================================
+   Header Image
+   ========================================================================== */
+
+.big-header-image {
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  height: 100vh;
+  + .container {
+	margin-top: -120px;
+	position: relative;
+  }
+
+
+}
+
+.header-image {
+  height: 550px;
+  .full-size-header,
+  .full-size-header--image {
+	height: 100%;
+  }
+  .full-size-header--image {
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+  }
+}
+
+
+/* ==========================================================================
+   News teaser
+   ========================================================================== */
+
+.news-teaser {
+  i {
+	display: block;
+	font-size: 10rem;
+  }
+
+  .news-title {
+	@include font-size($font-size-bigger);
+	font-weight: $font-weight-light;
+  }
+  .news--directLink {
+	display: flex;
+	a {
+	  margin-left: auto;
+	}
+  }
+}
+
+/* ==========================================================================
+   City Sign
+   ========================================================================== */
+
+.city-sign {
+  padding: 10px;
+  width:100%;
+  height:200px;
+
+  .city-sign-inner {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	@include font-size($font-size-bigger);
+	font-weight: $font-weight-bold;
+	width: 100%;
+	height: 100%;
+	border: 2px solid #000000;
+
+	.city-sign-text {
+	  text-align: center;
+	}
+  }
+
+  &,
+  .city-sign-inner {
+	position: relative;
+	overflow: hidden;
+	background:$primary-color;
+	border-radius: 5px;
+  }
+}
+
+
+/* ==========================================================================
+   USP
+   ========================================================================== */
+
+.usp-list {
+  .usp-item {
+	padding: 1rem 0;
+	display: flex;
+	i {
+	  @include font-size($font-size-big);
+	  color: $font-color;
+	}
+	.usp-item--text {
+	  margin-left: 0.5rem;
+	}
+  }
+}
+
+
+article {
+  margin: 3rem 0;
+}

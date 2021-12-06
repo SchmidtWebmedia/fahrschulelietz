@@ -1,16 +1,40 @@
-<header>
+<header id="header" class="transparent">
 	<div class="container">
-		<nav class="nav">
-			<f:link.page pageUid="1" class="navbar-brand">
-				<f:if condition="{settings.logo}">
-					<f:image src="{settings.logo}" class="img-logo" alt="{settings.pageName} - Logo" title="{settings.pageName} - Logo"></f:image>
-				</f:if>
-			</f:link.page>
-
-			<f:cObject typoscriptObjectPath="lib.mainNavigation"/>
-		</nav>
+		<div class="row">
+			<div class="col-2">
+				<div class="brand-wrapper">
+					<f:link.page pageUid="1" class="navbar-brand">
+						<f:if condition="{settings.logo}">
+							<f:image src="{settings.logo}" class="img-fluid img-brand" alt="{settings.pageName} - Logo" title="{settings.pageName} - Logo"></f:image>
+						</f:if>
+					</f:link.page>
+				</div>
+			</div>
+			<div class="col-10">
+				<div class="navigation-container">
+					<div class="header-information">
+						<div class="header-information-item">
+							<i class="fas fa-map-pin"></i>
+							<span class="header-information-item--value">
+									Möhnesee / Soest
+								</span>
+						</div>
+						<div class="header-information-item">
+							<i class="fas fa-phone-alt"></i>
+							<span class="header-information-item--value">
+									0 29 24 - 8 87 67
+								</span>
+						</div>
+						<div class="header-information-item">
+							<i class="fas fa-at"></i>
+							<span class="header-information-item--value">
+									info@fahrschule-lietz.de
+								</span>
+						</div>
+					</div>
+					<f:cObject typoscriptObjectPath="lib.mainNavigation"/>
+				</div>
+			</div>
+		</div>
 	</div>
 </header>
-
-
-

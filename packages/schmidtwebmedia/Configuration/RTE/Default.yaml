@@ -17,8 +17,10 @@ editor:
     - { name: "Big Text", element: "span", attributes: { class: "big-text"} }
     - { name: "Bigger Text", element: "span", attributes: { class: "bigger-text"} }
     - { name: "Light Text", element: "span", attributes: { class: "light-text"} }
+    - { name: "Footer Table", element: "table", attributes: { class: "table-footer" } }
 
-    format_tags: "p;h1;h2;h3;h4;h5"
+
+    format_tags: "p;h1;h2;h3;h4;h5;address"
 
     toolbarGroups:
     - { name: styles, groups: [ styles, format ] }
@@ -50,7 +52,7 @@ editor:
     - Indent
     - Blockquote
     - JustifyBlock
-    
+
     defaultContentLanguage: "de"
     defaultLanguage: "de"
     contentsLanguage: "de"

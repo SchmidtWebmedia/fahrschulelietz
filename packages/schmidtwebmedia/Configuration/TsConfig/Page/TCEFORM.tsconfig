@@ -6,6 +6,11 @@ TCEFORM {
 
     }
     tt_content {
-
+        table_class {
+            removeItems = striped,bordered
+            addItems {
+                table-footer = Footer Table
+            }
+        }
     }
 }

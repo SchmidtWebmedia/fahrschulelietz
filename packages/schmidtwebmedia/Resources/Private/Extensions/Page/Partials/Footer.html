@@ -1,3 +1,24 @@
-<footer class="footer">
-	<f:cObject typoscriptObjectPath="lib.copyright"></f:cObject> - {settings.pageName}
+<footer id="footer">
+	<section class="footer-information">
+		<div class="container">
+			<f:cObject typoscriptObjectPath="lib.footercontent"></f:cObject>
+		</div>
+	</section>
+	<section class="footer-legal">
+		<div class="container">
+			<div class="row">
+				<div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+					<span class="text-muted"><f:cObject typoscriptObjectPath="lib.copyright"></f:cObject> - {settings.pageName}</span>
+				</div>
+				<div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+					<f:cObject typoscriptObjectPath="lib.legalNavigation"/>
+				</div>
+				<div class="col-12 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+					<a href="/facebook" target="_blank" title="Facebook" class="link-social"><i class="fab fa-facebook-f fa-2x" aria-label="Facebook"></i></a>
+				</div>
+			</div>
+		</div>
+	</section>
 </footer>
+
+

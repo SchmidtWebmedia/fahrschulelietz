@@ -1,0 +1,22 @@
+mod.web_layout.BackendLayouts {
+	footer {
+		title = Footer
+		icon = EXT:schmidtwebmedia/Resources/Public/img/BackendLayouts/Icon.png
+		config {
+			backend_layout {
+				colCount = 1
+				rowCount = 1
+				rows {
+					1 {
+						columns {
+							1 {
+								name = Footer
+								colPos = 2
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

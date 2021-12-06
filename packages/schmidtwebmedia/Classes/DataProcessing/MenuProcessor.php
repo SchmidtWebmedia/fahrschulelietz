@@ -3,7 +3,7 @@
 namespace MarcoSchmidtWebmedia\Schmidtwebmedia\DataProcessing;
 
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
-use TYPO3\CMS\Frontend\Page\PageRepository;
+use TYPO3\CMS\Core\Domain\Repository\PageRepository;
 
 /**
  * Data Processor: Menu Processor
