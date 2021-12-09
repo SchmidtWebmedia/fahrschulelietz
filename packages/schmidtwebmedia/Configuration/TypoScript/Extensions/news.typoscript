@@ -1,0 +1,54 @@
+plugin.tx_news {
+	view {
+		templateRootPaths {
+			0 = EXT:news/Resources/Private/Templates/
+			10 = EXT:schmidtwebmedia/Resources/Private/Extensions/News/Templates/
+		}
+
+		partialRootPaths {
+			0 = EXT:news/Resources/Private/Partials/
+			10 = EXT:schmidtwebmedia/Resources/Private/Extensions/News/Partials/
+		}
+
+		layoutRootPaths {
+			0 = EXT:news/Resources/Private/Layouts/
+			10 = EXT:schmidtwebmedia/Resources/Private/Extensions/News/Layouts/
+		}
+	}
+
+	module.defaultPid.tx_news_domain_model_news = 8
+	predefine.author = 1
+	settings.cssFile >
+	predefine.archive = first day of january +2 year
+}
+
+#Breadcrumb for News
+lib.breadcrumb = FLUIDTEMPLATE
+lib.breadcrumb {
+	templateName = breadcrumb
+	templateRootPaths {
+		10 = EXT:schmidtwebmedia/Resources/Private/Extensions/Menu/Templates/
+	}
+	partialRootPaths {
+		10 = EXT:schmidtwebmedia/Resources/Private/Extensions/Menu/Partials/
+	}
+	dataProcessing {
+		10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+		10 {
+			special = rootline
+			special.range = 0|-1
+			includeNotInMenu = 1
+			as = menuBreadcrumb
+		}
+		20 = GeorgRinger\News\DataProcessing\AddNewsToMenuProcessor
+		20.menus = menuBreadcrumb
+	}
+}
+
+[page["uid"] == 1]
+	plugin.tx_news {
+		settings {
+			isLatest = 1
+		}
+	}
+[END]

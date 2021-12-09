@@ -51,7 +51,7 @@ $border-color: #f9f8f4;
    Fonts
    ========================================================================== */
 
-$font-path: "../fonts";
+$font-path: "fonts";
 @import "font";
 
 /* ==========================================================================
@@ -261,9 +261,15 @@ a {
   .brand-wrapper {
 	background-color: $primary-color;
 	padding: 0.4rem;
+	@include media-breakpoint-down(sm) {
+	  text-align: center;
+	}
   }
   .img-brand {
-	height: 50px;
+	max-height: 50px;
+	@include media-breakpoint-down(sm) {
+	  width: auto;
+	}
   }
 
   .nav {
@@ -273,6 +279,7 @@ a {
 	  border-bottom: 1px solid transparent;
 	  .nav-link {
 		color: #F9F8F4;
+		padding: 0.5rem 0;
 		@include font-size(16px);
 		&,
 		&:hover {
@@ -308,17 +315,145 @@ a {
 		color: #F9F8F4;
 		font-weight: $font-weight-light;
 	  }
+
+	  @include media-breakpoint-down(sm) {
+		display: block;
+	  }
+	}
+
+	@include media-breakpoint-down(sm) {
+	  flex-direction: row;
+	  margin-top: 0.5rem;
 	}
   }
 
   &.transparent {
 	background-color: rgba(0, 0, 0, 0.5 );
+	@include media-breakpoint-down(sm) {
+	  background-color: $font-color;
+	}
+  }
+
+  @include media-breakpoint-down(sm) {
+	position: absolute;
   }
 }
 
 .title {
   display: block;
   @include font-size($h2-font-size);
+}
+
+
+/* ==========================================================================
+   Mobile Navigation
+   ========================================================================== */
+.button.button-responsive-menu {
+  display: inline-block;
+  width: auto;
+  margin-top: 0;
+  margin-left: auto;
+}
+
+@include media-breakpoint-down(lg) {
+  .navigation-container .nav {
+	display: none;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .button.button-responsive-menu {
+	display: none;
+  }
+}
+
+.button-navigation {
+  width: 50%;
+  display: inline-block;
+}
+
+.menu-open {
+  overflow: hidden;
+  .menu-wrapper {
+	opacity: 1;
+	height: 100vh;
+	z-index: 1050;
+	visibility: visible;
+	top: 0;
+	.button-menu-close {
+	  background-color: transparent;
+	  border: 0;
+	  @include font-size(2.5em);
+	  right: 35px;
+	  padding: 15px;
+	  position: absolute;
+	  width: auto;
+	  color: $font-color;
+	  &:hover {
+		background-color: transparent;
+		border: 0;
+		color: #fff;
+	  }
+	}
+  }
+}
+
+.menu-wrapper {
+  opacity: 0;
+  height: 0;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+  width: 100%;
+  position: fixed;
+  display: block;
+  background: rgba(0, 0, 0, 0.8);
+  visibility: hidden;
+  .menu-inner {
+	display: flex;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+	.nav-link {
+	  color: $primary-color;
+	}
+  }
+
+  .menu-content {
+	height: 100%;
+	ul {
+	  list-style-type: none;
+	  padding-left: 0;
+	  li {
+		text-align: center;
+		margin-bottom: 30px;
+		width: auto;
+		&:hover {
+		  font-weight: 600;
+		}
+		a {
+		  @include font-size(3rem);
+		  font-weight: $font-light;
+		  &:hover,
+		  &:active,
+		  &:focus {
+			background-color: transparent;
+		  }
+
+		}
+	  }
+	}
+  }
+  @include media-breakpoint-down(xs) {
+	.button-menu {
+	  width: 63px;
+	}
+	.menu-content ul li {
+	  margin-bottom: 10px;
+	  a {
+		font-size: 1.5rem;
+	  }
+	}
+  }
 }
 
 /* ==========================================================================
@@ -346,8 +481,11 @@ a {
   .ce-table-table-footer {
 	width: 100%;
   }
-  .footer-open-hours {
-	margin-bottom: 1rem;
+
+  .footer-information {
+	@include media-breakpoint-down(md) {
+	  padding-bottom: 1rem;
+	}
   }
 
   .footer-legal {
@@ -364,13 +502,18 @@ a {
 	  line-height: 24px;
 	  display: block;
 	}
+
+	@include media-breakpoint-down(sm) {
+	  text-align: center;
+	  padding-bottom: 1rem;
+	}
   }
 }
 
 /* ==========================================================================
    Content - General
    ========================================================================== */
-#container section {
+.container section {
   background-color: #ffffff;
   padding: 1rem;
   box-shadow: $z5;
@@ -382,47 +525,39 @@ a {
    Header Image
    ========================================================================== */
 
-.big-header-image {
-  background-size: cover;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  height: 100vh;
-  + .container {
-	margin-top: -120px;
-	position: relative;
-  }
-
-
-}
-
 .header-image {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   height: 550px;
-  .full-size-header,
-  .full-size-header--image {
-	height: 100%;
-  }
-  .full-size-header--image {
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
+  &.big-header-image {
+	height: 100vh;
+	+ .container {
+	  margin-top: -120px;
+	  position: relative;
+	}
   }
 }
-
 
 /* ==========================================================================
    News teaser
    ========================================================================== */
 
-.news-teaser {
-  i {
-	display: block;
-	font-size: 10rem;
-  }
-
+.news-list-item {
   .news-title {
 	@include font-size($font-size-bigger);
 	font-weight: $font-weight-light;
+	display: block;
   }
+
+  .news--meta {
+	display: block;
+  }
+
+  .news-list-item--teaser {
+	margin: 0.5rem 0;
+  }
+
   .news--directLink {
 	display: flex;
 	a {

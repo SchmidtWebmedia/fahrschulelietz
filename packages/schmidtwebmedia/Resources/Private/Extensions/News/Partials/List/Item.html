@@ -1,0 +1,54 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+	  data-namespace-typo3-fluid="true">
+<!--
+	=====================
+		Partials/List/Item.html
+-->
+
+<f:if condition="{newsItem.isEvent}">
+	<f:then>
+		<n:link newsItem="{newsItem}" settings="{settings}" class="news eventitem row" title="{newsItem.title}">
+			<span class="col-12 col-sm-3 col-lg-3">
+				<span class="event-date">
+					<time datetime="{f:format.date(date:newsItem.datetime, format:'d.m.Y')}">
+						<span class="eventdate--day"><f:format.date format="d.">{newsItem.datetime}</f:format.date></span>
+						<span class="eventdate--month"><f:format.date format="%B">{newsItem.datetime}</f:format.date></span>
+						<span class="eventdate--year"><f:format.date format="Y">{newsItem.datetime}</f:format.date></span>
+					</time>
+					<span class="event-time">
+						<time datetime="{f:format.date(date:newsItem.datetime, format:'H:i')}" class="event--from">
+							<f:format.date format="H:i">{newsItem.datetime}</f:format.date>
+						</time>
+						<span class="eventdate--timespacer">-</span>
+						<time datetime="{f:format.date(date:newsItem.eventEnd, format:'H:i')}" class="event--to">
+							<f:format.date format="H:i">{newsItem.eventEnd}</f:format.date>
+						</time>
+						<span class="eventdate--timelabel">Uhr</span>
+					</span>
+				</span>
+			</span>
+			<span class="col-12 col-sm-8">
+				{newsItem.title}
+			</span>
+		</n:link>
+	</f:then>
+	<f:else>
+		<div class="news-list-item">
+			<span class="news-title">{newsItem.title}</span>
+			<span class="news--meta light-text small-text">
+				Veröffentlicht: <time itemprop="datePublished" datetime="{f:format.date(date:newsItem.datetime, format:'Y-m-d')}">
+				<f:format.date format="{f:translate(key:'dateFormat')}">{newsItem.datetime}</f:format.date></time>
+			</span>
+			<div class="news-list-item--teaser">
+				<p>{newsItem.teaser}</p>
+			</div>
+			<div class="news--directLink">
+				<n:link newsItem="{newsItem}" settings="{settings}" class="ml-auto" title="{newsItem.title}">
+					Direktlink
+				</n:link>
+			</div>
+		</div>
+	</f:else>
+</f:if>
+</html>

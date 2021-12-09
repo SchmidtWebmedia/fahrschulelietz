@@ -1,0 +1,26 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:if condition="{media}">
+	<!-- media files -->
+	<div class="gallery-container">
+		<div class="row">
+			<f:for each="{media}" as="mediaElement" iteration="iteration">
+				<div class="col-12 col-md-4">
+					<f:if condition="{mediaElement.originalResource.type} == 3 || {mediaElement.originalResource.type} == 4">
+						<f:then>
+							<f:render partial="Detail/MediaVideo" arguments="{mediaElement: mediaElement, settings:settings}"/>
+						</f:then>
+						<f:else>
+							<div class="gallery">
+								<a href="{f:uri.image(src:'{mediaElement.uid}',treatIdAsReference:'1', maxWidth: '1440')}" rel="gallery" title="{mediaElement.title}">
+									<div class="gallery-background-image"
+										 style="background-image: url({f:uri.image(src:'{mediaElement.uid}',treatIdAsReference:'1', maxWidth: '512')});"></div>
+								</a>
+							</div>
+						</f:else>
+					</f:if>
+				</div>
+			</f:for>
+		</div>
+	</div>
+</f:if>
+</html>

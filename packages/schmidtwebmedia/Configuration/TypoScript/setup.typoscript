@@ -154,7 +154,7 @@ page {
     }
 
     includeJSFooter {
-        schmidtwebmedia_scripts = EXT:schmidtwebmedia/Resources/Public/js/main.min.js
+        schmidtwebmedia_scripts = EXT:schmidtwebmedia/Resources/Public/js/main.js
     }
 }
 

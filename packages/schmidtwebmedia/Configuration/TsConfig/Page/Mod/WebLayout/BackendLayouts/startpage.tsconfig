@@ -4,8 +4,8 @@
 mod {
     web_layout {
         BackendLayouts {
-            default {
-                title = LLL:EXT:schmidtwebmedia/Resources/Private/Language/locallang_be.xlf:backend_layout.default
+            startpage {
+                title = Startseite
                 config {
                     backend_layout {
                         colCount = 1

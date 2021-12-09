@@ -1,0 +1,14 @@
+<f:if condition="{data_tx_cceexport_usplist}">
+    <div class="usp-list">
+        <div class="row">
+            <f:for each="{data_tx_cceexport_usplist}" as="data_item">
+                <div class="col-12 col-lg-6">
+                    <div class="usp-item">
+                        <i class="fas fa-car"></i>
+                        <span class="usp-item--text bigger-text light-text">{data_item.data.tx_cceexport_usp}</span>
+                    </div>
+                </div>
+            </f:for>
+        </div>
+    </div>
+</f:if>
