@@ -1,0 +1,75 @@
+{namespace formvh=TYPO3\CMS\Form\ViewHelpers}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<style>
+		table {
+			font-family: 'Verdana';
+			width: 600px;
+			Margin: 0 auto;
+			margin: 0 auto;
+			font-size: 14px;
+		}
+		.bigger-text {
+			font-size: 16px;
+			display: block;
+			border-top: 1px solid #ddd;
+		}
+	</style>
+</head>
+<body>
+<table>
+	<tr>
+		<td colspan="2">
+			<h1>Vielen Dank für Ihre Nachricht</h1>
+			<p>Guten Tag,<br>
+				ich bedanke mich für Ihre E-Mail.</p>
+			<p>Ich werde schnellstmöglich mit Ihnen Kontakt aufnehmen.</p>
+			<p>Mit freundlichen Grüßen<br>
+				Marco Schmidt - Webmedia</p>
+			<p class="bigger-text">Ihre Nachricht:</p>
+		</td>
+	</tr>
+	<formvh:renderAllFormValues renderable="{form.formDefinition}" as="formValue">
+		<tr>
+			<td valign="top" align="left">{formvh:translateElementProperty(element: formValue.element, property: 'label')}</td>
+			<td valign="top" align="left">
+				<f:if condition="{formValue.value}">
+					<f:then>
+						<f:if condition="{formValue.isMultiValue}">
+							<f:then>
+								<table cellspacing="0" border="0">
+									<f:for each="{formValue.processedValue}" as="value">
+										<TR>
+											<TD>{VALUE}</TD>
+										</TR>
+									</f:for>
+								</table>
+							</f:then>
+							<f:else>
+								<table cellspacing="0" border="0">
+									<tr>
+										<td><f:format.nl2br>{formValue.processedValue}</f:format.nl2br></td>
+									</tr>
+								</table>
+							</f:else>
+						</f:if>
+					</f:then>
+					<f:else>
+						-
+					</f:else>
+				</f:if>
+			</td>
+		</tr>
+	</formvh:renderAllFormValues>
+	<tr>
+		<td colspan="2">
+			<f:image src="/fileadmin/user_upload/resources/schmidt_webmedia_logo.png" absolute="1" alt="Marco Schmidt - Webmedia - Logo" />
+		</td>
+	</tr>
+</table>
+</body>
+</html>
