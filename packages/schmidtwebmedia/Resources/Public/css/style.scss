@@ -41,7 +41,7 @@ $grid-breakpoints: (
    ========================================================================== */
 
 $primary-color: #f4e601;
-$secondary-color: #8b8b8b;
+$secondary-color: #c6c6c6;
 $font-color: #333;
 $footer-background: #86A47C;
 $border-color: #f9f8f4;
@@ -259,7 +259,6 @@ a {
   background-color: $font-color;
   padding: 0.5rem 0;
   .brand-wrapper {
-	background-color: $primary-color;
 	padding: 0.4rem;
 	@include media-breakpoint-down(sm) {
 	  text-align: center;
@@ -343,7 +342,6 @@ a {
   display: block;
   @include font-size($h2-font-size);
 }
-
 
 /* ==========================================================================
    Mobile Navigation
@@ -453,6 +451,16 @@ a {
 		font-size: 1.5rem;
 	  }
 	}
+  }
+}
+
+/* ==========================================================================
+   Breadcrumb
+   ========================================================================== */
+
+.breadcrumb {
+  .breadcrumb-item--icon {
+	margin-right: 0.5rem;
   }
 }
 
@@ -621,4 +629,14 @@ a {
 
 article {
   margin: 3rem 0;
+}
+
+/* ==========================================================================
+   Form
+   ========================================================================== */
+.form-navigation {
+  .btn-toolbar {
+	justify-content: flex-end;
+  }
+
 }

@@ -131,3 +131,16 @@ renderables:
         type: Textarea
         identifier: textarea-1
         label: Nachricht
+      -
+        properties:
+          pageUid: '14'
+          linkText: Datenschutzerklärung
+          elementDescription: ''
+          fluidAdditionalAttributes:
+            required: required
+        type: LinkedCheckbox
+        identifier: linkedcheckbox-1
+        label: 'Ich habe die %s gelesen und akzeptiere sie'
+        validators:
+          -
+            identifier: NotEmpty

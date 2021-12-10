@@ -163,7 +163,6 @@ page {
 #### CONFIG ####
 ################
 config {
-    absRefPrefix = {$schmidtwebmedia.page.settings.baseUrl}
 	absRelPath = /
 	no_cache = {$schmidtwebmedia.page.cache.no_cache}
     uniqueLinkVars = 1

@@ -1,0 +1,140 @@
+
+renderingOptions:
+  submitButtonLabel: Absenden
+type: Form
+identifier: onlineanmeldung
+label: Onlineanmeldung
+prototypeName: standard
+renderables:
+  -
+    renderingOptions:
+      previousButtonLabel: 'Vorherige Seite'
+      nextButtonLabel: 'Nächster Schritt'
+    type: Page
+    identifier: page-1
+    label: Step
+    renderables:
+      -
+        defaultValue: ''
+        type: Text
+        identifier: text-1
+        label: 'Name, Vorname'
+        properties:
+          fluidAdditionalAttributes:
+            required: required
+        validators:
+          -
+            identifier: NotEmpty
+      -
+        defaultValue: ''
+        type: Text
+        identifier: text-9
+        label: Geburtsname
+      -
+        type: GridRow
+        identifier: gridrow-2
+        label: 'Grid: Zeile'
+        renderables:
+          -
+            defaultValue: ''
+            properties:
+              fluidAdditionalAttributes:
+                min: ''
+                max: ''
+                step: 1
+            type: Date
+            identifier: date-1
+            label: Geburtsdatum
+          -
+            defaultValue: ''
+            type: Text
+            identifier: text-2
+            label: Geburtsort
+          -
+            defaultValue: ''
+            type: Text
+            identifier: text-3
+            label: Staatsangehörigkeit
+      -
+        type: GridRow
+        identifier: gridrow-3
+        label: 'Grid: Zeile'
+        renderables:
+          -
+            defaultValue: ''
+            type: Text
+            identifier: text-5
+            label: 'Vorbesitz Klasse seit wann'
+          -
+            defaultValue: ''
+            type: Text
+            identifier: text-4
+            label: 'Gewünschte Klasse'
+      -
+        defaultValue: ''
+        type: Text
+        identifier: text-6
+        label: Straße
+      -
+        type: GridRow
+        identifier: gridrow-1
+        label: 'Grid: Zeile'
+        renderables:
+          -
+            defaultValue: ''
+            type: Text
+            identifier: text-7
+            label: PLZ
+          -
+            defaultValue: ''
+            type: Text
+            identifier: text-8
+            label: Wohnort
+      -
+        type: GridRow
+        identifier: gridrow-4
+        label: 'Grid: Zeile'
+        renderables:
+          -
+            defaultValue: ''
+            type: Email
+            identifier: email-1
+            label: E-Mail
+            validators:
+              -
+                identifier: EmailAddress
+          -
+            defaultValue: ''
+            type: Telephone
+            identifier: telephone-1
+            label: Telefonnummer
+          -
+            defaultValue: ''
+            type: Telephone
+            identifier: telephone-2
+            label: Mobil
+      -
+        defaultValue: ''
+        type: Text
+        identifier: text-10
+        label: Alter
+        validators:
+          -
+            identifier: Integer
+      -
+        defaultValue: ''
+        type: Text
+        identifier: text-11
+        label: 'Erreichbarkeit wann und wie'
+      -
+        defaultValue: ''
+        type: Textarea
+        identifier: textarea-1
+        label: Bemerkungen
+      -
+        properties:
+          pageUid: '14'
+          linkText: Datenschutzerklärung
+        type: LinkedCheckbox
+        identifier: linkedcheckbox-1
+        label: 'Ich habe die %s gelesen und akzeptiere sie'

@@ -1,7 +1,7 @@
-base: 'https://www.fahrschule-lietz.de'
+base: 'https://lietz.webdesigner-soest.de/'
 baseVariants:
   -
-    base: 'https://lietz.ddev.site'
+    base: 'https://lietz.ddev.site/'
     condition: 'getenv("IS_DDEV_PROJECT") == "true"'
 languages:
   -
@@ -18,6 +18,47 @@ languages:
     flag: de
     websiteTitle: Fahrschule-Lietz
 rootPageId: 1
+routeEnhancers:
+  NewsPlugin:
+    type: Extbase
+    LimitToPages:
+      - 3
+      - 16
+    extension: News
+    plugin: Pi1
+    routes:
+      -
+        routePath: '/{page}'
+        _controller: 'News::list'
+        _arguments:
+          page: '@widget_0/currentPage'
+      -
+        routePath: '/tag/{tag_name}'
+        _controller: 'News::list'
+        _arguments:
+          tag_name: overwriteDemand/tags
+      -
+        routePath: '/{news_title}'
+        _controller: 'News::detail'
+        _arguments:
+          news_title: news
+      -
+        routePath: '/archiv/{year}/{month}'
+        _controller: 'News::archive'
+    defaultController: 'News::list'
+    defaults:
+      page: '0'
+    aspects:
+      page:
+        type: StaticRangeMapper
+        start: '1'
+        end: '100'
+      news_title:
+        type: PersistedAliasMapper
+        tableName: tx_news_domain_model_news
+        routeFieldName: path_segment
+    requirements:
+      page: \d+
 routes:
   -
     route: robots.txt
