@@ -1,0 +1,133 @@
+
+renderingOptions:
+  submitButtonLabel: Absenden
+  fieldState:
+    text-1:
+      type: Text
+      identifier: text-1
+      label: Name
+      renderingOptions:
+        deleted: 0
+        listView: 1
+    email-1:
+      type: Email
+      identifier: email-1
+      label: 'E-Mail Adresse'
+      renderingOptions:
+        deleted: 0
+        listView: 1
+    text-2:
+      type: Text
+      identifier: text-2
+      label: Betreff
+      renderingOptions:
+        deleted: 0
+        listView: 1
+    textarea-1:
+      type: Textarea
+      identifier: textarea-1
+      label: Nachricht
+      renderingOptions:
+        deleted: 0
+        listView: 1
+type: Form
+identifier: kontaktformular
+label: Kontaktformular
+prototypeName: standard
+finishers:
+  -
+    options:
+      subject: 'Vielen Dank für Ihre Nachricht'
+      recipients:
+        '{email-1}': '{text-1}'
+      senderAddress: info@fahrschule-lietz.de
+      senderName: Fahrschule-Lietz
+      addHtmlPart: true
+      attachUploads: true
+    identifier: EmailToSender
+  -
+    options:
+      subject: 'Anfrage über das Kontaktformular'
+      recipients:
+        info@fahrschule-lietz.de: Fahrschule-Lietz
+      senderAddress: info@fahrschule-lietz.de
+      senderName: '{text-1}'
+      replyToRecipients:
+        '{email-1}': '{text-1}'
+      addHtmlPart: true
+      attachUploads: true
+      translation:
+        language: default
+    identifier: EmailToReceiver
+  -
+    options:
+      message: 'Vielen Dank für Ihre Nachricht, wir werden uns so schnell wie möglich melden'
+      contentElementUid: ''
+    identifier: Confirmation
+renderables:
+  -
+    renderingOptions:
+      previousButtonLabel: 'Vorherige Seite'
+      nextButtonLabel: 'Nächster Schritt'
+    type: Page
+    identifier: page-1
+    label: ''
+    renderables:
+      -
+        type: GridRow
+        identifier: gridrow-1
+        label: 'Grid: Zeile'
+        renderables:
+          -
+            defaultValue: ''
+            type: Text
+            identifier: text-1
+            label: Name
+            properties:
+              fluidAdditionalAttributes:
+                required: required
+              validationErrorMessages:
+                -
+                  code: 1221560910
+                  message: 'Bitte geben Sie einen Namen an'
+                -
+                  code: 1221560718
+                  message: 'Bitte geben Sie einen Namen an'
+                -
+                  code: 1347992400
+                  message: 'Bitte geben Sie einen Namen an'
+                -
+                  code: 1347992453
+                  message: 'Bitte geben Sie einen Namen an'
+            validators:
+              -
+                identifier: NotEmpty
+          -
+            defaultValue: ''
+            type: Email
+            identifier: email-1
+            label: 'E-Mail Adresse'
+            properties:
+              fluidAdditionalAttributes:
+                required: required
+            validators:
+              -
+                identifier: EmailAddress
+              -
+                identifier: NotEmpty
+      -
+        defaultValue: ''
+        type: Text
+        identifier: text-2
+        label: Betreff
+        properties:
+          fluidAdditionalAttributes:
+            required: required
+        validators:
+          -
+            identifier: NotEmpty
+      -
+        defaultValue: ''
+        type: Textarea
+        identifier: textarea-1
+        label: Nachricht
