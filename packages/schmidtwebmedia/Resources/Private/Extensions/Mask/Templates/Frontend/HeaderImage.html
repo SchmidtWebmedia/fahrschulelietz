@@ -1,6 +1,8 @@
+<f:layout name="Default"/>
+<f:section name="Maskcontent">
 <f:if condition="{data_image}">
     <f:alias map="{file: data_image.0}">
         <div id="js-big-header-image" class="header-image {f:if(condition: data.tx_cceexport_large_image, then: 'big-header-image')}" style="background-image: url({f:uri.image(src:'{file.uid}',treatIdAsReference:'1', maxWidth: '1920')});"></div>
     </f:alias>
 </f:if>
-
+</f:section>

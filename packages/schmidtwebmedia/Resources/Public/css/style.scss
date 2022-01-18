@@ -603,8 +603,13 @@ a {
   background-position: center;
   background-size: cover;
   height: 550px;
-  &.big-header-image {
-	height: 100vh;
+}
+
+#page-1 {
+  .frame-type-cceexport_header_image {
+	.big-header-image {
+	  height: 100vh;
+	}
 	+ .container {
 	  margin-top: -120px;
 	  position: relative;

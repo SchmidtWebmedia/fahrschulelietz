@@ -1,6 +1,8 @@
+<f:layout name="Default"/>
+<f:section name="Maskcontent">
 <f:if condition="{data.tx_cceexport_lat} && {data.tx_cceexport_lng}">
     <div class="map-wrapper">
         <div class="interactive-map" id="map{data.uid}" data-lat="{data.tx_cceexport_lat}" data-lng="{data.tx_cceexport_lng}" data-title="{data.header}"></div>
     </div>
 </f:if>
-
+</f:section>

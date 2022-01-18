@@ -1,4 +1,9 @@
+<f:layout name="Default"/>
+<f:section name="Maskcontent">
 <div class="driving-licence-class">
+    <f:render partial="Header" arguments="{
+					header: data.header,
+					header_layout: data.header_layout}" />
     <f:if condition="{data.bodytext}">
         <div class="row-label-value">
             <div class="col-label">Fahrzeug</div>
@@ -24,3 +29,4 @@
     </div>
     </f:if>
 </div>
+</f:section>
