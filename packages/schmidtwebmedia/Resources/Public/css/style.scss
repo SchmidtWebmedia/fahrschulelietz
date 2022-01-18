@@ -34,7 +34,7 @@ $grid-breakpoints: (
 @import '_bootstrap/scss/tables';
 @import '_bootstrap/scss/button-group';
 @import '_bootstrap/scss/buttons';
-
+@import '_baguettebox/baguetteBox';
 
 /* ==========================================================================
    Colors
@@ -84,6 +84,7 @@ $font-size-big: ($font-size-bigger * 1.2);
 
 $h1-size: 2.25rem;
 $h2-font-size: ($font-size-normal * 1.2);
+$h3-font-size: ($h2-font-size * 0.95);
 
 
 /* ==========================================================================
@@ -105,6 +106,44 @@ $border-wide: 8px;
 $border-width: 100px;
 $border-height: 100px;
 $border-gap: -10px;
+
+/* ==========================================================================
+   Spacing
+   ========================================================================== */
+
+.frame-space-before- {
+  &extra-small { 	margin-top: 1rem; }
+  &small {  		margin-top: 2rem; }
+  &medium {  		margin-top: 3rem; }
+  &large {  		margin-top: 4rem; }
+  &extra-large { 	margin-top: 5rem; }
+}
+
+.frame-space-after- {
+  &extra-small { 	margin-bottom: 1rem; }
+  &small {  		margin-bottom: 2rem; }
+  &medium {			margin-bottom: 3rem; }
+  &large {  		margin-bottom: 4rem; }
+  &extra-large { 	margin-bottom: 5rem; }
+}
+
+/* ==========================================================================
+   Alignments
+   ========================================================================== */
+
+.ce-headline- {
+  &left { text-align: left; }
+  &center { text-align: center; }
+  &right { text-align: right; }
+}
+
+/* ==========================================================================
+   Borders
+   ========================================================================== */
+
+.frame-ruler-after {
+  border-bottom: 2px solid $primary-color;
+}
 
 /* ==========================================================================
    General
@@ -149,6 +188,14 @@ h2 {
   font-weight: $font-bold;
   margin-top: 1.5rem;
   @include font-size($h2-font-size);
+}
+
+h3 {
+  font-weight: $font-light;
+  @include font-size($h3-font-size);
+  line-height: 1;
+  margin-bottom: 0;
+  margin-top: 1rem;
 }
 
 /* ==========================================================================
@@ -197,9 +244,9 @@ a {
   text-transform: uppercase;
   padding: 10px;
   margin-top: 15px;
-  display: block;
+  display: inline-block;
   border-radius: 0;
-  width: 100%;
+  width: auto;
   text-decoration: none;
   &:hover {
 	color: #000;
@@ -241,6 +288,10 @@ a {
 	  background-color: $secondary-color;
 	}
   }
+  &.button-full {
+	width: 100%;
+	display: block;
+  }
 }
 
 .btn-group-full {
@@ -254,7 +305,7 @@ a {
   position: fixed;
   width: 100%;
   box-shadow: $z5;
-  z-index: 999;
+  z-index: 10000;
   transition: background 150ms ease-in-out;
   background-color: $font-color;
   padding: 0.5rem 0;
@@ -279,12 +330,14 @@ a {
 	  .nav-link {
 		color: #F9F8F4;
 		padding: 0.5rem 0;
+		font-weight: $font-bold;
 		@include font-size(16px);
 		&,
 		&:hover {
 		  text-decoration: none;
 		}
 	  }
+	  &.active,
 	  &:hover {
 		border-bottom-color: $primary-color;
 		.nav-link {
@@ -465,6 +518,18 @@ a {
 }
 
 /* ==========================================================================
+   Section Menu
+   ========================================================================== */
+.nav-pills {
+	.nav-item {
+	  .nav-link {
+		color: $font-color;
+		text-decoration: underline;
+	  }
+	}
+}
+
+/* ==========================================================================
    Footer
    ========================================================================== */
 
@@ -587,11 +652,11 @@ a {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	@include font-size($font-size-bigger);
+	@include font-size(2rem);
 	font-weight: $font-weight-bold;
 	width: 100%;
 	height: 100%;
-	border: 2px solid #000000;
+	border: 5px solid #000000;
 
 	.city-sign-text {
 	  text-align: center;
@@ -638,5 +703,136 @@ article {
   .btn-toolbar {
 	justify-content: flex-end;
   }
+}
 
+/* ==========================================================================
+   Card
+   ========================================================================== */
+.card {
+  .fa-icon {
+	text-align: center;
+	i {
+	  @include font-size(10rem);
+	}
+  }
+  .card-title {
+	@include font-size($font-size-bigger);
+	font-weight: $font-bold;
+	display: block;
+  }
+}
+
+/* ==========================================================================
+   Row Label/Value
+   ========================================================================== */
+.row-label-value {
+  padding: 1px 0;
+  @include media-breakpoint-up(sm) {
+	display: flex;
+  }
+  .col-label {
+	font-weight: $font-weight-bold;
+	@include media-breakpoint-up(sm) {
+	  flex: 0 0 15%;
+	  max-width: 15%;
+	}
+  }
+  .col-value {
+	@include media-breakpoint-down(sm) {
+	  margin-left: 15px;
+	}
+	@include media-breakpoint-up(sm) {
+	  flex: 0 0 75%;
+	  max-width: 75%;
+	}
+  }
+}
+
+/* ==========================================================================
+   Map
+   ========================================================================== */
+
+.map-wrapper {
+  position: relative;
+  .interactive-map {
+	height: 400px;
+	width: 100%;
+	&.map-scroll {
+	  &::before,
+	  &::after {
+		position: absolute;
+
+	  }
+	  &::before {
+		content: 'Benutze Strg + scroll um zu zoomen';
+		@include font-size($font-size-bigger);
+		color: #fff;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: 100%;
+		z-index: 910;
+	  }
+	  &::after {
+		display: flex;
+		width: 100%;
+		height: 100%;
+		content: '';
+		background-color: rgba(0,0,0,0.5);
+		z-index: 900;
+	  }
+	}
+  }
+}
+.leaflet-control-attribution.leaflet-control,
+.leaflet-control-attribution.leaflet-control a {
+  @include font-size(11px);
+}
+
+/* ==========================================================================
+   Galerie
+   ========================================================================== */
+
+.gallery-container {
+ &.gallery-layout- {
+   &1 {
+	 .gallery {
+	   height: 400px;
+	 }
+   }
+
+   &2 {
+	 .gallery {
+	   height: 325px;
+	 }
+   }
+
+   &3 {
+	 .gallery {
+	   height: 250px;
+	 }
+   }
+
+   &4 {
+	 .gallery {
+	   height: 125px;
+	 }
+   }
+ }
+
+  .gallery {
+	margin: 15px 0;
+	.gallery-background-image {
+	  height: 100%;
+	  background-size: cover;
+	  background-position: center;
+	}
+  }
+  .figcaption {
+	padding: 0.25rem 0;
+	text-align: center;
+	font-weight: $font-light;
+	display: block;
+  }
 }

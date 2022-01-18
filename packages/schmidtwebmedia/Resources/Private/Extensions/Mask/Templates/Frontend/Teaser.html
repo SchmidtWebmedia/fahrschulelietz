@@ -1,0 +1,32 @@
+<div class="card">
+    <f:if condition="{data_image}">
+        <f:then>
+            <f:alias map="{file: data_image.0}">
+                <div class="card-image">
+                    <f:image image="{file}" alt="{file.alternative}" title="{file.title}" class="img-fluid" maxWidth="350" />
+                </div>
+            </f:alias>
+        </f:then>
+        <f:else>
+            <f:if condition="{data.tx_cceexport_fa_icon}">
+                <div class="fa-icon">
+                    <i class="{data.tx_cceexport_fa_icon}"></i>
+                </div>
+            </f:if>
+        </f:else>
+    </f:if>
+
+    <div class="card-body">
+        <f:if condition="{data.header}">
+            <span class="card-title"> {data.header}</span>
+        </f:if>
+        <f:if condition="{data.bodytext}">
+            <div class="card-text">
+                <f:format.html parseFuncTSPath="lib.parseFunc_RTE">{data.bodytext}</f:format.html>
+            </div>
+        </f:if>
+        <f:if condition="{data.header_link} && {data.tx_cceexport_url_title}">
+            <f:link.typolink class="button button-primary" parameter="{data.header_link}">{data.tx_cceexport_url_title}</f:link.typolink>
+        </f:if>
+    </div>
+</div>

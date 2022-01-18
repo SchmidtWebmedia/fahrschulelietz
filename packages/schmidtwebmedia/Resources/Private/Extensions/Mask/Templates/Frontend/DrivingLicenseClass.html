@@ -1,0 +1,26 @@
+<div class="driving-licence-class">
+    <f:if condition="{data.bodytext}">
+        <div class="row-label-value">
+            <div class="col-label">Fahrzeug</div>
+            <div class="col-value"><f:format.html parseFuncTSPath="lib.parseFunc_RTE">{data.bodytext}</f:format.html></div>
+        </div>
+    </f:if>
+    <f:if condition="{data.tx_cceexport_age}">
+    <div class="row-label-value">
+        <div class="col-label">Alter</div>
+        <div class="col-value">{data.tx_cceexport_age}</div>
+    </div>
+    </f:if>
+    <f:if condition="{data.tx_cceexport_previous_ownership}">
+    <div class="row-label-value">
+        <div class="col-label">Vorbesitz</div>
+        <div class="col-value">{data.tx_cceexport_previous_ownership}</div>
+    </div>
+    </f:if>
+    <f:if condition="{data.tx_cceexport_comment}">
+    <div class="row-label-value">
+        <div class="col-label">Bemerkung</div>
+        <div class="col-value"><f:format.html parseFuncTSPath="lib.parseFunc_RTE">{data.tx_cceexport_comment}</f:format.html></div>
+    </div>
+    </f:if>
+</div>

@@ -39,6 +39,10 @@ page {
     shortcutIcon = {$schmidtwebmedia.page.settings.favicon}
 	disableAllHeaderCode = 1
 
+    bodyTag >
+    bodyTagCObject = TEXT
+    bodyTagCObject.dataWrap = <body id="page-{field:uid}">
+
     10 = FLUIDTEMPLATE
     10 {
         templateName = TEXT
@@ -134,7 +138,7 @@ page {
     }
 
     includeCSSLibs {
-
+        leaflet_css = EXT:schmidtwebmedia/Resources/Public/Library/leaflet/css/leaflet.min.css
     }
 
     includeCSS {
@@ -150,11 +154,31 @@ page {
     }
 
     includeJSFooterlibs {
-
+        leaflet = EXT:schmidtwebmedia/Resources/Public/Library/leaflet/js/leaflet.min.js
+        baguetteBox = EXT:schmidtwebmedia/Resources/Public/js/baguetteBox.js
     }
 
     includeJSFooter {
         schmidtwebmedia_scripts = EXT:schmidtwebmedia/Resources/Public/js/main.js
+    }
+
+    headerData {
+        100 = TEXT
+        100 {
+            value = <link rel="apple-touch-icon" href="fileadmin/resources/apple_touch_icon_x60.png">
+        }
+        101 = TEXT
+        101 {
+            value = <link rel="apple-touch-icon" sizes="76x76" href="fileadmin/resources/apple_touch_icon_x76.png">
+        }
+        102 = TEXT
+        102 {
+            value = <link rel="apple-touch-icon" sizes="120x120" href="fileadmin/resources/apple_touch_icon_x120.png">
+        }
+        103 = TEXT
+        103 {
+            value = <link rel="apple-touch-icon" sizes="152x152" href="fileadmin/resources/apple_touch_icon_x152.png">
+        }
     }
 }
 

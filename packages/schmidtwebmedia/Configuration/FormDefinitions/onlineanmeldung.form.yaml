@@ -12,7 +12,7 @@ renderables:
       nextButtonLabel: 'Nächster Schritt'
     type: Page
     identifier: page-1
-    label: Step
+    label: ''
     renderables:
       -
         defaultValue: ''
@@ -30,6 +30,12 @@ renderables:
         type: Text
         identifier: text-9
         label: Geburtsname
+        properties:
+          fluidAdditionalAttributes:
+            required: required
+        validators:
+          -
+            identifier: NotEmpty
       -
         type: GridRow
         identifier: gridrow-2
@@ -42,19 +48,35 @@ renderables:
                 min: ''
                 max: ''
                 step: 1
+                required: required
             type: Date
             identifier: date-1
             label: Geburtsdatum
+            validators:
+              -
+                identifier: NotEmpty
           -
             defaultValue: ''
             type: Text
             identifier: text-2
             label: Geburtsort
+            properties:
+              fluidAdditionalAttributes:
+                required: required
+            validators:
+              -
+                identifier: NotEmpty
           -
             defaultValue: ''
             type: Text
             identifier: text-3
             label: Staatsangehörigkeit
+            properties:
+              fluidAdditionalAttributes:
+                required: required
+            validators:
+              -
+                identifier: NotEmpty
       -
         type: GridRow
         identifier: gridrow-3
@@ -65,16 +87,34 @@ renderables:
             type: Text
             identifier: text-5
             label: 'Vorbesitz Klasse seit wann'
+            properties:
+              fluidAdditionalAttributes:
+                required: required
+            validators:
+              -
+                identifier: NotEmpty
           -
             defaultValue: ''
             type: Text
             identifier: text-4
             label: 'Gewünschte Klasse'
+            properties:
+              fluidAdditionalAttributes:
+                required: required
+            validators:
+              -
+                identifier: NotEmpty
       -
         defaultValue: ''
         type: Text
         identifier: text-6
         label: Straße
+        properties:
+          fluidAdditionalAttributes:
+            required: required
+        validators:
+          -
+            identifier: NotEmpty
       -
         type: GridRow
         identifier: gridrow-1
@@ -85,11 +125,23 @@ renderables:
             type: Text
             identifier: text-7
             label: PLZ
+            properties:
+              fluidAdditionalAttributes:
+                required: required
+            validators:
+              -
+                identifier: NotEmpty
           -
             defaultValue: ''
             type: Text
             identifier: text-8
             label: Wohnort
+            properties:
+              fluidAdditionalAttributes:
+                required: required
+            validators:
+              -
+                identifier: NotEmpty
       -
         type: GridRow
         identifier: gridrow-4
@@ -100,9 +152,14 @@ renderables:
             type: Email
             identifier: email-1
             label: E-Mail
+            properties:
+              fluidAdditionalAttributes:
+                required: required
             validators:
               -
                 identifier: EmailAddress
+              -
+                identifier: NotEmpty
           -
             defaultValue: ''
             type: Telephone
@@ -113,28 +170,56 @@ renderables:
             type: Telephone
             identifier: telephone-2
             label: Mobil
+            properties:
+              fluidAdditionalAttributes:
+                required: required
+            validators:
+              -
+                identifier: NotEmpty
       -
         defaultValue: ''
         type: Text
         identifier: text-10
         label: Alter
+        properties:
+          fluidAdditionalAttributes:
+            required: required
         validators:
           -
             identifier: Integer
+          -
+            identifier: NotEmpty
       -
         defaultValue: ''
         type: Text
         identifier: text-11
         label: 'Erreichbarkeit wann und wie'
+        properties:
+          fluidAdditionalAttributes:
+            required: required
+        validators:
+          -
+            identifier: NotEmpty
       -
         defaultValue: ''
         type: Textarea
         identifier: textarea-1
         label: Bemerkungen
+        properties:
+          fluidAdditionalAttributes:
+            required: required
+        validators:
+          -
+            identifier: NotEmpty
       -
         properties:
           pageUid: '14'
           linkText: Datenschutzerklärung
+          fluidAdditionalAttributes:
+            required: required
         type: LinkedCheckbox
         identifier: linkedcheckbox-1
         label: 'Ich habe die %s gelesen und akzeptiere sie'
+        validators:
+          -
+            identifier: NotEmpty
