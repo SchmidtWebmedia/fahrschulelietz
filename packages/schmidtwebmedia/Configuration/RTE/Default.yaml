@@ -8,7 +8,7 @@ imports:
 # For complete documentation see http://docs.ckeditor.com/#!/api/CKEDITOR.config
 editor:
   config:
-    contentsCss: "EXT:schmidtwebmedia/Resources/Public/css/ckeditor.min.css"
+    contentsCss: "EXT:schmidtwebmedia/Resources/Public/css/ckeditor.css"
     stylesSet:
     - { name: "Button Primary", element: "a", attributes: { class: "button button-primary"} }
     - { name: "Button Secondary", element: "a", attributes: { class: "button button-secondary"} }

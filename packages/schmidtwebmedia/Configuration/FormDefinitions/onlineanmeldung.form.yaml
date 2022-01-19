@@ -94,13 +94,15 @@ renderables:
               -
                 identifier: NotEmpty
           -
-            defaultValue: ''
-            type: Text
-            identifier: text-4
-            label: 'Gewünschte Klasse'
             properties:
+              options:
+                B: B
+                A1: A1
               fluidAdditionalAttributes:
                 required: required
+            type: SingleSelect
+            identifier: singleselect-1
+            label: 'Gewünschte Klasse'
             validators:
               -
                 identifier: NotEmpty

@@ -142,7 +142,7 @@ page {
     }
 
     includeCSS {
-        schmidtwebmedia_layout = EXT:schmidtwebmedia/Resources/Public/css/style.min.css
+        schmidtwebmedia_layout = EXT:schmidtwebmedia/Resources/Public/css/style.css
     }
 
     includeJSLibs {
