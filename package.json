@@ -1,4 +1,8 @@
 {
+  "name": "schmidtwebmedia",
+  "version": "1.0.0",
+  "author": "Marco Schmidt - Webmedia",
+  "license": "ISC",
   "scripts": {
     "build-sass": "sass packages/schmidtwebmedia/Resources/Public/css/style.scss:packages/schmidtwebmedia/Resources/Public/css/style.css",
     "build-sass-ckeditor": "sass packages/schmidtwebmedia/Resources/Public/css/ckeditor.scss:packages/schmidtwebmedia/Resources/Public/css/ckeditor.css",
