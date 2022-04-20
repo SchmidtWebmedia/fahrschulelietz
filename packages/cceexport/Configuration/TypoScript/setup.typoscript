@@ -1,0 +1,127 @@
+tt_content.cceexport_city_sign = FLUIDTEMPLATE
+tt_content.cceexport_city_sign {
+    layoutRootPaths.0 = EXT:cceexport/Resources/Private/Layouts/
+    layoutRootPaths.10 = {$plugin.tx_cceexport.view.layoutRootPath}
+    partialRootPaths.0 = EXT:cceexport/Resources/Private/Partials/
+    partialRootPaths.10 = {$plugin.tx_cceexport.view.partialRootPath}
+    templateRootPaths.0 = EXT:cceexport/Resources/Private/Templates/Content/
+    templateRootPaths.10 = {$plugin.tx_cceexport.view.templateRootPath}
+    templateName = CitySign
+}
+tt_content.cceexport_driving_license_class = FLUIDTEMPLATE
+tt_content.cceexport_driving_license_class {
+    layoutRootPaths.0 = EXT:cceexport/Resources/Private/Layouts/
+    layoutRootPaths.10 = {$plugin.tx_cceexport.view.layoutRootPath}
+    partialRootPaths.0 = EXT:cceexport/Resources/Private/Partials/
+    partialRootPaths.10 = {$plugin.tx_cceexport.view.partialRootPath}
+    templateRootPaths.0 = EXT:cceexport/Resources/Private/Templates/Content/
+    templateRootPaths.10 = {$plugin.tx_cceexport.view.templateRootPath}
+    templateName = DrivingLicenseClass
+}
+tt_content.cceexport_dsgvo = FLUIDTEMPLATE
+tt_content.cceexport_dsgvo {
+    layoutRootPaths.0 = EXT:cceexport/Resources/Private/Layouts/
+    layoutRootPaths.10 = {$plugin.tx_cceexport.view.layoutRootPath}
+    partialRootPaths.0 = EXT:cceexport/Resources/Private/Partials/
+    partialRootPaths.10 = {$plugin.tx_cceexport.view.partialRootPath}
+    templateRootPaths.0 = EXT:cceexport/Resources/Private/Templates/Content/
+    templateRootPaths.10 = {$plugin.tx_cceexport.view.templateRootPath}
+    templateName = Dsgvo
+}
+tt_content.cceexport_font_awesome = FLUIDTEMPLATE
+tt_content.cceexport_font_awesome {
+    layoutRootPaths.0 = EXT:cceexport/Resources/Private/Layouts/
+    layoutRootPaths.10 = {$plugin.tx_cceexport.view.layoutRootPath}
+    partialRootPaths.0 = EXT:cceexport/Resources/Private/Partials/
+    partialRootPaths.10 = {$plugin.tx_cceexport.view.partialRootPath}
+    templateRootPaths.0 = EXT:cceexport/Resources/Private/Templates/Content/
+    templateRootPaths.10 = {$plugin.tx_cceexport.view.templateRootPath}
+    templateName = FontAwesome
+}
+tt_content.cceexport_gallery = FLUIDTEMPLATE
+tt_content.cceexport_gallery {
+    layoutRootPaths.0 = EXT:cceexport/Resources/Private/Layouts/
+    layoutRootPaths.10 = {$plugin.tx_cceexport.view.layoutRootPath}
+    partialRootPaths.0 = EXT:cceexport/Resources/Private/Partials/
+    partialRootPaths.10 = {$plugin.tx_cceexport.view.partialRootPath}
+    templateRootPaths.0 = EXT:cceexport/Resources/Private/Templates/Content/
+    templateRootPaths.10 = {$plugin.tx_cceexport.view.templateRootPath}
+    templateName = Gallery
+    dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+    dataProcessing.10 {
+        if.isTrue.field = image
+        references {
+            fieldName = image
+            table = tt_content
+        }
+        as = data_image
+    }
+}
+tt_content.cceexport_header_image = FLUIDTEMPLATE
+tt_content.cceexport_header_image {
+    layoutRootPaths.0 = EXT:cceexport/Resources/Private/Layouts/
+    layoutRootPaths.10 = {$plugin.tx_cceexport.view.layoutRootPath}
+    partialRootPaths.0 = EXT:cceexport/Resources/Private/Partials/
+    partialRootPaths.10 = {$plugin.tx_cceexport.view.partialRootPath}
+    templateRootPaths.0 = EXT:cceexport/Resources/Private/Templates/Content/
+    templateRootPaths.10 = {$plugin.tx_cceexport.view.templateRootPath}
+    templateName = HeaderImage
+    dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+    dataProcessing.10 {
+        if.isTrue.field = image
+        references {
+            fieldName = image
+            table = tt_content
+        }
+        as = data_image
+    }
+}
+tt_content.cceexport_map = FLUIDTEMPLATE
+tt_content.cceexport_map {
+    layoutRootPaths.0 = EXT:cceexport/Resources/Private/Layouts/
+    layoutRootPaths.10 = {$plugin.tx_cceexport.view.layoutRootPath}
+    partialRootPaths.0 = EXT:cceexport/Resources/Private/Partials/
+    partialRootPaths.10 = {$plugin.tx_cceexport.view.partialRootPath}
+    templateRootPaths.0 = EXT:cceexport/Resources/Private/Templates/Content/
+    templateRootPaths.10 = {$plugin.tx_cceexport.view.templateRootPath}
+    templateName = Map
+}
+tt_content.cceexport_teaser = FLUIDTEMPLATE
+tt_content.cceexport_teaser {
+    layoutRootPaths.0 = EXT:cceexport/Resources/Private/Layouts/
+    layoutRootPaths.10 = {$plugin.tx_cceexport.view.layoutRootPath}
+    partialRootPaths.0 = EXT:cceexport/Resources/Private/Partials/
+    partialRootPaths.10 = {$plugin.tx_cceexport.view.partialRootPath}
+    templateRootPaths.0 = EXT:cceexport/Resources/Private/Templates/Content/
+    templateRootPaths.10 = {$plugin.tx_cceexport.view.templateRootPath}
+    templateName = Teaser
+    dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+    dataProcessing.10 {
+        if.isTrue.field = image
+        references {
+            fieldName = image
+            table = tt_content
+        }
+        as = data_image
+    }
+}
+tt_content.cceexport_usp = FLUIDTEMPLATE
+tt_content.cceexport_usp {
+    layoutRootPaths.0 = EXT:cceexport/Resources/Private/Layouts/
+    layoutRootPaths.10 = {$plugin.tx_cceexport.view.layoutRootPath}
+    partialRootPaths.0 = EXT:cceexport/Resources/Private/Partials/
+    partialRootPaths.10 = {$plugin.tx_cceexport.view.partialRootPath}
+    templateRootPaths.0 = EXT:cceexport/Resources/Private/Templates/Content/
+    templateRootPaths.10 = {$plugin.tx_cceexport.view.templateRootPath}
+    templateName = Usp
+    dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+    dataProcessing.10 {
+        if.isTrue.field = tx_cceexport_usplist
+        table = tx_cceexport_usplist
+        pidInList.field = pid
+        where = parentid=###uid### AND deleted=0 AND hidden=0
+        orderBy = sorting
+        markers.uid.field = uid
+        as = data_tx_cceexport_usplist
+    }
+}

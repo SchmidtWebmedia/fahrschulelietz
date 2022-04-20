@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.0">
+  <file source-language="en" datatype="plaintext" original="messages" date="2022-03-15T16:17:03+00:00" product-name="cceexport">
+    <header/>
+    <body>
+      <trans-unit id="wizards.newContentElement.city_sign_title">
+        <source>Ortseingangsschild</source>
+      </trans-unit>
+      <trans-unit id="wizards.newContentElement.city_sign_description">
+        <source>Zeige ein Ortseingangsschild an</source>
+      </trans-unit>
+      <trans-unit id="wizards.newContentElement.driving_license_class_title">
+        <source>Führerscheinklasse</source>
+      </trans-unit>
+      <trans-unit id="wizards.newContentElement.driving_license_class_description">
+        <source>Detailinformation zu der Führerscheinklasse</source>
+      </trans-unit>
+      <trans-unit id="wizards.newContentElement.dsgvo_title">
+        <source>DSGVO Opt Out</source>
+      </trans-unit>
+      <trans-unit id="wizards.newContentElement.dsgvo_description">
+        <source>Buttons für den DGVO Opt Out</source>
+      </trans-unit>
+      <trans-unit id="wizards.newContentElement.font_awesome_title">
+        <source>Font Awesome</source>
+      </trans-unit>
+      <trans-unit id="wizards.newContentElement.font_awesome_description">
+        <source>Füge ein Font Aweseome Icon hinzu</source>
+      </trans-unit>
+      <trans-unit id="wizards.newContentElement.gallery_title">
+        <source>Bilder Galerie</source>
+      </trans-unit>
+      <trans-unit id="wizards.newContentElement.gallery_description">
+        <source>Eine Galerie bestehend aus mehreren Bildern, sauber in einem Raster angeordnet </source>
+      </trans-unit>
+      <trans-unit id="wizards.newContentElement.header_image_title">
+        <source>Header Bild</source>
+      </trans-unit>
+      <trans-unit id="wizards.newContentElement.header_image_description">
+        <source>Zeige ein großes Headerbild an</source>
+      </trans-unit>
+      <trans-unit id="wizards.newContentElement.map_title">
+        <source>Karte</source>
+      </trans-unit>
+      <trans-unit id="wizards.newContentElement.map_description">
+        <source>Darstellung einer OpenStreet Map</source>
+      </trans-unit>
+      <trans-unit id="wizards.newContentElement.teaser_title">
+        <source>Teaser</source>
+      </trans-unit>
+      <trans-unit id="wizards.newContentElement.teaser_description">
+        <source>Teaser mit Überschrift, Bild, Beschreibung und Link</source>
+      </trans-unit>
+      <trans-unit id="wizards.newContentElement.usp_title">
+        <source>USP Auflistung</source>
+      </trans-unit>
+      <trans-unit id="wizards.newContentElement.usp_description">
+        <source>Auflistung mehrere USP in Spalten</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

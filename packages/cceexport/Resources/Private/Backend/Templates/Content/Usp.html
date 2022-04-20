@@ -1,0 +1,10 @@
+<f:if condition="{processedRow.tx_cceexport_usplist}">
+    <strong><f:translate key="LLL:EXT:cceexport/Resources/Private/Language/locallang_db.xlf:tt_content.tx_cceexport_usplist" /></strong>
+<br><f:for each="{processedRow.tx_cceexport_usplist}" as="item">
+    <ul>
+        <li>
+            <f:translate key="LLL:EXT:cceexport/Resources/Private/Language/locallang_db.xlf:tx_cceexport_usplist.tx_cceexport_usp" /> {item.tx_cceexport_usp} (id={item.uid})<br/>
+        </li>
+    </ul>
+</f:for>
+</f:if>

@@ -1,0 +1,77 @@
+mod.wizards.newContentElement.wizardItems.common {
+    elements {
+            city_sign {
+                iconIdentifier = tx_cceexport_city_sign
+                title = LLL:EXT:cceexport/Resources/Private/Language/locallang_db_new_content_el.xlf:wizards.newContentElement.city_sign_title
+                description = LLL:EXT:cceexport/Resources/Private/Language/locallang_db_new_content_el.xlf:wizards.newContentElement.city_sign_description
+                tt_content_defValues {
+                    CType = cceexport_city_sign
+                }
+            }
+            driving_license_class {
+                iconIdentifier = tx_cceexport_driving_license_class
+                title = LLL:EXT:cceexport/Resources/Private/Language/locallang_db_new_content_el.xlf:wizards.newContentElement.driving_license_class_title
+                description = LLL:EXT:cceexport/Resources/Private/Language/locallang_db_new_content_el.xlf:wizards.newContentElement.driving_license_class_description
+                tt_content_defValues {
+                    CType = cceexport_driving_license_class
+                }
+            }
+            dsgvo {
+                iconIdentifier = tx_cceexport_dsgvo
+                title = LLL:EXT:cceexport/Resources/Private/Language/locallang_db_new_content_el.xlf:wizards.newContentElement.dsgvo_title
+                description = LLL:EXT:cceexport/Resources/Private/Language/locallang_db_new_content_el.xlf:wizards.newContentElement.dsgvo_description
+                tt_content_defValues {
+                    CType = cceexport_dsgvo
+                }
+            }
+            font_awesome {
+                iconIdentifier = tx_cceexport_font_awesome
+                title = LLL:EXT:cceexport/Resources/Private/Language/locallang_db_new_content_el.xlf:wizards.newContentElement.font_awesome_title
+                description = LLL:EXT:cceexport/Resources/Private/Language/locallang_db_new_content_el.xlf:wizards.newContentElement.font_awesome_description
+                tt_content_defValues {
+                    CType = cceexport_font_awesome
+                }
+            }
+            gallery {
+                iconIdentifier = tx_cceexport_gallery
+                title = LLL:EXT:cceexport/Resources/Private/Language/locallang_db_new_content_el.xlf:wizards.newContentElement.gallery_title
+                description = LLL:EXT:cceexport/Resources/Private/Language/locallang_db_new_content_el.xlf:wizards.newContentElement.gallery_description
+                tt_content_defValues {
+                    CType = cceexport_gallery
+                }
+            }
+            header_image {
+                iconIdentifier = tx_cceexport_header_image
+                title = LLL:EXT:cceexport/Resources/Private/Language/locallang_db_new_content_el.xlf:wizards.newContentElement.header_image_title
+                description = LLL:EXT:cceexport/Resources/Private/Language/locallang_db_new_content_el.xlf:wizards.newContentElement.header_image_description
+                tt_content_defValues {
+                    CType = cceexport_header_image
+                }
+            }
+            map {
+                iconIdentifier = tx_cceexport_map
+                title = LLL:EXT:cceexport/Resources/Private/Language/locallang_db_new_content_el.xlf:wizards.newContentElement.map_title
+                description = LLL:EXT:cceexport/Resources/Private/Language/locallang_db_new_content_el.xlf:wizards.newContentElement.map_description
+                tt_content_defValues {
+                    CType = cceexport_map
+                }
+            }
+            teaser {
+                iconIdentifier = tx_cceexport_teaser
+                title = LLL:EXT:cceexport/Resources/Private/Language/locallang_db_new_content_el.xlf:wizards.newContentElement.teaser_title
+                description = LLL:EXT:cceexport/Resources/Private/Language/locallang_db_new_content_el.xlf:wizards.newContentElement.teaser_description
+                tt_content_defValues {
+                    CType = cceexport_teaser
+                }
+            }
+            usp {
+                iconIdentifier = tx_cceexport_usp
+                title = LLL:EXT:cceexport/Resources/Private/Language/locallang_db_new_content_el.xlf:wizards.newContentElement.usp_title
+                description = LLL:EXT:cceexport/Resources/Private/Language/locallang_db_new_content_el.xlf:wizards.newContentElement.usp_description
+                tt_content_defValues {
+                    CType = cceexport_usp
+                }
+            }
+    }
+    show := addToList(city_sign, driving_license_class, dsgvo, font_awesome, gallery, header_image, map, teaser, usp)
+}

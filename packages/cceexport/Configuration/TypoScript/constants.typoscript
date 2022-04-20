@@ -1,0 +1,8 @@
+# cat=cceexport/file; type=string; label=Path to template root (FE)
+plugin.tx_cceexport.view.templateRootPath =
+
+# cat=cceexport/file; type=string; label=Path to template partials (FE)
+plugin.tx_cceexport.view.partialRootPath =
+
+# cat=cceexport/file; type=string; label=Path to template layouts (FE)
+plugin.tx_cceexport.view.layoutRootPath =

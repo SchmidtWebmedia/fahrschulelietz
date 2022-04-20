@@ -7,11 +7,9 @@
 /packages/schmidtwebmedia/Resources/Public/css/ckeditor.css.map
 /packages/schmidtwebmedia/Resources/Public/css/ckeditor.min.css
 /packages/schmidtwebmedia/Resources/Public/js/main.min.js
-/packages/cceexport/
 /public/typo3/
 /public/typo3conf/
 /packages/schmidtwebmedia/Resources/Public/js/baguetteBox.min.js
-/composer.lock
 /vendor/
 /.ddev/
 /public/fileadmin/user_upload/
@@ -21,3 +19,5 @@
 /public/fileadmin/_temp_/
 /var/
 /public/fileadmin/_processed_/
+/node_modules/
+/packages/___cceexport/

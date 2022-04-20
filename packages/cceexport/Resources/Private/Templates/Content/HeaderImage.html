@@ -1,0 +1,16 @@
+<f:if condition="{data_image}">
+    <f:for each="{data_image}" as="file">
+        <f:image image="{file}" alt="{file.alternative}" title="{file.title}" width="200" /><br />
+        {file.description} / {file.identifier}<br />
+    </f:for>
+</f:if>
+
+<f:if condition="{data.tx_cceexport_large_image}">
+    <f:then>
+        On<br />
+    </f:then>
+    <f:else>
+        Off<br />
+     </f:else>
+</f:if>
+

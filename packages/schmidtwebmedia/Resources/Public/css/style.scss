@@ -76,7 +76,7 @@ $font-bold: 700;
    Font-Size
    ========================================================================== */
 
-$font-size-normal: 1.25rem;
+$font-size-normal: 1rem;
 $font-size-smaller: ($font-size-normal * 0.8);
 $font-size-small: ($font-size-smaller * 0.8);
 $font-size-bigger: ($font-size-normal * 1.2);
@@ -713,17 +713,49 @@ article {
 /* ==========================================================================
    Card
    ========================================================================== */
+
+.frame-type-cceexport_teaser {
+  height: 100%;
+}
+
 .card {
+  height: 100%;
+  background-color: #f9f9f9;
+  border: 1px solid rgba(0,0,0,0.125);
   .fa-icon {
+	background-color: #fff;
 	text-align: center;
 	i {
 	  @include font-size(10rem);
 	}
   }
+
+  .card-image {
+	margin-bottom: 1rem;
+  }
+
   .card-title {
 	@include font-size($font-size-bigger);
 	font-weight: $font-bold;
 	display: block;
+	margin-bottom: 1rem;
+
+	&::after {
+	  content: '';
+	  border-bottom: 3px solid $primary-color;
+	  width: 10%;
+	  display: block;
+	}
+  }
+  .card-body {
+	padding: 0 0.5rem;
+  }
+
+  .card-link {
+	.card-link--link {
+	  @include font-size($font-size-bigger);
+	  color: $primary-color;
+	}
   }
 }
 
@@ -738,8 +770,8 @@ article {
   .col-label {
 	font-weight: $font-weight-bold;
 	@include media-breakpoint-up(sm) {
-	  flex: 0 0 15%;
-	  max-width: 15%;
+	  flex: 0 0 10%;
+	  max-width: 10%;
 	}
   }
   .col-value {
@@ -747,11 +779,37 @@ article {
 	  margin-left: 15px;
 	}
 	@include media-breakpoint-up(sm) {
-	  flex: 0 0 75%;
-	  max-width: 75%;
+	  flex: 0 0 80%;
+	  max-width: 80%;
 	}
   }
 }
+
+
+/* ==========================================================================
+   Fahrerlaubnisklassen
+   ========================================================================== */
+.driving-licence-class {
+  background-color: #f9f9f9;
+  border: 1px solid rgba(0,0,0,0.125);
+  padding: 0.5rem;
+  margin: 1rem 0;
+
+  h2 {
+	margin-top: 0;
+	&::after {
+	  content: '';
+	  border-bottom: 3px solid $primary-color;
+	  width: 10%;
+	  display: block;
+	}
+  }
+  p {
+	margin-bottom: 0;
+  }
+}
+
+
 
 /* ==========================================================================
    Map

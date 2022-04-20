@@ -1,0 +1,14 @@
+<f:if condition="{data_tx_cceexport_usplist}">
+    <ul>
+        <f:for each="{data_tx_cceexport_usplist}" as="data_item">
+            <li>
+                <f:if condition="{data_item.data.tx_cceexport_usp}">
+    {data_item.data.tx_cceexport_usp}<br />
+</f:if>
+
+
+            </li>
+        </f:for>
+    </ul>
+</f:if>
+

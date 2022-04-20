@@ -1,0 +1,27 @@
+<f:if condition="{data.header}">
+    {data.header}<br />
+</f:if>
+
+<f:if condition="{data_image}">
+    <f:for each="{data_image}" as="file">
+        <f:image image="{file}" alt="{file.alternative}" title="{file.title}" width="200" /><br />
+        {file.description} / {file.identifier}<br />
+    </f:for>
+</f:if>
+
+<f:if condition="{data.tx_cceexport_fa_icon}">
+    {data.tx_cceexport_fa_icon}<br />
+</f:if>
+
+<f:if condition="{data.bodytext}">
+    <f:format.html parseFuncTSPath="lib.parseFunc_RTE">{data.bodytext}</f:format.html><br />
+</f:if>
+
+<f:if condition="{data.header_link}">
+    <f:link.page pageUid="{data.header_link}">{data.header_link}</f:link.page><br />
+</f:if>
+
+<f:if condition="{data.tx_cceexport_url_title}">
+    {data.tx_cceexport_url_title}<br />
+</f:if>
+
