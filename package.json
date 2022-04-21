@@ -14,6 +14,6 @@
     "css-minify": "^2.0.0",
     "postcss": "^8.4.12",
     "postcss-cli": "^9.1.0",
-    "sass": "^1.50.1"
+    "sass": "1.32"
   }
 }
