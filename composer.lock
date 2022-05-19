@@ -2378,8 +2378,8 @@
             "version": "dev-master",
             "dist": {
                 "type": "path",
-                "url": "./packages/___cceexport",
-                "reference": "22e27bed71df711cb4d7055da5314820ddc11988"
+                "url": "./packages/cceexport",
+                "reference": "1d4eb7b4ed9e0b4b3e7b05449f7ae0a6679a3e0d"
             },
             "require": {
                 "typo3/cms-backend": "^11.5",
