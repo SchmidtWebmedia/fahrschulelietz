@@ -1,11 +1,12 @@
 $primary-color: #000;
+$highlight-color: #f4e601;
 
 $font-light: 300;
 
-$font-size-small: 0.6rem;
-$font-size-smaller: 0.8rem;
-$font-size-big: 1.1rem;
-$font-size-bigger: 1.3rem;
+$font-size-small: 8px;
+$font-size-smaller: 12px;
+$font-size-big: 16px;
+$font-size-bigger: 20px;
 
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,400,400i,700,700i&display=swap');
 
@@ -46,4 +47,15 @@ a {
   &left { text-align: left; }
   &center { text-align: center; }
   &right { text-align: right; }
+}
+
+.highlight {
+  font-weight: bold;
+  display: inline-block;
+  &::after {
+    content: '';
+    border-bottom: 3px solid $highlight-color;
+    width: 100%;
+    display: block;
+  }
 }

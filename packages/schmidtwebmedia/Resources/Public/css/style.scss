@@ -256,6 +256,17 @@ h3 {
   font-weight: $font-light;
 }
 
+.highlight {
+  font-weight: $font-weight-bold;
+  display: inline-block;
+  &::after {
+	content: '';
+	border-bottom: 3px solid $primary-color;
+	width: 100%;
+	display: block;
+  }
+}
+
 /* ==========================================================================
    Button/Link Default
    ========================================================================== */
@@ -633,15 +644,6 @@ a {
 	background-color: $light-grey;
 	width: 100%;
 	padding: 1rem 0;
-
-	h1 {
-	  &::after {
-		content: '';
-		border-bottom: 3px solid $primary-color;
-		width: 21%;
-		display: block;
-	  }
-	}
   }
 }
 
