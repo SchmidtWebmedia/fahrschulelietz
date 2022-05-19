@@ -1,7 +1,7 @@
 <?php
 defined('TYPO3_MODE') || die();
 
-call_user_func(function () {
+call_user_func(static function () {
 
 $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['cceexport_city_sign'] = 'tx_cceexport_city_sign';
 $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['cceexport_driving_license_class'] = 'tx_cceexport_driving_license_class';
@@ -21,7 +21,7 @@ $tempColumns = [
             ],
             'type' => 'input',
         ],
-        'exclude' => '1',
+        'exclude' => 1,
         'label' => 'LLL:EXT:cceexport/Resources/Private/Language/locallang_db.xlf:tt_content.tx_cceexport_age',
     ],
     'tx_cceexport_comment' => [
@@ -31,9 +31,9 @@ $tempColumns = [
             ],
             'enableRichtext' => '1',
             'type' => 'text',
-            'softref' => 'typolink_tag,images,email[subst],url',
+            'softref' => 'typolink_tag,email[subst],url',
         ],
-        'exclude' => '1',
+        'exclude' => 1,
         'label' => 'LLL:EXT:cceexport/Resources/Private/Language/locallang_db.xlf:tt_content.tx_cceexport_comment',
     ],
     'tx_cceexport_fa_icon' => [
@@ -45,8 +45,7 @@ $tempColumns = [
             'eval' => 'trim,lower',
             'type' => 'input',
         ],
-        'description' => 'Entweder ein Bilder oder ein Icon',
-        'exclude' => '1',
+        'exclude' => 1,
         'label' => 'LLL:EXT:cceexport/Resources/Private/Language/locallang_db.xlf:tt_content.tx_cceexport_fa_icon',
     ],
     'tx_cceexport_large_image' => [
@@ -56,8 +55,7 @@ $tempColumns = [
             ],
             'type' => 'check',
         ],
-        'description' => 'Zeige das Bild über die gesamte Bildschirmgröße an',
-        'exclude' => '1',
+        'exclude' => 1,
         'label' => 'LLL:EXT:cceexport/Resources/Private/Language/locallang_db.xlf:tt_content.tx_cceexport_large_image',
     ],
     'tx_cceexport_lat' => [
@@ -69,7 +67,7 @@ $tempColumns = [
             'eval' => 'double2',
             'type' => 'input',
         ],
-        'exclude' => '1',
+        'exclude' => 1,
         'label' => 'LLL:EXT:cceexport/Resources/Private/Language/locallang_db.xlf:tt_content.tx_cceexport_lat',
     ],
     'tx_cceexport_lng' => [
@@ -81,7 +79,7 @@ $tempColumns = [
             'eval' => 'double2',
             'type' => 'input',
         ],
-        'exclude' => '1',
+        'exclude' => 1,
         'label' => 'LLL:EXT:cceexport/Resources/Private/Language/locallang_db.xlf:tt_content.tx_cceexport_lng',
     ],
     'tx_cceexport_previous_ownership' => [
@@ -92,7 +90,7 @@ $tempColumns = [
             ],
             'type' => 'input',
         ],
-        'exclude' => '1',
+        'exclude' => 1,
         'label' => 'LLL:EXT:cceexport/Resources/Private/Language/locallang_db.xlf:tt_content.tx_cceexport_previous_ownership',
     ],
     'tx_cceexport_url_title' => [
@@ -103,8 +101,7 @@ $tempColumns = [
             ],
             'type' => 'input',
         ],
-        'description' => 'Titel für den Link',
-        'exclude' => '1',
+        'exclude' => 1,
         'label' => 'LLL:EXT:cceexport/Resources/Private/Language/locallang_db.xlf:tt_content.tx_cceexport_url_title',
     ],
     'tx_cceexport_usplist' => [
@@ -118,7 +115,6 @@ $tempColumns = [
                 'levelLinksPosition' => 'top',
                 'showAllLocalizationLink' => '1',
                 'showPossibleLocalizationRecords' => '1',
-                'showRemovedLocalizationRecords' => '1',
                 'showSynchronizationLink' => '0',
                 'useSortable' => '0',
             ],
@@ -131,8 +127,7 @@ $tempColumns = [
             'foreign_table_field' => 'parenttable',
             'type' => 'inline',
         ],
-        'description' => 'Auflistung aller USPs',
-        'exclude' => '1',
+        'exclude' => 1,
         'label' => 'LLL:EXT:cceexport/Resources/Private/Language/locallang_db.xlf:tt_content.tx_cceexport_usplist',
     ],
 ];
@@ -189,6 +184,9 @@ $GLOBALS['TCA']['tt_content']['columns']['CType']['config']['items'][] = [
 $tempTypes = [
     'cceexport_city_sign' => [
         'columnsOverrides' => [
+            'header' => [
+                'label' => 'Text',
+            ],
             'bodytext' => [
                 'config' => [
                     'enableRichtext' => 1,
@@ -200,9 +198,19 @@ $tempTypes = [
     'cceexport_driving_license_class' => [
         'columnsOverrides' => [
             'bodytext' => [
+                'label' => 'Fahrzeug',
                 'config' => [
                     'enableRichtext' => 1,
                 ],
+            ],
+            'tx_cceexport_age' => [
+                'label' => 'Alter',
+            ],
+            'tx_cceexport_previous_ownership' => [
+                'label' => 'Vorbesitz',
+            ],
+            'tx_cceexport_comment' => [
+                'label' => 'Bemerkung',
             ],
         ],
         'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,header,header_layout,bodytext,tx_cceexport_age,tx_cceexport_previous_ownership,tx_cceexport_comment,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.frames;frames,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.appearanceLinks;appearanceLinks,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,--palette--;;language,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,--palette--;;hidden,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.access;access,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:categories,--div--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_category.tabs.category,categories,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,rowDescription,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
@@ -219,6 +227,10 @@ $tempTypes = [
     ],
     'cceexport_font_awesome' => [
         'columnsOverrides' => [
+            'tx_cceexport_fa_icon' => [
+                'label' => 'Icon Klasse',
+                'description' => 'Entweder ein Bilder oder ein Icon',
+            ],
             'bodytext' => [
                 'config' => [
                     'enableRichtext' => 1,
@@ -239,6 +251,13 @@ $tempTypes = [
     ],
     'cceexport_header_image' => [
         'columnsOverrides' => [
+            'image' => [
+                'label' => 'Bild',
+            ],
+            'tx_cceexport_large_image' => [
+                'label' => 'Großes Bild',
+                'description' => 'Zeige das Bild über die gesamte Bildschirmgröße an',
+            ],
             'bodytext' => [
                 'config' => [
                     'enableRichtext' => 1,
@@ -249,6 +268,12 @@ $tempTypes = [
     ],
     'cceexport_map' => [
         'columnsOverrides' => [
+            'tx_cceexport_lat' => [
+                'label' => 'Lat',
+            ],
+            'tx_cceexport_lng' => [
+                'label' => 'Lng',
+            ],
             'bodytext' => [
                 'config' => [
                     'enableRichtext' => 1,
@@ -259,6 +284,14 @@ $tempTypes = [
     ],
     'cceexport_teaser' => [
         'columnsOverrides' => [
+            'tx_cceexport_fa_icon' => [
+                'label' => 'FontAwesome Icon Klasse',
+                'description' => 'Entweder ein Bilder oder ein Icon',
+            ],
+            'tx_cceexport_url_title' => [
+                'label' => 'URL Titel',
+                'description' => 'Titel für den Link',
+            ],
             'bodytext' => [
                 'config' => [
                     'enableRichtext' => 1,
@@ -269,6 +302,10 @@ $tempTypes = [
     ],
     'cceexport_usp' => [
         'columnsOverrides' => [
+            'tx_cceexport_usplist' => [
+                'label' => 'USPs',
+                'description' => 'Auflistung aller USPs',
+            ],
             'bodytext' => [
                 'config' => [
                     'enableRichtext' => 1,

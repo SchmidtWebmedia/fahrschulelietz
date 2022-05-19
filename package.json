@@ -7,7 +7,8 @@
     "build-sass": "sass packages/schmidtwebmedia/Resources/Public/css/style.scss:packages/schmidtwebmedia/Resources/Public/css/style.css",
     "build-sass-ckeditor": "sass packages/schmidtwebmedia/Resources/Public/css/ckeditor.scss:packages/schmidtwebmedia/Resources/Public/css/ckeditor.css",
     "optimize-css": "postcss packages/schmidtwebmedia/Resources/Public/css/style.css --replace --use autoprefixer",
-    "css-minify": "css-minify -f packages/schmidtwebmedia/Resources/Public/css/style.css -o packages/schmidtwebmedia/Resources/Public/css/"
+    "css-minify": "css-minify -f packages/schmidtwebmedia/Resources/Public/css/style.css -o packages/schmidtwebmedia/Resources/Public/css/",
+    "css-minify-ckeditor": "css-minify -f packages/schmidtwebmedia/Resources/Public/css/ckeditor.css -o packages/schmidtwebmedia/Resources/Public/css/"
   },
   "dependencies": {
     "autoprefixer": "^10.4.4",

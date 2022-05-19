@@ -2,21 +2,30 @@
     "tt_content": {
         "elements": {
             "city_sign": {
+                "key": "city_sign",
+                "label": "Ortseingangsschild",
+                "description": "Zeige ein Ortseingangsschild an",
+                "shortLabel": "Ortsschild",
                 "color": "#000000",
+                "icon": "fa-map-signs",
                 "columns": [
                     "header"
                 ],
-                "description": "Zeige ein Ortseingangsschild an",
-                "icon": "fa-map-signs",
-                "key": "city_sign",
-                "label": "Ortseingangsschild",
                 "labels": [
                     "Text"
                 ],
-                "shortLabel": "Ortsschild"
+                "descriptions": [
+                    ""
+                ],
+                "sorting": 0
             },
             "driving_license_class": {
+                "key": "driving_license_class",
+                "label": "F\u00fchrerscheinklasse",
+                "description": "Detailinformation zu der F\u00fchrerscheinklasse",
+                "shortLabel": "F\u00fchrerscheinklasse",
                 "color": "#000000",
+                "icon": "fa-th-list",
                 "columns": [
                     "header",
                     "header_layout",
@@ -25,10 +34,6 @@
                     "tx_mask_previous_ownership",
                     "tx_mask_comment"
                 ],
-                "description": "Detailinformation zu der F\u00fchrerscheinklasse",
-                "icon": "fa-th-list",
-                "key": "driving_license_class",
-                "label": "F\u00fchrerscheinklasse",
                 "labels": [
                     "",
                     "",
@@ -37,90 +42,129 @@
                     "Vorbesitz",
                     "Bemerkung"
                 ],
+                "descriptions": {
+                    "3": "",
+                    "5": "",
+                    "4": "",
+                    "0": "",
+                    "1": "",
+                    "2": ""
+                },
+                "sorting": 0,
                 "options": {
                     "2": "rte",
                     "5": "rte"
-                },
-                "shortLabel": "F\u00fchrerscheinklasse"
+                }
             },
             "dsgvo": {
-                "color": "#000000",
-                "description": "Buttons f\u00fcr den DGVO Opt Out",
-                "icon": "fa-eye-slash",
                 "key": "dsgvo",
                 "label": "DSGVO Opt Out",
-                "shortLabel": "DSGVO"
+                "description": "Buttons f\u00fcr den DGVO Opt Out",
+                "shortLabel": "DSGVO",
+                "color": "#000000",
+                "icon": "fa-eye-slash",
+                "columns": [],
+                "labels": [],
+                "descriptions": [],
+                "sorting": 0
             },
             "font_awesome": {
+                "key": "font_awesome",
+                "label": "Font Awesome",
+                "description": "F\u00fcge ein Font Aweseome Icon hinzu",
+                "shortLabel": "Font Awesome Icon",
                 "color": "#000000",
+                "icon": "fa-font-awesome",
                 "columns": [
                     "tx_mask_fa_icon"
                 ],
-                "description": "F\u00fcge ein Font Aweseome Icon hinzu",
-                "icon": "fa-font-awesome",
-                "key": "font_awesome",
-                "label": "Font Awesome",
                 "labels": [
                     "Icon Klasse"
                 ],
-                "shortLabel": "Font Awesome Icon"
+                "descriptions": [
+                    "Entweder ein Bilder oder ein Icon"
+                ],
+                "sorting": 0
             },
             "gallery": {
+                "key": "gallery",
+                "label": "Bilder Galerie",
+                "description": "Eine Galerie bestehend aus mehreren Bildern, sauber in einem Raster angeordnet ",
+                "shortLabel": "Galerie",
                 "color": "#000000",
+                "icon": "fa-th",
                 "columns": [
                     "header",
                     "header_layout",
                     "imagecols",
                     "image"
                 ],
-                "description": "Eine Galerie bestehend aus mehreren Bildern, sauber in einem Raster angeordnet ",
-                "icon": "fa-th",
-                "key": "gallery",
-                "label": "Bilder Galerie",
                 "labels": [
                     "",
                     "",
                     "",
                     ""
                 ],
-                "shortLabel": "Galerie"
+                "descriptions": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "sorting": 0
             },
             "header_image": {
+                "key": "header_image",
+                "label": "Header Bild",
+                "description": "Zeige ein gro\u00dfes Headerbild an",
+                "shortLabel": "Header",
                 "color": "#000000",
+                "icon": "fa-image",
                 "columns": [
                     "image",
                     "tx_mask_large_image"
                 ],
-                "description": "Zeige ein gro\u00dfes Headerbild an",
-                "icon": "fa-image",
-                "key": "header_image",
-                "label": "Header Bild",
                 "labels": [
                     "Bild",
                     "Gro\u00dfes Bild"
                 ],
-                "shortLabel": "Header"
+                "descriptions": {
+                    "1": "Zeige das Bild \u00fcber die gesamte Bildschirmgr\u00f6\u00dfe an",
+                    "0": ""
+                },
+                "sorting": 0
             },
             "map": {
+                "key": "map",
+                "label": "Karte",
+                "description": "Darstellung einer OpenStreet Map",
+                "shortLabel": "Karte",
                 "color": "#000000",
+                "icon": "fa-map",
                 "columns": [
                     "header",
                     "tx_mask_lat",
                     "tx_mask_lng"
                 ],
-                "description": "Darstellung einer OpenStreet Map",
-                "icon": "fa-map",
-                "key": "map",
-                "label": "Karte",
                 "labels": [
                     "",
                     "Lat",
                     "Lng"
                 ],
-                "shortLabel": "Karte"
+                "descriptions": {
+                    "1": "",
+                    "2": "",
+                    "0": ""
+                },
+                "sorting": 0
             },
             "teaser": {
+                "key": "teaser",
+                "label": "Teaser",
+                "description": "Teaser mit \u00dcberschrift, Bild, Beschreibung und Link",
+                "shortLabel": "Teaser",
                 "color": "#000000",
+                "icon": "fa-link",
                 "columns": [
                     "header",
                     "image",
@@ -129,10 +173,6 @@
                     "header_link",
                     "tx_mask_url_title"
                 ],
-                "description": "Teaser mit \u00dcberschrift, Bild, Beschreibung und Link",
-                "icon": "fa-link",
-                "key": "teaser",
-                "label": "Teaser",
                 "labels": [
                     "",
                     "",
@@ -141,24 +181,36 @@
                     "",
                     "URL Titel"
                 ],
+                "descriptions": {
+                    "2": "Entweder ein Bilder oder ein Icon",
+                    "5": "Titel f\u00fcr den Link",
+                    "0": "",
+                    "3": "",
+                    "1": "",
+                    "4": ""
+                },
+                "sorting": 0,
                 "options": {
                     "3": "rte"
-                },
-                "shortLabel": "Teaser"
+                }
             },
             "usp": {
+                "key": "usp",
+                "label": "USP Auflistung",
+                "description": "Auflistung mehrere USP in Spalten",
+                "shortLabel": "USPs",
                 "color": "#000000",
+                "icon": "fa-list-ul",
                 "columns": [
                     "tx_mask_usplist"
                 ],
-                "description": "Auflistung mehrere USP in Spalten",
-                "icon": "fa-list-ul",
-                "key": "usp",
-                "label": "USP Auflistung",
                 "labels": [
                     "USPs"
                 ],
-                "shortLabel": "USPs"
+                "descriptions": [
+                    "Auflistung aller USPs"
+                ],
+                "sorting": 0
             }
         },
         "sql": {
@@ -215,38 +267,23 @@
                     "behaviour": {
                         "allowLanguageSynchronization": "0"
                     },
-                    "default": "",
-                    "eval": "",
-                    "is_in": "",
-                    "max": "",
-                    "mode": "",
-                    "placeholder": "",
-                    "size": "",
                     "type": "input"
                 },
-                "description": "",
-                "exclude": "1",
                 "key": "age",
-                "l10n_mode": ""
+                "fullKey": "tx_mask_age",
+                "type": "string"
             },
             "tx_mask_comment": {
                 "config": {
                     "behaviour": {
                         "allowLanguageSynchronization": "0"
                     },
-                    "cols": "",
-                    "default": "",
                     "enableRichtext": "1",
-                    "eval": "",
-                    "max": "",
-                    "placeholder": "",
-                    "rows": "",
                     "type": "text"
                 },
-                "description": "",
-                "exclude": "1",
                 "key": "comment",
-                "l10n_mode": ""
+                "fullKey": "tx_mask_comment",
+                "type": "richtext"
             },
             "tx_mask_fa_icon": {
                 "config": {
@@ -254,39 +291,23 @@
                     "behaviour": {
                         "allowLanguageSynchronization": "0"
                     },
-                    "default": "",
                     "eval": "trim,lower",
-                    "is_in": "",
-                    "max": "",
-                    "mode": "",
-                    "placeholder": "",
-                    "size": "",
                     "type": "input"
                 },
-                "description": "Entweder ein Bilder oder ein Icon",
-                "exclude": "1",
                 "key": "fa_icon",
-                "l10n_mode": ""
+                "fullKey": "tx_mask_fa_icon",
+                "type": "string"
             },
             "tx_mask_large_image": {
                 "config": {
                     "behaviour": {
                         "allowLanguageSynchronization": "0"
                     },
-                    "cols": "",
-                    "default": "",
-                    "items": [
-                        [
-                            ""
-                        ]
-                    ],
-                    "renderType": "",
                     "type": "check"
                 },
-                "description": "Zeige das Bild \u00fcber die gesamte Bildschirmgr\u00f6\u00dfe an",
-                "exclude": "1",
                 "key": "large_image",
-                "l10n_mode": ""
+                "fullKey": "tx_mask_large_image",
+                "type": "check"
             },
             "tx_mask_lat": {
                 "config": {
@@ -294,22 +315,12 @@
                     "behaviour": {
                         "allowLanguageSynchronization": "0"
                     },
-                    "default": "",
                     "eval": "double2",
-                    "max": "",
-                    "mode": "",
-                    "placeholder": "",
-                    "range": {
-                        "lower": "",
-                        "upper": ""
-                    },
-                    "size": "",
                     "type": "input"
                 },
-                "description": "",
-                "exclude": "1",
                 "key": "lat",
-                "l10n_mode": ""
+                "fullKey": "tx_mask_lat",
+                "type": "float"
             },
             "tx_mask_lng": {
                 "config": {
@@ -317,22 +328,12 @@
                     "behaviour": {
                         "allowLanguageSynchronization": "0"
                     },
-                    "default": "",
                     "eval": "double2",
-                    "max": "",
-                    "mode": "",
-                    "placeholder": "",
-                    "range": {
-                        "lower": "",
-                        "upper": ""
-                    },
-                    "size": "",
                     "type": "input"
                 },
-                "description": "",
-                "exclude": "1",
                 "key": "lng",
-                "l10n_mode": ""
+                "fullKey": "tx_mask_lng",
+                "type": "float"
             },
             "tx_mask_previous_ownership": {
                 "config": {
@@ -340,19 +341,11 @@
                     "behaviour": {
                         "allowLanguageSynchronization": "0"
                     },
-                    "default": "",
-                    "eval": "",
-                    "is_in": "",
-                    "max": "",
-                    "mode": "",
-                    "placeholder": "",
-                    "size": "",
                     "type": "input"
                 },
-                "description": "",
-                "exclude": "1",
                 "key": "previous_ownership",
-                "l10n_mode": ""
+                "fullKey": "tx_mask_previous_ownership",
+                "type": "string"
             },
             "tx_mask_url_title": {
                 "config": {
@@ -360,19 +353,11 @@
                     "behaviour": {
                         "allowLanguageSynchronization": "0"
                     },
-                    "default": "",
-                    "eval": "",
-                    "is_in": "",
-                    "max": "",
-                    "mode": "",
-                    "placeholder": "",
-                    "size": "",
                     "type": "input"
                 },
-                "description": "Titel f\u00fcr den Link",
-                "exclude": "1",
                 "key": "url_title",
-                "l10n_mode": ""
+                "fullKey": "tx_mask_url_title",
+                "type": "string"
             },
             "tx_mask_usplist": {
                 "config": {
@@ -383,10 +368,8 @@
                         },
                         "expandSingle": "0",
                         "levelLinksPosition": "top",
-                        "newRecordLinkTitle": "",
                         "showAllLocalizationLink": "1",
                         "showPossibleLocalizationRecords": "1",
-                        "showRemovedLocalizationRecords": "1",
                         "showSynchronizationLink": "0",
                         "useSortable": "0"
                     },
@@ -397,20 +380,48 @@
                     "foreign_sortby": "sorting",
                     "foreign_table": "--inlinetable--",
                     "foreign_table_field": "parenttable",
-                    "maxitems": "",
-                    "minitems": "",
                     "type": "inline"
                 },
-                "description": "Auflistung aller USPs",
-                "exclude": "1",
-                "inlineIcon": "",
-                "inlineLabel": "",
                 "key": "usplist",
-                "l10n_mode": ""
+                "fullKey": "tx_mask_usplist",
+                "type": "inline"
+            },
+            "header": {
+                "key": "header",
+                "fullKey": "header",
+                "coreField": 1
+            },
+            "header_layout": {
+                "key": "header_layout",
+                "fullKey": "header_layout",
+                "coreField": 1
+            },
+            "bodytext": {
+                "key": "bodytext",
+                "fullKey": "bodytext",
+                "type": "richtext",
+                "coreField": 1
+            },
+            "imagecols": {
+                "key": "imagecols",
+                "fullKey": "imagecols",
+                "coreField": 1
+            },
+            "image": {
+                "key": "image",
+                "fullKey": "image",
+                "coreField": 1
+            },
+            "header_link": {
+                "key": "header_link",
+                "fullKey": "header_link",
+                "coreField": 1
             }
-        }
+        },
+        "palettes": []
     },
     "tx_mask_usplist": {
+        "elements": [],
         "sql": {
             "tx_mask_usp": {
                 "tx_mask_usplist": {
@@ -425,38 +436,37 @@
                     "behaviour": {
                         "allowLanguageSynchronization": "0"
                     },
-                    "default": "",
-                    "eval": "",
-                    "is_in": "",
-                    "max": "",
-                    "mode": "",
-                    "placeholder": "",
-                    "size": "",
                     "type": "input"
                 },
                 "description": "USP Text",
-                "exclude": "1",
-                "inlineParent": "tx_mask_usplist",
-                "key": "usp",
-                "l10n_mode": "",
                 "label": "USP",
+                "key": "usp",
+                "fullKey": "tx_mask_usp",
+                "type": "string",
+                "inlineParent": "tx_mask_usplist",
                 "order": 1
             }
-        }
+        },
+        "palettes": []
     },
     "mask_export": {
-        "extensionName": "cceexport",
-        "vendorName": "SchmidtWebmedia",
-        "includedElements": [
-            "city_sign",
-            "driving_license_class",
-            "dsgvo",
-            "font_awesome",
-            "gallery",
-            "header_image",
-            "map",
-            "teaser",
-            "usp"
-        ]
+        "elements": {
+            "configuration": {
+                "key": "configuration",
+                "label": "cceexport",
+                "shortLabel": "schmidtwebmedia",
+                "columns": [
+                    "city_sign",
+                    "driving_license_class",
+                    "dsgvo",
+                    "font_awesome",
+                    "gallery",
+                    "header_image",
+                    "map",
+                    "teaser",
+                    "usp"
+                ]
+            }
+        }
     }
 }

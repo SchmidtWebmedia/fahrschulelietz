@@ -14,6 +14,9 @@ CREATE TABLE tx_cceexport_usplist (
     parenttable varchar(255) DEFAULT '' NOT NULL,
     t3ver_id int(11) DEFAULT '0' NOT NULL,
     t3ver_label varchar(255) DEFAULT '' NOT NULL,
+    t3ver_count int(11) DEFAULT '0' NOT NULL,
+    t3ver_tstamp int(11) DEFAULT '0' NOT NULL,
+    t3ver_move_id int(11) DEFAULT '0' NOT NULL,
     tx_cceexport_usp tinytext,
     KEY language (l10n_parent,sys_language_uid)
 );

@@ -21,7 +21,7 @@ return [
         ],
         'title' => 'LLL:EXT:cceexport/Resources/Private/Language/locallang_db.xlf:tx_cceexport_usplist',
         'label' => 'tx_cceexport_usp',
-        'iconfile' => 'EXT:cceexport/Resources/Public/Icons/Extension.png',
+        'iconfile' => 'EXT:cceexport/Resources/Public/Icons/Extension.svg',
         'hideTable' => true,
     ],
     'palettes' => [
@@ -65,17 +65,7 @@ return [
             'exclude' => true,
             'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language',
             'config' => [
-                'type' => 'select',
-                'renderType' => 'selectSingle',
-                'special' => 'languages',
-                'items' => [
-                    [
-                        'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.allLanguages',
-                        -1,
-                        'flags-multiple',
-                    ],
-                ],
-                'default' => 0,
+                'type' => 'language',
             ],
         ],
         'l10n_parent' => [
@@ -202,8 +192,8 @@ return [
                 'type' => 'input',
             ],
             'description' => 'USP Text',
-            'exclude' => '1',
             'label' => 'LLL:EXT:cceexport/Resources/Private/Language/locallang_db.xlf:tx_cceexport_usplist.tx_cceexport_usp',
+            'exclude' => 1,
         ],
         't3_origuid' => [
             'config' => [

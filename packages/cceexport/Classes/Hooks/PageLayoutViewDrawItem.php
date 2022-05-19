@@ -1,5 +1,5 @@
 <?php
-namespace SchmidtWebmedia\Cceexport\Hooks;
+namespace schmidtwebmedia\Cceexport\Hooks;
 
 use TYPO3\CMS\Backend\Form\Exception;
 use TYPO3\CMS\Backend\Form\FormDataCompiler;

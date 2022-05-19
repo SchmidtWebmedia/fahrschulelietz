@@ -1,7 +1,7 @@
 <?php
 defined('TYPO3_MODE') || die();
 
-call_user_func(function () {
+call_user_func(static function () {
 
 // Register content element icons
 $iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
@@ -77,7 +77,7 @@ $iconRegistry->registerIcon(
 );
 // Add backend preview hook
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['tt_content_drawItem']['cceexport'] = 
-    SchmidtWebmedia\Cceexport\Hooks\PageLayoutViewDrawItem::class;
+    schmidtwebmedia\Cceexport\Hooks\PageLayoutViewDrawItem::class;
 
 });
 

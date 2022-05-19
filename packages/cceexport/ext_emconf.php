@@ -3,7 +3,7 @@
 /***************************************************************
  * Extension Manager/Repository config file for ext "cceexport".
  *
- * Auto generated 08-12-2021 16:00
+ * Auto generated 19-05-2022 09:30
  *
  * Manual updates:
  * Only the data in the array - everything else is removed by next
@@ -19,17 +19,18 @@ $EM_CONF[$_EXTKEY] = array (
   'author_company' => '',
   'state' => 'stable',
   'version' => '0.1.0',
-  'constraints' =>
+  'constraints' => 
   array (
-    'depends' =>
+    'depends' => 
     array (
       'typo3' => '11.5.0-11.5.99',
     ),
-    'conflicts' =>
+    'conflicts' => 
     array (
     ),
-    'suggests' =>
+    'suggests' => 
     array (
     ),
   ),
 );
+
