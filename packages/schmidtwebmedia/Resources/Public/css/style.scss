@@ -86,8 +86,8 @@ $font-size-bigger: ($font-size-normal * 1.2);
 $font-size-big: ($font-size-bigger * 1.2);
 
 $h1-size: 2.25rem;
-$h2-font-size: ($font-size-normal * 1.2);
-$h3-font-size: ($h2-font-size * 0.95);
+$h2-font-size: ($h1-font-size * 0.8);
+$h3-font-size: ($h2-font-size * 0.7);
 
 
 /* ==========================================================================
@@ -216,7 +216,7 @@ h1 {
 }
 
 h2 {
-  font-weight: $font-bold;
+  font-weight: $font-light;
   margin-top: 1.5rem;
   @include font-size($h2-font-size);
 
