@@ -1,11 +1,16 @@
 <f:layout name="Default" />
 <f:section name="Main">
     <main>
-        <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{colPos: '0'}" />
+        <section class="fullsize-header-image">
+            <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{colPos: '0'}" />
+            <div class="text-overlay">
+                <div class="container">
+                    <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{colPos: '1'}" />
+                </div>
+            </div>
+        </section>
         <div class="container">
-            <section>
-                <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{colPos: '1'}" />
-            </section>
+            <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{colPos: '2'}" />
         </div>
     </main>
 </f:section>
