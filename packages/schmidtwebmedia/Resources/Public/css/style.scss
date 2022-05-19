@@ -34,6 +34,7 @@ $grid-breakpoints: (
 @import '_bootstrap/scss/tables';
 @import '_bootstrap/scss/button-group';
 @import '_bootstrap/scss/buttons';
+@import '_bootstrap/scss/badge';
 @import '_baguettebox/baguetteBox';
 
 /* ==========================================================================
@@ -45,6 +46,8 @@ $secondary-color: #c6c6c6;
 $font-color: #333;
 $footer-background: #86A47C;
 $border-color: #f9f8f4;
+$light-grey: #f9f9f9;
+$grey: $secondary-color;
 
 
 /* ==========================================================================
@@ -146,6 +149,30 @@ $border-gap: -10px;
 }
 
 /* ==========================================================================
+   Layouts
+   ========================================================================== */
+
+.frame {
+  /** Grey Background **/
+  &.frame-layout-1 {
+	background-color: $light-grey;
+	border: 1px solid $grey;
+	padding: 0.5rem;
+  }
+}
+
+/* ==========================================================================
+   Badges
+   ========================================================================== */
+
+.badge {
+  color: $font-color;
+  &.badge-grey {
+	background-color: $grey;
+  }
+}
+
+/* ==========================================================================
    General
    ========================================================================== */
 
@@ -188,6 +215,13 @@ h2 {
   font-weight: $font-bold;
   margin-top: 1.5rem;
   @include font-size($h2-font-size);
+
+  &::after {
+	content: '';
+	border-bottom: 3px solid $primary-color;
+	width: 10%;
+	display: block;
+  }
 }
 
 h3 {
@@ -622,6 +656,7 @@ a {
    ========================================================================== */
 
 .news-list-item {
+  margin-top: 1rem;
   .news-title {
 	@include font-size($font-size-bigger);
 	font-weight: $font-weight-light;
@@ -638,9 +673,6 @@ a {
 
   .news--directLink {
 	display: flex;
-	a {
-	  margin-left: auto;
-	}
   }
 }
 
@@ -797,12 +829,6 @@ article {
 
   h2 {
 	margin-top: 0;
-	&::after {
-	  content: '';
-	  border-bottom: 3px solid $primary-color;
-	  width: 10%;
-	  display: block;
-	}
   }
   p {
 	margin-bottom: 0;
