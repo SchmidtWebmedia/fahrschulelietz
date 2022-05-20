@@ -636,6 +636,21 @@ a {
    Header Image
    ========================================================================== */
 
+.container-header {
+  margin-top: 6rem;
+  overflow: hidden;
+  .container-header--item {
+	background-color: $light-grey;
+	height: 100%;
+	&.container-header--text {
+	  text-align: center;
+	  display: flex;
+	  justify-content: center;
+	  align-content: center;flex-direction: column;
+	}
+  }
+}
+
 .fullsize-header-image {
   position: relative;
   height: 100vh;
