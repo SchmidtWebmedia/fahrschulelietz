@@ -653,6 +653,7 @@ a {
 	 background-color: $light-grey;
 	 width: 100%;
 	 padding: 1rem 0;
+	 text-align: center;
 	 animation: fadeInText 4s ease forwards;
 	 h1,
 	 p {
@@ -663,6 +664,7 @@ a {
 	 padding: 0 20px;
 	 color: $primary-color;
 	 position: absolute;
+	 top: 25%;
 	 animation: moveIcon 4s ease forwards;
    }
  }
