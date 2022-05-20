@@ -639,6 +639,7 @@ a {
 .fullsize-header-image {
   position: relative;
   height: 100vh;
+  overflow-x: hidden;
   .header-image {
 	height: 100vh;
   }
@@ -653,7 +654,8 @@ a {
 	 width: 100%;
 	 padding: 1rem 0;
 	 animation: fadeInText 4s ease forwards;
-	 h1 {
+	 h1,
+	 p {
 	   animation: moveText 4s ease forwards;
 	 }
    }
@@ -677,16 +679,16 @@ a {
 
 @keyframes moveText {
   0% {
-	transform: skew(40deg);
+	transform: skew(-40deg);
   }
   90% {
-	transform: skew(-20deg);
-  }
-  94% {
 	transform: skew(20deg);
   }
+  94% {
+	transform: skew(-20deg);
+  }
   98%{
-	transform: skew(-10deg);
+	transform: skew(10deg);
   }
   100% {
 	transform: skew(0);

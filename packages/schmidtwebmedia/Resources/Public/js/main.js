@@ -65,8 +65,3 @@ map.initMap();
 
 let lb = new LightBox();
 lb.initLightBox();
-
-const animatedIcon = document.querySelector('.icon-overlay');
-animatedIcon.addEventListener('animationend', function() {
-	animatedIcon.classList.add('d-none');
-});
