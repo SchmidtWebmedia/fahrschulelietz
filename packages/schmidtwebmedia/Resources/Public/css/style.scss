@@ -670,18 +670,25 @@ a {
 	 width: 100%;
 	 padding: 1rem 0;
 	 text-align: center;
-	 animation: fadeInText 4s ease forwards;
-	 h1,
-	 p {
-	   animation: moveText 4s ease forwards;
-	 }
    }
    .icon-overlay {
 	 padding: 0 20px;
 	 color: $primary-color;
 	 position: absolute;
 	 top: 25%;
-	 animation: moveIcon 4s ease forwards;
+   }
+
+   @include media-breakpoint-up(md) {
+	 .text-overlay {
+	   animation: fadeInText 4s ease forwards;
+	   h1,
+	   p {
+		 animation: moveText 4s ease forwards;
+	   }
+	 }
+	 .icon-overlay {
+	   animation: moveIcon 4s ease forwards;
+	 }
    }
  }
 }
@@ -752,6 +759,12 @@ a {
 
   .news--directLink {
 	display: flex;
+  }
+}
+
+.news.newsdetail {
+  .newsdetail--teaser {
+	font-weight: $font-light;
   }
 }
 
@@ -865,7 +878,7 @@ article {
   .card-link {
 	.card-link--link {
 	  @include font-size($font-size-bigger);
-	  color: $primary-color;
+	  color: $font-color;
 	}
   }
 }

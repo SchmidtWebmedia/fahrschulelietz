@@ -1,18 +1,38 @@
 <f:layout name="Default"/>
 <f:section name="Maskcontent">
 <div class="card">
+
     <f:if condition="{data_image}">
         <f:then>
             <f:alias map="{file: data_image.0}">
                 <div class="card-image">
-                    <f:image image="{file}" alt="{file.alternative}" title="{file.title}" class="img-fluid" maxWidth="350" />
+                    <f:if condition="{data.header_link}">
+                        <f:then>
+                            <f:link.typolink parameter="{data.header_link}">
+                                <f:image image="{file}" alt="{file.alternative}" title="{file.title}" class="img-fluid" maxWidth="350" />
+                            </f:link.typolink>
+                        </f:then>
+                        <f:else>
+                            <f:image image="{file}" alt="{file.alternative}" title="{file.title}" class="img-fluid" maxWidth="350" />
+                        </f:else>
+                    </f:if>
+
                 </div>
             </f:alias>
         </f:then>
         <f:else>
             <f:if condition="{data.tx_cceexport_fa_icon}">
                 <div class="fa-icon">
-                    <i class="{data.tx_cceexport_fa_icon}"></i>
+                    <f:if condition="{data.header_link}">
+                        <f:then>
+                            <f:link.typolink parameter="{data.header_link}">
+                                <i class="{data.tx_cceexport_fa_icon}"></i>
+                            </f:link.typolink>
+                        </f:then>
+                        <f:else>
+                            <i class="{data.tx_cceexport_fa_icon}"></i>
+                        </f:else>
+                    </f:if>
                 </div>
             </f:if>
         </f:else>
@@ -33,11 +53,6 @@
                  <f:link.typolink class="card-link--link" parameter="{data.header_link}"><i class="far fa-chevron-circle-right"></i> {data.tx_cceexport_url_title}</f:link.typolink>
             </div>
         </f:if>
-        <f:comment>
-        <f:if condition="{data.header_link} && {data.tx_cceexport_url_title}">
-            <f:link.typolink class="button button-primary" parameter="{data.header_link}">{data.tx_cceexport_url_title}</f:link.typolink>
-        </f:if>
-        </f:comment>
     </div>
 </div>
 </f:section>

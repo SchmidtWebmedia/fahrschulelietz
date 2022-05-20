@@ -110,6 +110,9 @@
 								<f:format.date format="{f:translate(key:'dateFormat')}">{newsItem.datetime}</f:format.date>
 							</time>
 						</div>
+						<div class="newsdetail--teaser">
+							<f:format.html>{newsItem.teaser}</f:format.html>
+						</div>
 						<div class="newsdetail--body">
 							<f:format.html>{newsItem.bodytext}</f:format.html>
 						</div>
