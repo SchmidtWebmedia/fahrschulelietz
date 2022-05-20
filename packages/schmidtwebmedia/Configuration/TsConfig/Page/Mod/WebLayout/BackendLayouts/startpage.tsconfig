@@ -16,6 +16,7 @@ mod {
                                     1 {
                                         name = Header
                                         colPos = 0
+                                        colspan = 2
                                     }
                                 }
                             }
@@ -25,6 +26,10 @@ mod {
                                         name = Text Overlay
                                         colPos = 1
                                     }
+                                    2 {
+                                        name = Icon Overlay
+                                        colPos = 3
+                                    }
                                 }
                             }
                             3 {
@@ -32,6 +37,7 @@ mod {
                                     1 {
                                         name = Content
                                         colPos = 2
+                                        colspan = 2
                                     }
                                 }
                             }

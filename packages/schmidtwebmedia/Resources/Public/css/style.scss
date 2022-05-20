@@ -642,12 +642,64 @@ a {
   .header-image {
 	height: 100vh;
   }
-  .text-overlay {
-	position: absolute;
-	bottom: 0;
-	background-color: $light-grey;
-	width: 100%;
-	padding: 1rem 0;
+
+ .text-overlay-container {
+   position: absolute;
+   bottom: 0;
+   width: 100%;
+   display: flex;
+   .text-overlay {
+	 background-color: $light-grey;
+	 width: 100%;
+	 padding: 1rem 0;
+	 animation: fadeInText 4s ease forwards;
+	 h1 {
+	   animation: moveText 4s ease forwards;
+	 }
+   }
+   .icon-overlay {
+	 padding: 0 20px;
+	 color: $primary-color;
+	 position: absolute;
+	 animation: moveIcon 4s ease forwards;
+   }
+ }
+}
+
+@keyframes fadeInText {
+  0% {
+	transform: translateX(-100%);
+  }
+  100% {
+	transform: translateX(0);
+  }
+}
+
+@keyframes moveText {
+  0% {
+	transform: skew(40deg);
+  }
+  90% {
+	transform: skew(-20deg);
+  }
+  94% {
+	transform: skew(20deg);
+  }
+  98%{
+	transform: skew(-10deg);
+  }
+  100% {
+	transform: skew(0);
+  }
+}
+
+@keyframes moveIcon {
+  0% {
+	transform: translateX(0vw);
+  }
+  100% {
+	transform: translateX(100vw);
+	display: none;
   }
 }
 
