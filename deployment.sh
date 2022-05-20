@@ -22,6 +22,12 @@ unzip -o dist.zip
 
 rm -rv dist.zip
 
+RemoveDir $PWD"/public/typo3conf/ext/schmidtwebmedia"
+RemoveDir $PWD"/public/typo3conf/ext/cceexport"
+
+ln -s $PWD/packages/schmidtwebmedia/ $PWD/public/typo3conf/ext/schmidtwebmedia
+ln -s $PWD/packages/cceexport/ $PWD/public/typo3conf/ext/cceexport
+
 /usr/bin/php vendor/bin/typo3cms database:updateschema
 /usr/bin/php vendor/bin/typo3cms cache:flush
 /usr/bin/php vendor/bin/typo3cms language:update
