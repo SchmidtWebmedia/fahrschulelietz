@@ -1,71 +1,80 @@
 schmidtwebmedia {
 	page {
 		meta {
-			#cat = schmidtwebmedia/page/meta/01; type=string; label=Autor
+			# cat=schmidtwebmedia/meta; type=string; label=Autor
 			author =
 
-			#cat = schmidtwebmedia/page/meta/01; type=string; label=Robots
+			# cat=schmidtwebmedia/meta; type=string; label=Robots
 			robots = INDEX,FOLLOW
 
-			#cat = schmidtwebmedia/page/meta/01; type=string; label=Apple Mobile Web App Capable
+			# cat=schmidtwebmedia/meta; type=string; label=Apple Mobile Web App Capable
 			apple-mobile-web-app-capable = no
 		}
 
 		settings {
-			#cat = schmidtwebmedia/page/settings/01; type=string; label=Base Url
+			# cat = schmidtwebmedia/settings; type=string; label=Base Url
 			baseUrl =
 
-			#cat = schmidtwebmedia/page/settings/01; type=string; label=Seitenname
+			# cat = schmidtwebmedia/settings; type=string; label=Seitenname
 			pageName =
 
-			#cat = schmidtwebmedia/page/settings/01; type=string; label=Logo
+			# cat = schmidtwebmedia/settings; type=string; label=Logo
 			logo =
 
-			#cat = schmidtwebmedia/page/settings/01; type=string; label=Favicon
+			# cat = schmidtwebmedia/settings; type=string; label=Favicon
 			favicon =
 
-			#cat = schmidtwebmedia/page/settings/01; type=boolean; label=Compress JS
+			# cat = schmidtwebmedia/settings; type=boolean; label=Compress JS
 			compressJs = 0
 
-			#cat = schmidtwebmedia/page/settings/01; type=boolean; label=Compress CSS
+			# cat = schmidtwebmedia/settings; type=boolean; label=Compress CSS
 			compressCss = 0
 
-			#cat = schmidtwebmedia/page/settings/01; type=boolean; label=Concatenate JS
+			# cat = schmidtwebmedia/settings; type=boolean; label=Concatenate JS
 			concatenateJs = 0
 
-			#cat = schmidtwebmedia/page/settings/01; type=boolean; label=Concatenate CSS
+			# cat = schmidtwebmedia/settings; type=boolean; label=Concatenate CSS
 			concatenateCss = 0
 
-			#cat = schmidtwebmedia/page/settings/01; type=boolean; label=Frontend Editing
+			# cat = schmidtwebmedia/settings; type=boolean; label=Frontend Editing
 			frontend_editing = 0
 
-			#cat = schmidtwebmedia/page/settings/01; type=boolean; label=Admin Panel
+			# cat = schmidtwebmedia/settings; type=boolean; label=Admin Panel
 			admPanel = 1
 		}
 
 		debug {
-			#cat = schmidtwebmedia/page/debug/01; type=boolean; label=Content Object Exception Handler
+			# cat = schmidtwebmedia/debug; type=boolean; label=Content Object Exception Handler
 			contentObjectExceptionHandler = 0
 		}
 
 		cache {
-			#cat = schmidtwebmedia/page/cache/01; type=int; label=Cache Period
+			# cat = schmidtwebmedia/cache; type=int; label=Cache Period
 			cache_period = 86400
 
-			#cat = schmidtwebmedia/page/cache/01; type=boolean; label=Cache clear at Midnight
+			# cat = schmidtwebmedia/cache; type=boolean; label=Cache clear at Midnight
 			cache_clearAtMidnight = false
 
-			#cat = schmidtwebmedia/page/cache/01; type=boolean; label=No Cache
+			# cat = schmidtwebmedia/cache; type=boolean; label=No Cache
 			no_cache = 0
 
-			#cat = schmidtwebmedia/page/cache/01; type=boolean; label=Send Cache Headers
+			# cat = schmidtwebmedia/cache; type=boolean; label=Send Cache Headers
 			sendCacheHeaders = 1
 		}
 		navigation {
-			#cat = schmidtwebmedia/page/navigation/01; type=int; label=Root Page
+			# cat = schmidtwebmedia/navigation; type=int; label=Root Page
 			main =
-			#cat = schmidtwebmedia/page/navigation/01; type=int; label=Legal Page
+			# cat = schmidtwebmedia/navigation; type=int; label=Legal Page
 			legal =
+		}
+
+		content {
+			# cat=schmidtwebmedia/content; type=string; label=Standort
+			location =
+			# cat=schmidtwebmedia/content; type=string; label=Telefon
+			phoneNumber =
+			# cat=schmidtwebmedia/content; type=string; label=E-Mail
+			email =
 		}
 	}
 

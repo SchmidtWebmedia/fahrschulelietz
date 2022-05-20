@@ -3,6 +3,13 @@ plugin {
 		settings {
 			logo = {$schmidtwebmedia.page.settings.logo}
 			pageName = {$schmidtwebmedia.page.settings.pageName}
+
+			content {
+				location = {$schmidtwebmedia.page.content.location}
+				phoneNumber = {$schmidtwebmedia.page.content.phoneNumber}
+				email = {$schmidtwebmedia.page.content.email}
+			}
 		}
+
 	}
 }

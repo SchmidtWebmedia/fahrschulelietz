@@ -350,8 +350,11 @@ a {
 /* ==========================================================================
    Header
    ========================================================================== */
-#header {
+#page-1 #header {
   position: fixed;
+}
+
+#header {
   width: 100%;
   box-shadow: $z5;
   z-index: 10000;
@@ -433,10 +436,6 @@ a {
 	@include media-breakpoint-down(sm) {
 	  background-color: $font-color;
 	}
-  }
-
-  @include media-breakpoint-down(sm) {
-	position: absolute;
   }
 }
 
@@ -637,7 +636,6 @@ a {
    ========================================================================== */
 
 .container-header {
-  margin-top: 6rem;
   overflow: hidden;
   margin-bottom: 2rem;
   .container-header--item {
@@ -650,6 +648,15 @@ a {
 	  align-content: center;flex-direction: column;
 	}
   }
+   @include media-breakpoint-down(sm) {
+	 .header--text {
+	   order: 1;
+	 }
+	 .header--image {
+	   order: 0;
+	 }
+   }
+
 }
 
 .fullsize-header-image {
@@ -688,6 +695,12 @@ a {
 	 }
 	 .icon-overlay {
 	   animation: moveIcon 4s ease forwards;
+	 }
+   }
+
+   @include media-breakpoint-down(md) {
+	 .icon-overlay {
+	   display: none;
 	 }
    }
  }

@@ -60,7 +60,7 @@ page {
             }
             ifEmpty = Default
         }
-				templateRootPaths {
+		templateRootPaths {
             0 = EXT:schmidtwebmedia/Resources/Private/Extensions/Page/Templates/
             1 = {$page.fluidtemplate.templateRootPath}
         }
