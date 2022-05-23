@@ -1,10 +1,12 @@
+#!/usr/bin/env bash
 RemoveDir() {
   if [ -d "$1" ]; then
     rm -rv $1
   fi
 }
 
-cd /home/users/webdesignersoest/www/fahrschule-lietz.de
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+cd $SCRIPT_DIR
 
 rm -rv rollback.zip
 

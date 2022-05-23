@@ -2,10 +2,12 @@ const header = document.getElementById('header');
 
 document.addEventListener('scroll', function () {
 	let currentScrollPosition = window.scrollY;
-	if(currentScrollPosition > 10) {
-		header.classList.remove('transparent');
-	} else {
-		header.classList.add('transparent');
+	if(!header.classList.contains('not-transparent')) {
+		if(currentScrollPosition > 10) {
+			header.classList.remove('transparent');
+		} else {
+			header.classList.add('transparent');
+		}
 	}
 });
 

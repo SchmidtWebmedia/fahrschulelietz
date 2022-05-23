@@ -1,7 +1,7 @@
-<header id="header" class="transparent">
+<header id="header" class="{f:if(condition: '{data.layout} == 1', then: 'transparent', else: 'not-transparent')}">
 	<div class="container">
 		<div class="row">
-			<div class="col-12 col-sm-2">
+			<div class="col-12 col-lg-2">
 				<div class="brand-wrapper">
 					<f:link.page pageUid="1" class="navbar-brand">
 						<f:if condition="{settings.logo}">
@@ -10,7 +10,7 @@
 					</f:link.page>
 				</div>
 			</div>
-			<div class="col-12 col-sm-10">
+			<div class="col-12 col-lg-10">
 				<div class="navigation-container">
 					<div class="header-information">
 						<div class="header-information-item">

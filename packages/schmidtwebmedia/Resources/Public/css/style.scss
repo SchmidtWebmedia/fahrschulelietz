@@ -10,6 +10,7 @@
 @import '_bootstrap/scss/variables';
 
 $enable-responsive-font-sizes: true;
+/*
 $grid-breakpoints: (
 		xs: 0,
 		sm: 576px,
@@ -18,7 +19,7 @@ $grid-breakpoints: (
 		xl: 1200px,
 		xxl: 1920px
 );
-
+*/
 @import '_bootstrap/scss/bootstrap-reboot';
 @import '_bootstrap/scss/utilities';
 @import '_bootstrap/scss/mixins';
@@ -193,8 +194,8 @@ body {
 main {
   margin-bottom: 3rem;
   flex-shrink: 0;
-  &.default-content {
-	margin-top: 35px;
+  &.content-default {
+	margin-top: 6rem;
   }
 }
 
@@ -355,6 +356,7 @@ a {
 }
 
 #header {
+  position: fixed;
   width: 100%;
   box-shadow: $z5;
   z-index: 10000;
@@ -363,13 +365,13 @@ a {
   padding: 0.5rem 0;
   .brand-wrapper {
 	padding: 0.4rem;
-	@include media-breakpoint-down(sm) {
+	@include media-breakpoint-down(lg) {
 	  text-align: center;
 	}
   }
   .img-brand {
 	max-height: 50px;
-	@include media-breakpoint-down(sm) {
+	@include media-breakpoint-down(lg) {
 	  width: auto;
 	}
   }
@@ -420,12 +422,12 @@ a {
 		font-weight: $font-weight-light;
 	  }
 
-	  @include media-breakpoint-down(sm) {
+	  @include media-breakpoint-down(lg) {
 		display: block;
 	  }
 	}
 
-	@include media-breakpoint-down(sm) {
+	@include media-breakpoint-down(lg) {
 	  flex-direction: row;
 	  margin-top: 0.5rem;
 	}
@@ -433,7 +435,7 @@ a {
 
   &.transparent {
 	background-color: rgba(0, 0, 0, 0.5 );
-	@include media-breakpoint-down(sm) {
+	@include media-breakpoint-down(lg) {
 	  background-color: $font-color;
 	}
   }
@@ -1029,4 +1031,15 @@ article {
 	font-weight: $font-light;
 	display: block;
   }
+}
+
+/* ==========================================================================
+   Debug
+   ========================================================================== */
+.extbase-debugger {
+  overflow: unset!important;
+}
+
+.extbase-debugger-floating {
+  z-index: 9999999999!important;
 }

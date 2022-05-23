@@ -3,7 +3,12 @@
 #
 TCEFORM {
     pages {
-
+        layout {
+            altLabels {
+                1 = Transparent Header
+            }
+            removeItems = 2,3,4
+        }
     }
     tt_content {
         table_class {
