@@ -1,22 +1,19 @@
 <?php
 defined('TYPO3_MODE') || die();
 
-call_user_func(function()
-{
-    /**
-     * Temporary variables
-     */
-    $extensionKey = 'schmidtwebmedia';
+/**
+ * Temporary variables
+ */
+$extensionKey = 'schmidtwebmedia';
 
-    /**
-     * Default PageTS for Schmidtwebmedia
-     */
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::registerPageTSConfigFile(
-        $extensionKey,
-        'Configuration/TsConfig/Page/All.tsconfig',
-        'SchmidtWebmedia'
-    );
-});
+/**
+ * Default PageTS for Schmidtwebmedia
+ */
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::registerPageTSConfigFile(
+    $extensionKey,
+    'Configuration/TsConfig/Page/All.tsconfig',
+    'SchmidtWebmedia'
+);
 // Configure new fields:
 $fields = array(
     'tx_schmidtwebmedia_is_highlighted' => array(
