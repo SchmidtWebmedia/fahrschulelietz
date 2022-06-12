@@ -1,4 +1,4 @@
-
+ 
 renderingOptions:
   submitButtonLabel: Absenden
 type: Form
@@ -97,7 +97,16 @@ renderables:
             properties:
               options:
                 B: B
+                BE: BE
+                B96: B96
+                B196: B196
+                B197: B197
+                A: A
                 A1: A1
+                A2: A2
+                AM: AM
+                Mofa: Mofa
+                ASF: ASF
               fluidAdditionalAttributes:
                 required: required
             type: SingleSelect
