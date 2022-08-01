@@ -1,10 +1,190 @@
- 
+
 renderingOptions:
   submitButtonLabel: Absenden
+  fieldState:
+    text-1:
+      type: Text
+      identifier: text-1
+      label: 'Name, Vorname'
+      renderingOptions:
+        deleted: 0
+        listView: 1
+    text-9:
+      type: Text
+      identifier: text-9
+      label: Geburtsname
+      renderingOptions:
+        deleted: 0
+        listView: 1
+    date-1:
+      type: Date
+      identifier: date-1
+      label: Geburtsdatum
+      renderingOptions:
+        deleted: 1
+        listView: 1
+    text-2:
+      type: Text
+      identifier: text-2
+      label: Geburtsort
+      renderingOptions:
+        deleted: 1
+        listView: 1
+    text-3:
+      type: Text
+      identifier: text-3
+      label: Staatsangehörigkeit
+      renderingOptions:
+        deleted: 1
+        listView: 0
+    text-5:
+      type: Text
+      identifier: text-5
+      label: 'Vorbesitz Klasse seit wann'
+      renderingOptions:
+        deleted: 1
+        listView: 0
+    singleselect-1:
+      type: SingleSelect
+      identifier: singleselect-1
+      label: 'Gewünschte Klasse'
+      renderingOptions:
+        deleted: 1
+        listView: 0
+    text-6:
+      type: Text
+      identifier: text-6
+      label: Straße
+      renderingOptions:
+        deleted: 0
+        listView: 0
+    text-7:
+      type: Text
+      identifier: text-7
+      label: PLZ
+      renderingOptions:
+        deleted: 1
+        listView: 0
+    text-8:
+      type: Text
+      identifier: text-8
+      label: Wohnort
+      renderingOptions:
+        deleted: 1
+        listView: 0
+    email-1:
+      type: Email
+      identifier: email-1
+      label: E-Mail
+      renderingOptions:
+        deleted: 1
+        listView: 0
+    telephone-1:
+      type: Telephone
+      identifier: telephone-1
+      label: Telefonnummer
+      renderingOptions:
+        deleted: 1
+        listView: 0
+    telephone-2:
+      type: Telephone
+      identifier: telephone-2
+      label: Mobil
+      renderingOptions:
+        deleted: 1
+        listView: 0
+    text-10:
+      type: Text
+      identifier: text-10
+      label: Alter
+      renderingOptions:
+        deleted: 0
+        listView: 0
+    text-11:
+      type: Text
+      identifier: text-11
+      label: 'Erreichbarkeit wann und wie'
+      renderingOptions:
+        deleted: 0
+        listView: 0
+    textarea-1:
+      type: Textarea
+      identifier: textarea-1
+      label: Bemerkungen
+      renderingOptions:
+        deleted: 0
+        listView: 0
+    linkedcheckbox-1:
+      type: LinkedCheckbox
+      identifier: linkedcheckbox-1
+      label: 'Ich habe die %s gelesen und akzeptiere sie'
+      renderingOptions:
+        deleted: 0
+        listView: 0
+    gridrow-2:
+      type: GridRow
+      identifier: gridrow-2
+      label: 'Grid: Zeile'
+      renderingOptions:
+        listView: 0
+        deleted: 0
+    gridrow-3:
+      type: GridRow
+      identifier: gridrow-3
+      label: 'Grid: Zeile'
+      renderingOptions:
+        listView: 0
+        deleted: 0
+    gridrow-1:
+      type: GridRow
+      identifier: gridrow-1
+      label: 'Grid: Zeile'
+      renderingOptions:
+        listView: 0
+        deleted: 0
+    gridrow-4:
+      type: GridRow
+      identifier: gridrow-4
+      label: 'Grid: Zeile'
+      renderingOptions:
+        listView: 0
+        deleted: 0
 type: Form
 identifier: onlineanmeldung
 label: Onlineanmeldung
 prototypeName: standard
+finishers:
+  -
+    identifier: FormToDatabase
+  -
+    options:
+      subject: 'Vielen Dank für Ihre Nachricht'
+      recipients:
+        '{email-1}': '{text-1}'
+      senderAddress: info@fahrschule-lietz.de
+      senderName: Fahrschule-Lietz
+      addHtmlPart: true
+      attachUploads: true
+    identifier: EmailToSender
+  -
+    options:
+      subject: 'Neue Onlineanmledung'
+      recipients:
+        info@fahrschule-lietz.de: Fahrschule-Lietz
+      senderAddress: info@fahrschule-lietz.de
+      senderName: '{text-1}'
+      replyToRecipients:
+        '{email-1}': '{text-1}'
+      addHtmlPart: true
+      attachUploads: true
+      translation:
+        language: default
+    identifier: EmailToReceiver
+  -
+    options:
+      pageUid: '21'
+      additionalParameters: ''
+    identifier: Redirect
 renderables:
   -
     renderingOptions:
