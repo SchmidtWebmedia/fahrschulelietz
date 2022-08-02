@@ -606,9 +606,8 @@ a {
   }
 
   .footer-information {
-	@include media-breakpoint-down(md) {
-	  padding-bottom: 1rem;
-	}
+	padding-bottom: 1rem;
+
 	@include media-breakpoint-down(sm) {
 	  .grid-col {
 		margin-bottom: 1rem;
