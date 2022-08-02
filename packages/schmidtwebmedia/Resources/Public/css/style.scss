@@ -417,9 +417,12 @@ a {
 	  i {
 		color: $primary-color;
 	  }
-	  .header-information-item--value {
-		color: #F9F8F4;
-		font-weight: $font-weight-light;
+	  .header-information-item--value, {
+		&,
+		a {
+		  color: #F9F8F4;
+		  font-weight: $font-weight-light;
+		}
 	  }
 
 	  @include media-breakpoint-down(lg) {
@@ -633,6 +636,10 @@ a {
 	@include media-breakpoint-down(sm) {
 	  text-align: center;
 	  padding-bottom: 1rem;
+
+	  .nav-item {
+		width: 50%;
+	  }
 	}
   }
 }
