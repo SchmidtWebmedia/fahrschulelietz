@@ -481,7 +481,7 @@ a {
   .menu-wrapper {
 	opacity: 1;
 	height: 100vh;
-	z-index: 1050;
+	z-index: calc(9e999);
 	visibility: visible;
 	top: 0;
 	.button-menu-close {
