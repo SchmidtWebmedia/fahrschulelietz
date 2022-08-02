@@ -609,6 +609,11 @@ a {
 	@include media-breakpoint-down(md) {
 	  padding-bottom: 1rem;
 	}
+	@include media-breakpoint-down(sm) {
+	  .grid-col {
+		margin-bottom: 1rem;
+	  }
+	}
   }
 
   .footer-legal {
@@ -705,7 +710,17 @@ a {
 	   display: none;
 	 }
    }
+
+   @include media-breakpoint-down(sm) {
+	 position: relative;
+	 margin-top: -22%;
+   }
  }
+
+  @include media-breakpoint-down(sm) {
+	height: auto;
+	overflow-x: visible;
+  }
 }
 
 @keyframes fadeInText {
@@ -814,6 +829,10 @@ a {
 	background:$primary-color;
 	border-radius: 5px;
   }
+
+  @include media-breakpoint-down(sm) {
+	margin-bottom: 1rem;
+  }
 }
 
 
@@ -895,6 +914,11 @@ article {
 	  @include font-size($font-size-bigger);
 	  color: $font-color;
 	}
+  }
+
+  @include media-breakpoint-down(sm) {
+	margin-bottom: 1rem;
+	height: auto;
   }
 }
 
