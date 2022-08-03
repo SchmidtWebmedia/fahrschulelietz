@@ -113,9 +113,12 @@
 						<div class="newsdetail--teaser">
 							<f:format.html>{newsItem.teaser}</f:format.html>
 						</div>
-						<div class="newsdetail--body">
-							<f:format.html>{newsItem.bodytext}</f:format.html>
-						</div>
+						<f:if condition="{newsItem.bodytext}">
+							<div class="newsdetail--body">
+								<f:format.html>{newsItem.bodytext}</f:format.html>
+							</div>
+						</f:if>
+
 						<f:if condition="{newsItem.mediaNonPreviews -> f:count()} > 0">
 							<f:then>
 								<div class="newsdetail--gallery">
@@ -127,7 +130,7 @@
 							<!-- Link Back -->
 							<div class="d-flex newsdetail--backlink">
 								<f:link.page pageUid="{settings.backPid}" class="ml-auto">
-									<f:translate key="back-link" />
+									Zur Übersicht
 								</f:link.page>
 							</div>
 						</f:if>
