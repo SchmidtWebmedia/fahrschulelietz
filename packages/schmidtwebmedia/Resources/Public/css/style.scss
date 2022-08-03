@@ -611,7 +611,7 @@ a {
   .footer-information {
 	padding-bottom: 1rem;
 
-	@include media-breakpoint-down(sm) {
+	@include media-breakpoint-down(md) {
 	  .grid-col {
 		margin-bottom: 1rem;
 	  }
@@ -880,6 +880,10 @@ article {
 
 .frame-type-cceexport_teaser {
   height: 100%;
+
+  @include media-breakpoint-down(lg) {
+	padding-bottom: 1rem;
+  }
 }
 
 .card {
@@ -920,11 +924,6 @@ article {
 	  @include font-size($font-size-bigger);
 	  color: $font-color;
 	}
-  }
-
-  @include media-breakpoint-down(sm) {
-	margin-bottom: 1rem;
-	height: auto;
   }
 }
 
