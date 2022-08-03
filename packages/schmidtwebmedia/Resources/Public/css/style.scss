@@ -726,6 +726,12 @@ a {
   @include media-breakpoint-down(sm) {
 	height: auto;
 	overflow-x: visible;
+
+	.header-image.big-header-image {
+	  margin-top: 50px;
+	  height: 85vh;
+	  background-position: left;
+	}
   }
 }
 
@@ -814,6 +820,15 @@ a {
   }
 }
 
+.news-list-view {
+  .news-list-item.news-layout-0 {
+	background-color: $light-grey;
+	border: 1px solid $grey;
+	padding: 0.5rem;
+  }
+}
+
+
 /* ==========================================================================
    City Sign
    ========================================================================== */
@@ -882,6 +897,21 @@ article {
   .btn-toolbar {
 	justify-content: flex-end;
   }
+}
+
+.inputs-list {
+  &,
+  .form-group {
+	display: flex;
+
+	.radio {
+	  margin-right: 1rem;
+	}
+  }
+}
+
+.form-group {
+  margin-top: 1rem;
 }
 
 /* ==========================================================================

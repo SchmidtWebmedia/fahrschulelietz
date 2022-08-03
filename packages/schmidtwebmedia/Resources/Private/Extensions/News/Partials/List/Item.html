@@ -34,14 +34,14 @@
 		</n:link>
 	</f:then>
 	<f:else>
-		<div class="news-list-item frame frame-layout-1">
+		<div class="news-list-item news-layout-{settings.templateLayout}">
 			<span class="news-title">{newsItem.title}</span>
 			<span class="badge badge-grey">
 				Veröffentlicht: <time itemprop="datePublished" datetime="{f:format.date(date:newsItem.datetime, format:'Y-m-d')}">
 				<f:format.date format="{f:translate(key:'dateFormat')}">{newsItem.datetime}</f:format.date></time>
 			</span>
 			<div class="news-list-item--teaser">
-				<p>{newsItem.teaser}</p>
+				<f:format.html>{newsItem.bodytext}</f:format.html>
 			</div>
 			<div class="news--directLink">
 				<n:link newsItem="{newsItem}" settings="{settings}" class="ml-auto" title="{newsItem.title}">

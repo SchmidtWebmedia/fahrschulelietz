@@ -110,14 +110,10 @@
 								<f:format.date format="{f:translate(key:'dateFormat')}">{newsItem.datetime}</f:format.date>
 							</time>
 						</div>
-						<div class="newsdetail--teaser">
-							<f:format.html>{newsItem.teaser}</f:format.html>
+
+						<div class="newsdetail--body">
+							<f:format.html>{newsItem.bodytext}</f:format.html>
 						</div>
-						<f:if condition="{newsItem.bodytext}">
-							<div class="newsdetail--body">
-								<f:format.html>{newsItem.bodytext}</f:format.html>
-							</div>
-						</f:if>
 
 						<f:if condition="{newsItem.mediaNonPreviews -> f:count()} > 0">
 							<f:then>

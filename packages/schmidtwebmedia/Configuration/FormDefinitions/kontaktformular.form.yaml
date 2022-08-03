@@ -79,6 +79,20 @@ renderingOptions:
       renderingOptions:
         listView: 0
         deleted: 0
+    multicheckbox-1:
+      type: MultiCheckbox
+      identifier: multicheckbox-1
+      label: 'Gewünschte Fahrerlaubnis'
+      renderingOptions:
+        deleted: 1
+        listView: 0
+    singleselect-1:
+      type: SingleSelect
+      identifier: singleselect-1
+      label: 'Vorbesitz?'
+      renderingOptions:
+        deleted: 1
+        listView: 0
 type: Form
 identifier: kontaktformular
 label: Kontaktformular
@@ -208,14 +222,41 @@ renderables:
         label: 'Grid: Zeile'
         renderables:
           -
-            defaultValue: ''
-            type: Text
-            identifier: text-4
-            label: 'Gewünschte Fahrleraubnis'
+            properties:
+              options:
+                B: B
+                BE: BE
+                B96: B96
+                B196: B196
+                B197: B197
+                A: A
+                A1: A1
+                A2: A2
+                AM: AM
+                Mofa: Mofa
+                ASF: ASF
+            type: MultiCheckbox
+            identifier: multicheckbox-1
+            label: 'Gewünschte Fahrerlaubnis'
+            validators:
+              -
+                identifier: NotEmpty
           -
-            defaultValue: ''
-            type: Text
-            identifier: text-5
+            properties:
+              options:
+                B: B
+                BE: BE
+                B96: B96
+                B196: B196
+                B197: B197
+                A: A
+                A1: A1
+                A2: A2
+                AM: AM
+                Mofa: Mofa
+                ASF: ASF
+            type: SingleSelect
+            identifier: singleselect-1
             label: 'Vorbesitz?'
       -
         defaultValue: ''

@@ -7,14 +7,14 @@ renderingOptions:
       identifier: text-1
       label: 'Name, Vorname'
       renderingOptions:
-        deleted: 0
+        deleted: 1
         listView: 1
     text-9:
       type: Text
       identifier: text-9
       label: Geburtsname
       renderingOptions:
-        deleted: 0
+        deleted: 1
         listView: 1
     date-1:
       type: Date
@@ -149,6 +149,34 @@ renderingOptions:
       renderingOptions:
         listView: 0
         deleted: 0
+    multiselect-1:
+      type: MultiSelect
+      identifier: multiselect-1
+      label: 'Gewünschte Klasse (mehrfachauswahl)'
+      renderingOptions:
+        deleted: 1
+        listView: 0
+    multicheckbox-1:
+      type: MultiCheckbox
+      identifier: multicheckbox-1
+      label: 'Gewünschte Klasse (mehrfachauswahl)'
+      renderingOptions:
+        deleted: 1
+        listView: 0
+    radiobutton-1:
+      type: RadioButton
+      identifier: radiobutton-1
+      label: 'Sehhilfe?'
+      renderingOptions:
+        deleted: 0
+        listView: 0
+    gridrow-5:
+      type: GridRow
+      identifier: gridrow-5
+      label: 'Grid: Zeile'
+      renderingOptions:
+        listView: 0
+        deleted: 0
 type: Form
 identifier: onlineanmeldung
 label: Onlineanmeldung
@@ -195,27 +223,32 @@ renderables:
     label: ''
     renderables:
       -
-        defaultValue: ''
-        type: Text
-        identifier: text-1
-        label: 'Name, Vorname'
-        properties:
-          fluidAdditionalAttributes:
-            required: required
-        validators:
+        type: GridRow
+        identifier: gridrow-5
+        label: 'Grid: Zeile'
+        renderables:
           -
-            identifier: NotEmpty
-      -
-        defaultValue: ''
-        type: Text
-        identifier: text-9
-        label: Geburtsname
-        properties:
-          fluidAdditionalAttributes:
-            required: required
-        validators:
+            defaultValue: ''
+            type: Text
+            identifier: text-1
+            label: 'Name, Vorname'
+            properties:
+              fluidAdditionalAttributes:
+                required: required
+            validators:
+              -
+                identifier: NotEmpty
           -
-            identifier: NotEmpty
+            defaultValue: ''
+            type: Text
+            identifier: text-9
+            label: Geburtsname
+            properties:
+              fluidAdditionalAttributes:
+                required: required
+            validators:
+              -
+                identifier: NotEmpty
       -
         type: GridRow
         identifier: gridrow-2
@@ -287,11 +320,13 @@ renderables:
                 AM: AM
                 Mofa: Mofa
                 ASF: ASF
-              fluidAdditionalAttributes:
-                required: required
-            type: SingleSelect
-            identifier: singleselect-1
-            label: 'Gewünschte Klasse'
+              gridColumnClassAutoConfiguration:
+                viewPorts:
+                  xxl:
+                    numbersOfColumnsToUse: '0'
+            type: MultiCheckbox
+            identifier: multicheckbox-1
+            label: 'Gewünschte Klasse (mehrfachauswahl)'
             validators:
               -
                 identifier: NotEmpty
@@ -388,6 +423,19 @@ renderables:
         properties:
           fluidAdditionalAttributes:
             required: required
+        validators:
+          -
+            identifier: NotEmpty
+      -
+        properties:
+          options:
+            Ja: Ja
+            Nein: Nein
+          fluidAdditionalAttributes:
+            required: required
+        type: RadioButton
+        identifier: radiobutton-1
+        label: 'Sehhilfe?'
         validators:
           -
             identifier: NotEmpty

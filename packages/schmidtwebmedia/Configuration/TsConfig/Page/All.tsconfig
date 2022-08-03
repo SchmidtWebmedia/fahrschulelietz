@@ -7,3 +7,4 @@
 @import 'EXT:schmidtwebmedia/Configuration/TsConfig/Page/Mod/WebLayout/BackendLayouts.tsconfig'
 @import 'EXT:schmidtwebmedia/Configuration/TsConfig/Page/BackendPreview.tsconfig'
 @import 'EXT:schmidtwebmedia/Configuration/TsConfig/Page/LinkValidator.tsconfig'
+@import 'EXT:schmidtwebmedia/Configuration/TsConfig/Page/NEWS.tsconfig'
