@@ -1,0 +1,37 @@
+#
+# BACKENDLAYOUT: News
+#
+mod {
+    web_layout {
+        BackendLayouts {
+            news {
+                title = News
+                config {
+                    backend_layout {
+                        colCount = 1
+                        rowCount = 2
+                        rows {
+                            1 {
+                                columns {
+                                    1 {
+                                        name = Header
+                                        colPos = 0
+                                    }
+                                }
+                            }
+                            2 {
+                                columns {
+                                    1 {
+                                        name = Content
+                                        colPos = 1
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                icon = EXT:schmidtwebmedia/Resources/Public/img/BackendLayouts/Icon.png
+            }
+        }
+    }
+}
