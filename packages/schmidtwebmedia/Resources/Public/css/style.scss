@@ -938,8 +938,8 @@ article {
   .col-label {
 	font-weight: $font-weight-bold;
 	@include media-breakpoint-up(sm) {
-	  flex: 0 0 10%;
-	  max-width: 10%;
+	  flex: 0 0 15%;
+	  max-width: 15%;
 	}
   }
   .col-value {
@@ -947,8 +947,8 @@ article {
 	  margin-left: 15px;
 	}
 	@include media-breakpoint-up(sm) {
-	  flex: 0 0 80%;
-	  max-width: 80%;
+	  flex: 0 0 75%;
+	  max-width: 75%;
 	}
   }
 }
