@@ -481,7 +481,7 @@ a {
   .menu-wrapper {
 	opacity: 1;
 	height: 100vh;
-	z-index: calc(9e999);
+	z-index: 99999999;
 	visibility: visible;
 	top: 0;
 	.button-menu-close {
@@ -492,7 +492,7 @@ a {
 	  padding: 15px;
 	  position: absolute;
 	  width: auto;
-	  color: $font-color;
+	  color: $primary-color;
 	  &:hover {
 		background-color: transparent;
 		border: 0;
@@ -771,6 +771,10 @@ a {
   background-position: center;
   background-size: cover;
   height: 550px;
+
+  @include media-breakpoint-down(sm) {
+	height: 300px;
+  }
 }
 
 /* ==========================================================================
