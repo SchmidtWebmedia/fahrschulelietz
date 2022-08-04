@@ -56,7 +56,7 @@ renderingOptions:
       identifier: text-6
       label: Straße
       renderingOptions:
-        deleted: 0
+        deleted: 1
         listView: 0
     text-7:
       type: Text
@@ -98,21 +98,21 @@ renderingOptions:
       identifier: text-10
       label: Alter
       renderingOptions:
-        deleted: 0
+        deleted: 1
         listView: 0
     text-11:
       type: Text
       identifier: text-11
       label: 'Erreichbarkeit wann und wie'
       renderingOptions:
-        deleted: 0
+        deleted: 1
         listView: 0
     textarea-1:
       type: Textarea
       identifier: textarea-1
       label: Bemerkungen
       renderingOptions:
-        deleted: 0
+        deleted: 1
         listView: 0
     linkedcheckbox-1:
       type: LinkedCheckbox
@@ -127,28 +127,28 @@ renderingOptions:
       label: 'Grid: Zeile'
       renderingOptions:
         listView: 0
-        deleted: 0
+        deleted: 1
     gridrow-3:
       type: GridRow
       identifier: gridrow-3
       label: 'Grid: Zeile'
       renderingOptions:
         listView: 0
-        deleted: 0
+        deleted: 1
     gridrow-1:
       type: GridRow
       identifier: gridrow-1
       label: 'Grid: Zeile'
       renderingOptions:
         listView: 0
-        deleted: 0
+        deleted: 1
     gridrow-4:
       type: GridRow
       identifier: gridrow-4
       label: 'Grid: Zeile'
       renderingOptions:
         listView: 0
-        deleted: 0
+        deleted: 1
     multiselect-1:
       type: MultiSelect
       identifier: multiselect-1
@@ -166,9 +166,9 @@ renderingOptions:
     radiobutton-1:
       type: RadioButton
       identifier: radiobutton-1
-      label: 'Sehhilfe?'
+      label: 'Benötigen Sie eine Sehhilfe?'
       renderingOptions:
-        deleted: 0
+        deleted: 1
         listView: 0
     gridrow-5:
       type: GridRow
@@ -176,7 +176,42 @@ renderingOptions:
       label: 'Grid: Zeile'
       renderingOptions:
         listView: 0
+        deleted: 1
+    fieldset-1:
+      type: Fieldset
+      identifier: fieldset-1
+      label: Personendaten
+      renderingOptions:
         deleted: 0
+        listView: 0
+    fieldset-2:
+      type: Fieldset
+      identifier: fieldset-2
+      label: Adressdaten
+      renderingOptions:
+        deleted: 0
+        listView: 0
+    fieldset-3:
+      type: Fieldset
+      identifier: fieldset-3
+      label: 'Führerschein Informationen'
+      renderingOptions:
+        deleted: 0
+        listView: 0
+    fieldset-4:
+      type: Fieldset
+      identifier: fieldset-4
+      label: Erreichbarkeit
+      renderingOptions:
+        deleted: 0
+        listView: 0
+    fieldset-5:
+      type: Fieldset
+      identifier: fieldset-5
+      label: Sonstiges
+      renderingOptions:
+        deleted: 0
+        listView: 0
 type: Form
 identifier: onlineanmeldung
 label: Onlineanmeldung
@@ -223,134 +258,97 @@ renderables:
     label: ''
     renderables:
       -
-        type: GridRow
-        identifier: gridrow-5
-        label: 'Grid: Zeile'
+        type: Fieldset
+        identifier: fieldset-1
+        label: Personendaten
         renderables:
           -
-            defaultValue: ''
-            type: Text
-            identifier: text-1
-            label: 'Name, Vorname'
-            properties:
-              fluidAdditionalAttributes:
-                required: required
-            validators:
+            type: GridRow
+            identifier: gridrow-5
+            label: 'Grid: Zeile'
+            renderables:
               -
-                identifier: NotEmpty
+                defaultValue: ''
+                type: Text
+                identifier: text-1
+                label: 'Name, Vorname'
+                properties:
+                  fluidAdditionalAttributes:
+                    required: required
+                validators:
+                  -
+                    identifier: NotEmpty
+              -
+                defaultValue: ''
+                type: Text
+                identifier: text-9
+                label: Geburtsname
+                properties:
+                  fluidAdditionalAttributes: {  }
           -
-            defaultValue: ''
-            type: Text
-            identifier: text-9
-            label: Geburtsname
-            properties:
-              fluidAdditionalAttributes:
-                required: required
-            validators:
+            type: GridRow
+            identifier: gridrow-2
+            label: 'Grid: Zeile'
+            renderables:
               -
-                identifier: NotEmpty
-      -
-        type: GridRow
-        identifier: gridrow-2
-        label: 'Grid: Zeile'
-        renderables:
-          -
-            defaultValue: ''
-            properties:
-              fluidAdditionalAttributes:
-                min: ''
-                max: ''
-                step: 1
-                required: required
-            type: Date
-            identifier: date-1
-            label: Geburtsdatum
-            validators:
+                defaultValue: ''
+                properties:
+                  fluidAdditionalAttributes:
+                    min: ''
+                    max: ''
+                    step: 1
+                    required: required
+                type: Date
+                identifier: date-1
+                label: Geburtsdatum
+                validators:
+                  -
+                    identifier: NotEmpty
               -
-                identifier: NotEmpty
-          -
-            defaultValue: ''
-            type: Text
-            identifier: text-2
-            label: Geburtsort
-            properties:
-              fluidAdditionalAttributes:
-                required: required
-            validators:
+                defaultValue: ''
+                type: Text
+                identifier: text-2
+                label: Geburtsort
+                properties:
+                  fluidAdditionalAttributes:
+                    required: required
+                validators:
+                  -
+                    identifier: NotEmpty
               -
-                identifier: NotEmpty
-          -
-            defaultValue: ''
-            type: Text
-            identifier: text-3
-            label: Staatsangehörigkeit
-            properties:
-              fluidAdditionalAttributes:
-                required: required
-            validators:
-              -
-                identifier: NotEmpty
-      -
-        type: GridRow
-        identifier: gridrow-3
-        label: 'Grid: Zeile'
-        renderables:
-          -
-            defaultValue: ''
-            type: Text
-            identifier: text-5
-            label: 'Vorbesitz Klasse seit wann'
-            properties:
-              fluidAdditionalAttributes:
-                required: required
-            validators:
-              -
-                identifier: NotEmpty
+                defaultValue: ''
+                type: Text
+                identifier: text-3
+                label: Staatsangehörigkeit
+                properties:
+                  fluidAdditionalAttributes:
+                    required: required
+                validators:
+                  -
+                    identifier: NotEmpty
           -
             properties:
               options:
-                B: B
-                BE: BE
-                B96: B96
-                B196: B196
-                B197: B197
-                A: A
-                A1: A1
-                A2: A2
-                AM: AM
-                Mofa: Mofa
-                ASF: ASF
-              gridColumnClassAutoConfiguration:
-                viewPorts:
-                  xxl:
-                    numbersOfColumnsToUse: '0'
-            type: MultiCheckbox
-            identifier: multicheckbox-1
-            label: 'Gewünschte Klasse (mehrfachauswahl)'
+                Ja: Ja
+                Nein: Nein
+              fluidAdditionalAttributes:
+                required: required
+            type: RadioButton
+            identifier: radiobutton-1
+            label: 'Benötigen Sie eine Sehhilfe?'
             validators:
               -
                 identifier: NotEmpty
       -
-        defaultValue: ''
-        type: Text
-        identifier: text-6
-        label: Straße
-        properties:
-          fluidAdditionalAttributes:
-            required: required
-        validators:
-          -
-            identifier: NotEmpty
-      -
-        type: GridRow
-        identifier: gridrow-1
-        label: 'Grid: Zeile'
+        type: Fieldset
+        identifier: fieldset-2
+        label: Adressdaten
         renderables:
           -
             defaultValue: ''
             type: Text
-            identifier: text-7
-            label: PLZ
+            identifier: text-6
+            label: Straße
             properties:
               fluidAdditionalAttributes:
                 required: required
@@ -358,98 +356,143 @@ renderables:
               -
                 identifier: NotEmpty
           -
-            defaultValue: ''
-            type: Text
-            identifier: text-8
-            label: Wohnort
-            properties:
-              fluidAdditionalAttributes:
-                required: required
-            validators:
+            type: GridRow
+            identifier: gridrow-1
+            label: 'Grid: Zeile'
+            renderables:
               -
-                identifier: NotEmpty
+                defaultValue: ''
+                type: Text
+                identifier: text-7
+                label: PLZ
+                properties:
+                  fluidAdditionalAttributes:
+                    required: required
+                validators:
+                  -
+                    identifier: NotEmpty
+              -
+                defaultValue: ''
+                type: Text
+                identifier: text-8
+                label: Wohnort
+                properties:
+                  fluidAdditionalAttributes:
+                    required: required
+                validators:
+                  -
+                    identifier: NotEmpty
       -
-        type: GridRow
-        identifier: gridrow-4
-        label: 'Grid: Zeile'
+        type: Fieldset
+        identifier: fieldset-3
+        label: 'Führerschein Informationen'
+        renderables:
+          -
+            type: GridRow
+            identifier: gridrow-3
+            label: 'Grid: Zeile'
+            renderables:
+              -
+                defaultValue: ''
+                type: Text
+                identifier: text-5
+                label: 'Vorbesitz Klasse seit wann'
+                properties:
+                  fluidAdditionalAttributes:
+                    required: required
+                validators:
+                  -
+                    identifier: NotEmpty
+              -
+                properties:
+                  options:
+                    B: B
+                    BE: BE
+                    B96: B96
+                    B196: B196
+                    B197: B197
+                    A: A
+                    A1: A1
+                    A2: A2
+                    AM: AM
+                    Mofa: Mofa
+                    ASF: ASF
+                  gridColumnClassAutoConfiguration:
+                    viewPorts:
+                      xxl:
+                        numbersOfColumnsToUse: '0'
+                type: MultiCheckbox
+                identifier: multicheckbox-1
+                label: 'Gewünschte Klasse (mehrfachauswahl)'
+                validators:
+                  -
+                    identifier: NotEmpty
+      -
+        type: Fieldset
+        identifier: fieldset-4
+        label: Erreichbarkeit
+        renderables:
+          -
+            type: GridRow
+            identifier: gridrow-4
+            label: 'Grid: Zeile'
+            renderables:
+              -
+                defaultValue: ''
+                type: Email
+                identifier: email-1
+                label: E-Mail
+                properties:
+                  fluidAdditionalAttributes:
+                    required: required
+                validators:
+                  -
+                    identifier: EmailAddress
+                  -
+                    identifier: NotEmpty
+              -
+                defaultValue: ''
+                type: Telephone
+                identifier: telephone-1
+                label: Telefonnummer
+              -
+                defaultValue: ''
+                type: Telephone
+                identifier: telephone-2
+                label: Mobil
+                properties:
+                  fluidAdditionalAttributes:
+                    required: required
+                validators:
+                  -
+                    identifier: NotEmpty
+              -
+                defaultValue: ''
+                type: Text
+                identifier: text-11
+                label: 'Erreichbarkeit wann und wie'
+                properties:
+                  fluidAdditionalAttributes:
+                    required: required
+                validators:
+                  -
+                    identifier: NotEmpty
+      -
+        type: Fieldset
+        identifier: fieldset-5
+        label: Sonstiges
         renderables:
           -
             defaultValue: ''
-            type: Email
-            identifier: email-1
-            label: E-Mail
-            properties:
-              fluidAdditionalAttributes:
-                required: required
-            validators:
-              -
-                identifier: EmailAddress
-              -
-                identifier: NotEmpty
-          -
-            defaultValue: ''
-            type: Telephone
-            identifier: telephone-1
-            label: Telefonnummer
-          -
-            defaultValue: ''
-            type: Telephone
-            identifier: telephone-2
-            label: Mobil
+            type: Textarea
+            identifier: textarea-1
+            label: Bemerkungen
             properties:
               fluidAdditionalAttributes:
                 required: required
             validators:
               -
                 identifier: NotEmpty
-      -
-        defaultValue: ''
-        type: Text
-        identifier: text-10
-        label: Alter
-        properties:
-          fluidAdditionalAttributes:
-            required: required
-        validators:
-          -
-            identifier: Integer
-          -
-            identifier: NotEmpty
-      -
-        defaultValue: ''
-        type: Text
-        identifier: text-11
-        label: 'Erreichbarkeit wann und wie'
-        properties:
-          fluidAdditionalAttributes:
-            required: required
-        validators:
-          -
-            identifier: NotEmpty
-      -
-        properties:
-          options:
-            Ja: Ja
-            Nein: Nein
-          fluidAdditionalAttributes:
-            required: required
-        type: RadioButton
-        identifier: radiobutton-1
-        label: 'Sehhilfe?'
-        validators:
-          -
-            identifier: NotEmpty
-      -
-        defaultValue: ''
-        type: Textarea
-        identifier: textarea-1
-        label: Bemerkungen
-        properties:
-          fluidAdditionalAttributes:
-            required: required
-        validators:
-          -
-            identifier: NotEmpty
       -
         properties:
           pageUid: '14'

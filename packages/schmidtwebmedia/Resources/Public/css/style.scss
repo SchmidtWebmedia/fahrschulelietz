@@ -885,7 +885,6 @@ a {
   }
 }
 
-
 article {
   margin: 3rem 0;
 }
@@ -908,11 +907,30 @@ article {
 	  margin-right: 1rem;
 	}
   }
+
+  @include media-breakpoint-down(sm) {
+	flex-direction: column;
+  }
 }
 
 .form-group {
   margin-top: 1rem;
 }
+
+fieldset.form-group {
+  background-color: $light-grey;
+  border: 1px solid $grey;
+  padding: 1rem 0.5rem;
+
+  legend:after {
+	content: '';
+	border-bottom: 3px solid $primary-color;
+	width: 10%;
+	display: block;
+  }
+}
+
+
 
 /* ==========================================================================
    Card
