@@ -2,6 +2,7 @@ plugin.tx_form {
 	settings {
 		yamlConfigurations {
 			100 = EXT:schmidtwebmedia/Configuration/FormDefinitions/form.yaml
+			158329071148 = EXT:schmidtwebmedia/Configuration/FormDefinitions/LinkedCheckbox.yaml
 		}
 	}
 }
@@ -10,6 +11,7 @@ module.tx_form {
 	settings {
 		yamlConfigurations {
 			100 = EXT:schmidtwebmedia/Configuration/FormDefinitions/form.yaml
+			158329071148 = EXT:schmidtwebmedia/Configuration/FormDefinitions/LinkedCheckbox.yaml
 		}
 	}
 }

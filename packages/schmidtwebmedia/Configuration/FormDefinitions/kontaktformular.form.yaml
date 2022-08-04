@@ -14,21 +14,21 @@ renderingOptions:
       identifier: email-1
       label: 'E-Mail Adresse'
       renderingOptions:
-        deleted: 0
+        deleted: 1
         listView: 1
     text-2:
       type: Text
       identifier: text-2
       label: Wohnort
       renderingOptions:
-        deleted: 0
+        deleted: 1
         listView: 1
     textarea-1:
       type: Textarea
       identifier: textarea-1
       label: Bemerkung
       renderingOptions:
-        deleted: 0
+        deleted: 1
         listView: 1
     text-3:
       type: Text
@@ -42,7 +42,7 @@ renderingOptions:
       identifier: date-1
       label: Geburtsdatum
       renderingOptions:
-        deleted: 0
+        deleted: 1
         listView: 0
     text-4:
       type: Text
@@ -71,14 +71,14 @@ renderingOptions:
       label: 'Grid: Zeile'
       renderingOptions:
         listView: 0
-        deleted: 0
+        deleted: 1
     gridrow-2:
       type: GridRow
       identifier: gridrow-2
       label: 'Grid: Zeile'
       renderingOptions:
         listView: 0
-        deleted: 0
+        deleted: 1
     multicheckbox-1:
       type: MultiCheckbox
       identifier: multicheckbox-1
@@ -93,6 +93,34 @@ renderingOptions:
       renderingOptions:
         deleted: 1
         listView: 0
+    fieldset-1:
+      type: Fieldset
+      identifier: fieldset-1
+      label: Kontaktdaten
+      renderingOptions:
+        listView: 0
+        deleted: 0
+    contentelement-1:
+      label: Inhaltselement
+      type: ContentElement
+      identifier: contentelement-1
+      renderingOptions:
+        deleted: 1
+        listView: 0
+    fieldset-2:
+      type: Fieldset
+      identifier: fieldset-2
+      label: 'Führerschein Information'
+      renderingOptions:
+        listView: 0
+        deleted: 0
+    fieldset-3:
+      type: Fieldset
+      identifier: fieldset-3
+      label: Sonstiges
+      renderingOptions:
+        listView: 0
+        deleted: 0
 type: Form
 identifier: kontaktformular
 label: Kontaktformular
@@ -139,130 +167,156 @@ renderables:
     label: ''
     renderables:
       -
-        type: GridRow
-        identifier: gridrow-1
-        label: 'Grid: Zeile'
+        type: Fieldset
+        identifier: fieldset-1
+        label: Kontaktdaten
+        renderables:
+          -
+            type: GridRow
+            identifier: gridrow-1
+            label: 'Grid: Zeile'
+            renderables:
+              -
+                defaultValue: ''
+                type: Text
+                identifier: text-3
+                label: Vorname
+                properties:
+                  fluidAdditionalAttributes:
+                    required: required
+                validators:
+                  -
+                    identifier: NotEmpty
+              -
+                defaultValue: ''
+                type: Text
+                identifier: text-1
+                label: Name
+                properties:
+                  fluidAdditionalAttributes:
+                    required: required
+                  validationErrorMessages:
+                    -
+                      code: 1221560910
+                      message: 'Bitte geben Sie einen Namen an'
+                    -
+                      code: 1221560718
+                      message: 'Bitte geben Sie einen Namen an'
+                    -
+                      code: 1347992400
+                      message: 'Bitte geben Sie einen Namen an'
+                    -
+                      code: 1347992453
+                      message: 'Bitte geben Sie einen Namen an'
+                validators:
+                  -
+                    identifier: NotEmpty
+          -
+            type: GridRow
+            identifier: gridrow-3
+            label: 'Grid: Zeile'
+            renderables:
+              -
+                defaultValue: ''
+                properties:
+                  fluidAdditionalAttributes:
+                    min: ''
+                    max: ''
+                    step: 1
+                    required: required
+                type: Date
+                identifier: date-1
+                label: Geburtsdatum
+                validators:
+                  -
+                    identifier: NotEmpty
+              -
+                defaultValue: ''
+                type: Text
+                identifier: text-2
+                label: Wohnort
+                properties:
+                  fluidAdditionalAttributes:
+                    required: required
+                validators:
+                  -
+                    identifier: NotEmpty
+              -
+                defaultValue: ''
+                type: Email
+                identifier: email-1
+                label: 'E-Mail Adresse'
+                properties:
+                  fluidAdditionalAttributes:
+                    required: required
+                validators:
+                  -
+                    identifier: EmailAddress
+                  -
+                    identifier: NotEmpty
+      -
+        type: Fieldset
+        identifier: fieldset-2
+        label: 'Führerschein Information'
+        renderables:
+          -
+            label: Inhaltselement
+            properties:
+              contentElementUid: '118'
+            type: ContentElement
+            identifier: contentelement-1
+          -
+            type: GridRow
+            identifier: gridrow-2
+            label: 'Grid: Zeile'
+            renderables:
+              -
+                properties:
+                  options:
+                    B: B
+                    BE: BE
+                    B96: B96
+                    B196: B196
+                    B197: B197
+                    A: A
+                    A1: A1
+                    A2: A2
+                    AM: AM
+                    Mofa: Mofa
+                    ASF: ASF
+                type: MultiCheckbox
+                identifier: multicheckbox-1
+                label: 'Gewünschte Fahrerlaubnis'
+                validators:
+                  -
+                    identifier: NotEmpty
+              -
+                properties:
+                  options:
+                    B: B
+                    BE: BE
+                    B96: B96
+                    B196: B196
+                    B197: B197
+                    A: A
+                    A1: A1
+                    A2: A2
+                    AM: AM
+                    Mofa: Mofa
+                    ASF: ASF
+                type: SingleSelect
+                identifier: singleselect-1
+                label: 'Vorbesitz?'
+      -
+        type: Fieldset
+        identifier: fieldset-3
+        label: Sonstiges
         renderables:
           -
             defaultValue: ''
-            type: Text
-            identifier: text-3
-            label: Vorname
-            properties:
-              fluidAdditionalAttributes:
-                required: required
-            validators:
-              -
-                identifier: NotEmpty
-          -
-            defaultValue: ''
-            type: Text
-            identifier: text-1
-            label: Name
-            properties:
-              fluidAdditionalAttributes:
-                required: required
-              validationErrorMessages:
-                -
-                  code: 1221560910
-                  message: 'Bitte geben Sie einen Namen an'
-                -
-                  code: 1221560718
-                  message: 'Bitte geben Sie einen Namen an'
-                -
-                  code: 1347992400
-                  message: 'Bitte geben Sie einen Namen an'
-                -
-                  code: 1347992453
-                  message: 'Bitte geben Sie einen Namen an'
-            validators:
-              -
-                identifier: NotEmpty
-      -
-        defaultValue: ''
-        type: Text
-        identifier: text-2
-        label: Wohnort
-        properties:
-          fluidAdditionalAttributes:
-            required: required
-        validators:
-          -
-            identifier: NotEmpty
-      -
-        defaultValue: ''
-        properties:
-          fluidAdditionalAttributes:
-            min: ''
-            max: ''
-            step: 1
-            required: required
-        type: Date
-        identifier: date-1
-        label: Geburtsdatum
-        validators:
-          -
-            identifier: NotEmpty
-      -
-        defaultValue: ''
-        type: Email
-        identifier: email-1
-        label: 'E-Mail Adresse'
-        properties:
-          fluidAdditionalAttributes:
-            required: required
-        validators:
-          -
-            identifier: EmailAddress
-          -
-            identifier: NotEmpty
-      -
-        type: GridRow
-        identifier: gridrow-2
-        label: 'Grid: Zeile'
-        renderables:
-          -
-            properties:
-              options:
-                B: B
-                BE: BE
-                B96: B96
-                B196: B196
-                B197: B197
-                A: A
-                A1: A1
-                A2: A2
-                AM: AM
-                Mofa: Mofa
-                ASF: ASF
-            type: MultiCheckbox
-            identifier: multicheckbox-1
-            label: 'Gewünschte Fahrerlaubnis'
-            validators:
-              -
-                identifier: NotEmpty
-          -
-            properties:
-              options:
-                B: B
-                BE: BE
-                B96: B96
-                B196: B196
-                B197: B197
-                A: A
-                A1: A1
-                A2: A2
-                AM: AM
-                Mofa: Mofa
-                ASF: ASF
-            type: SingleSelect
-            identifier: singleselect-1
-            label: 'Vorbesitz?'
-      -
-        defaultValue: ''
-        type: Textarea
-        identifier: textarea-1
-        label: Bemerkung
+            type: Textarea
+            identifier: textarea-1
+            label: Bemerkung
       -
         properties:
           pageUid: '14'
