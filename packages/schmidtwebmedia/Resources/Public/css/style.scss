@@ -930,6 +930,12 @@ fieldset.form-group {
   }
 }
 
+.form-check-label {
+  > input,
+  &:hover {
+	cursor: pointer;
+  }
+}
 
 
 /* ==========================================================================

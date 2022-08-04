@@ -212,6 +212,13 @@ renderingOptions:
       renderingOptions:
         deleted: 0
         listView: 0
+    contentelement-1:
+      label: Inhaltselement
+      type: ContentElement
+      identifier: contentelement-1
+      renderingOptions:
+        deleted: 1
+        listView: 0
 type: Form
 identifier: onlineanmeldung
 label: Onlineanmeldung
@@ -385,6 +392,12 @@ renderables:
         identifier: fieldset-3
         label: 'Führerschein Informationen'
         renderables:
+          -
+            label: Inhaltselement
+            properties:
+              contentElementUid: '118'
+            type: ContentElement
+            identifier: contentelement-1
           -
             type: GridRow
             identifier: gridrow-3
