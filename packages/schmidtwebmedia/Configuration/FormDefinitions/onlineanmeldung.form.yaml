@@ -283,8 +283,6 @@ renderables:
                 type: Text
                 identifier: text-9
                 label: Geburtsname
-                properties:
-                  fluidAdditionalAttributes: {  }
           -
             type: GridRow
             identifier: gridrow-2
@@ -466,17 +464,17 @@ renderables:
                 validators:
                   -
                     identifier: NotEmpty
+          -
+            defaultValue: ''
+            type: Text
+            identifier: text-11
+            label: 'Erreichbarkeit wann und wie'
+            properties:
+              fluidAdditionalAttributes:
+                required: required
+            validators:
               -
-                defaultValue: ''
-                type: Text
-                identifier: text-11
-                label: 'Erreichbarkeit wann und wie'
-                properties:
-                  fluidAdditionalAttributes:
-                    required: required
-                validators:
-                  -
-                    identifier: NotEmpty
+                identifier: NotEmpty
       -
         type: Fieldset
         identifier: fieldset-5
