@@ -271,6 +271,13 @@ AddDefaultCharset utf-8
 	# Enable URL rewriting
 	RewriteEngine On
 
+	RewriteCond %{HTTP_HOST} ^fahrschulelietz.de [OR]
+    RewriteCond %{HTTP_HOST} ^www.fahrschulelietz.de [OR]
+    RewriteRule ^(.*)$ https://www.fahrschule-lietz.de%{REQUEST_URI} [L,R=301]
+
+    RewriteCond %{HTTP_HOST} !^www\.
+    RewriteRule ^(.*)$ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
 	# Store the current location in an environment variable CWD to use
 	# mod_rewrite in .htaccess files without knowing the RewriteBase
 	RewriteCond $0#%{REQUEST_URI} ([^#]*)#(.*)\1$
