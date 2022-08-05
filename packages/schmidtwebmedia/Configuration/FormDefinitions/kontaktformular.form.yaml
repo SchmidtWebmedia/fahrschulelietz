@@ -133,6 +133,9 @@ finishers:
       subject: 'Vielen Dank für Ihre Nachricht'
       recipients:
         '{email-1}': '{text-1}'
+      templateName: '{@format}.html'
+      templateRootPaths:
+        20: 'EXT:schmidtwebmedia/Resources/Private/Extensions/Form/Templates/Finishers/Email/ToSender'
       senderAddress: info@fahrschule-lietz.de
       senderName: Fahrschule-Lietz
       addHtmlPart: true
@@ -293,6 +296,7 @@ renderables:
               -
                 properties:
                   options:
+                    Keine: Keine
                     B: B
                     BE: BE
                     B96: B96
