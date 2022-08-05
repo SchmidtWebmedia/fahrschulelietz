@@ -1,4 +1,4 @@
-base: 'https://lietz.webdesigner-soest.de/'
+base: 'https://www.fahrschulelietz.de/'
 baseVariants:
   -
     base: 'https://lietz.ddev.site/'
