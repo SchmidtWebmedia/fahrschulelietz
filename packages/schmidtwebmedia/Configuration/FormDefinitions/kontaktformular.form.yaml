@@ -146,7 +146,7 @@ finishers:
       subject: 'Anfrage über das Kontaktformular'
       recipients:
         info@fahrschule-lietz.de: Fahrschule-Lietz
-      senderAddress: info@fahrschule-lietz.de
+      senderAddress: form@fahrschule-lietz.de
       senderName: '{text-1}'
       replyToRecipients:
         '{email-1}': '{text-1}'
