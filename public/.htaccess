@@ -272,7 +272,7 @@ AddDefaultCharset utf-8
 	RewriteEngine On
 
 	RewriteCond %{HTTP_HOST} ^fahrschulelietz.de [OR]
-    RewriteCond %{HTTP_HOST} ^www.fahrschulelietz.de [OR]
+    RewriteCond %{HTTP_HOST} ^www.fahrschulelietz.de
     RewriteRule ^(.*)$ https://www.fahrschule-lietz.de%{REQUEST_URI} [L,R=301]
 
     RewriteCond %{HTTP_HOST} !^www\.
