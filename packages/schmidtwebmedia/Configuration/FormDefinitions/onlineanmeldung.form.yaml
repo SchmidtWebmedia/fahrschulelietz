@@ -412,11 +412,7 @@ renderables:
                 identifier: text-5
                 label: 'Vorbesitz Klasse seit wann'
                 properties:
-                  fluidAdditionalAttributes:
-                    required: required
-                validators:
-                  -
-                    identifier: NotEmpty
+                  fluidAdditionalAttributes: {  }
               -
                 properties:
                   options:
@@ -502,11 +498,7 @@ renderables:
             identifier: textarea-1
             label: Bemerkungen
             properties:
-              fluidAdditionalAttributes:
-                required: required
-            validators:
-              -
-                identifier: NotEmpty
+              fluidAdditionalAttributes: {  }
       -
         properties:
           pageUid: '14'

@@ -59,6 +59,10 @@ routeEnhancers:
         routeFieldName: path_segment
     requirements:
       page: \d+
+  PageTypeSuffix:
+    type: PageType
+    map:
+      sitemap.xml: 1533906435
 routes:
   -
     route: robots.txt
