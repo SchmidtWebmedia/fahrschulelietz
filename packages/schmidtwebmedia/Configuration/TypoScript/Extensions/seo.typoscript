@@ -4,7 +4,7 @@ plugin.tx_seo {
 			sitemaps {
 				pages {
 					config {
-						additionalWhere = AND no_index = 0
+						additionalWhere = AND no_index = 0 AND uid NOT IN (16)
 					}
 				}
 			}
