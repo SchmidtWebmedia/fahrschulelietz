@@ -733,7 +733,7 @@ a {
 	}
   }
 
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(lg) {
 	.header-image.big-header-image {
 	  background-position: left;
 	}
