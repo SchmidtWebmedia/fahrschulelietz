@@ -11,7 +11,7 @@
 
 @import 'EXT:schmidtwebmedia/Configuration/TypoScript/Extensions'
 @import 'EXT:schmidtwebmedia/Configuration/TypoScript/Menu'
-@import 'EXT:schmidtwebmedia/Configuration/TypoScript/Pages'
+#@import 'EXT:schmidtwebmedia/Configuration/TypoScript/Pages'
 
 lib.copyright = TEXT
 lib.copyright {
