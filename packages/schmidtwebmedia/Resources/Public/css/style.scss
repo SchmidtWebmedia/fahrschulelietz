@@ -730,6 +730,11 @@ a {
 	.header-image.big-header-image {
 	  margin-top: 50px;
 	  height: 85vh;
+	}
+  }
+
+  @include media-breakpoint-down(md) {
+	.header-image.big-header-image {
 	  background-position: left;
 	}
   }
