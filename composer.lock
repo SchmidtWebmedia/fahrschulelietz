@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0c4889451dd1471fabdb34339a3d16eb",
+    "content-hash": "5bf336777ead9eb3199aa3950d072322",
     "packages": [
         {
             "name": "b13/container",
@@ -2425,6 +2425,61 @@
                 "source": "https://github.com/ralouphie/getallheaders/tree/develop"
             },
             "time": "2019-03-08T08:55:37+00:00"
+        },
+        {
+            "name": "schliesser/sitecrawler",
+            "version": "v2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/schliesser/sitecrawler.git",
+                "reference": "7907ce2a76795a397b55e4c71bf1c3aec922c5cb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/schliesser/sitecrawler/zipball/7907ce2a76795a397b55e4c71bf1c3aec922c5cb",
+                "reference": "7907ce2a76795a397b55e4c71bf1c3aec922c5cb",
+                "shasum": ""
+            },
+            "require": {
+                "ext-simplexml": "*",
+                "php": "^7.4 || ^8.0",
+                "typo3/cms-core": "^10.4 || ^11.5"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.0",
+                "php-parallel-lint/php-parallel-lint": "^1.2",
+                "typo3/testing-framework": "^6"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/cms": {
+                    "cms-package-dir": "{$vendor-dir}/typo3/cms",
+                    "web-dir": ".Build/Web",
+                    "extension-key": "sitecrawler"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Schliesser\\Sitecrawler\\": "Classes"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "André Buchmann",
+                    "email": "andy.schliesser@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "TYPO3 sitemap crawler",
+            "support": {
+                "issues": "https://github.com/schliesser/sitecrawler/issues",
+                "source": "https://github.com/schliesser/sitecrawler/tree/v2.0.0"
+            },
+            "time": "2022-08-05T16:05:36+00:00"
         },
         {
             "name": "schmidtwebmedia/cceexport",

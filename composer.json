@@ -23,6 +23,7 @@
 		"helhum/typo3-console": "^7.0.2",
 		"lavitto/typo3-form-to-database": "^2.1",
 		"marco-schmidt-webmedia/schmidtwebmedia": "@dev",
+		"schliesser/sitecrawler": "^2.0",
 		"schmidtwebmedia/cceexport": "@dev",
 		"schmidtwebmedia/grid-for-container": "^0.9.0",
 		"typo3/cms-adminpanel": "^11.5",
