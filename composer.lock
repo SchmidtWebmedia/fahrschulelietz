@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5bf336777ead9eb3199aa3950d072322",
+    "content-hash": "aa35ef3c3e1bd4b451a99322ac60b64f",
     "packages": [
         {
             "name": "b13/container",
@@ -2428,33 +2428,31 @@
         },
         {
             "name": "schliesser/sitecrawler",
-            "version": "v2.0.0",
+            "version": "v1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/schliesser/sitecrawler.git",
-                "reference": "7907ce2a76795a397b55e4c71bf1c3aec922c5cb"
+                "reference": "d5176429eca11a56fa3b73061f249caea4ea9a67"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schliesser/sitecrawler/zipball/7907ce2a76795a397b55e4c71bf1c3aec922c5cb",
-                "reference": "7907ce2a76795a397b55e4c71bf1c3aec922c5cb",
+                "url": "https://api.github.com/repos/schliesser/sitecrawler/zipball/d5176429eca11a56fa3b73061f249caea4ea9a67",
+                "reference": "d5176429eca11a56fa3b73061f249caea4ea9a67",
                 "shasum": ""
             },
             "require": {
                 "ext-simplexml": "*",
-                "php": "^7.4 || ^8.0",
-                "typo3/cms-core": "^10.4 || ^11.5"
+                "typo3/cms-core": "^9.5 || ^10.4 || ^11.4"
             },
             "require-dev": {
                 "friendsofphp/php-cs-fixer": "^3.0",
                 "php-parallel-lint/php-parallel-lint": "^1.2",
-                "typo3/testing-framework": "^6"
+                "typo3/testing-framework": "^4 || ^5 || ^6"
             },
             "type": "typo3-cms-extension",
             "extra": {
                 "typo3/cms": {
-                    "cms-package-dir": "{$vendor-dir}/typo3/cms",
-                    "web-dir": ".Build/Web",
+                    "web-dir": ".Build",
                     "extension-key": "sitecrawler"
                 }
             },
@@ -2477,9 +2475,9 @@
             "description": "TYPO3 sitemap crawler",
             "support": {
                 "issues": "https://github.com/schliesser/sitecrawler/issues",
-                "source": "https://github.com/schliesser/sitecrawler/tree/v2.0.0"
+                "source": "https://github.com/schliesser/sitecrawler/tree/v1.1.2"
             },
-            "time": "2022-08-05T16:05:36+00:00"
+            "time": "2022-07-08T05:59:09+00:00"
         },
         {
             "name": "schmidtwebmedia/cceexport",
