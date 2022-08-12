@@ -411,8 +411,6 @@ renderables:
                 type: Text
                 identifier: text-5
                 label: 'Vorbesitz Klasse seit wann'
-                properties:
-                  fluidAdditionalAttributes: {  }
               -
                 properties:
                   options:
@@ -497,8 +495,6 @@ renderables:
             type: Textarea
             identifier: textarea-1
             label: Bemerkungen
-            properties:
-              fluidAdditionalAttributes: {  }
       -
         properties:
           pageUid: '14'

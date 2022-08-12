@@ -147,7 +147,7 @@ finishers:
       recipients:
         info@fahrschule-lietz.de: Fahrschule-Lietz
       senderAddress: form@fahrschule-lietz.de
-      senderName: '{text-1}'
+      senderName: '{text-1},  {text-3}'
       replyToRecipients:
         '{email-1}': '{text-1}'
       addHtmlPart: true
