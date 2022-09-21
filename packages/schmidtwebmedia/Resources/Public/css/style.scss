@@ -1132,6 +1132,35 @@ fieldset.form-group {
 }
 
 /* ==========================================================================
+   Pagination
+   ========================================================================== */
+.page-navigation {
+  display: flex;
+  width: 100%;
+  border-radius: 0;
+  &:last-child{
+	margin-top: 1rem;
+  }
+  .pagination {
+	margin-left: auto;
+	.page-item {
+	  .page-link {
+		background-color: #fff;
+		color: $primary-color;
+		border-color: $primary-color;
+		text-decoration: none;
+	  }
+	  &.active {
+		.page-link {
+		  color: $secondary-color;
+		  border-color: $secondary-color;
+		}
+	  }
+	}
+  }
+}
+
+/* ==========================================================================
    Debug
    ========================================================================== */
 .extbase-debugger {

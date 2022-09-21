@@ -1,0 +1,48 @@
+<f:if condition="{pagination.allPageNumbers -> f:count()} > 0">
+<div class="page-navigation">
+    <ul class="pagination f3-widget-paginator">
+        <f:if condition="{pagination.previousPageNumber} && {pagination.previousPageNumber} >= {pagination.firstPageNumber}">
+            <f:then>
+                <li class="page-item previous">
+                    <a href="{f:uri.action(action:actionName, arguments:{currentPage: pagination.previousPageNumber},addQueryString:1)}" class="page-link" title="{f:translate(key:'pagination.previous')}">
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                </li>
+            </f:then>
+        </f:if>
+        <f:if condition="{pagination.hasLessPages}">
+            <li class="page-item disabled"><span class="page-link">…</span></li>
+        </f:if>
+        <f:for each="{pagination.allPageNumbers}" as="page">
+            <f:if condition="{page} == {paginator.currentPageNumber}">
+                <f:then>
+                    <li class="page-item {f:if(condition: '{page} == {paginator.currentPageNumber}', then:'active')}">
+                        <span class="page-link">{page}</span>
+                    </li>
+                </f:then>
+                <f:else>
+                    <li class="page-item previous">
+                        <a href="{f:uri.action(action:actionName, arguments:{currentPage: page},addQueryString:1)}" class="page-link" title="zu Seite {page}">
+                            {page}
+                        </a>
+                    </li>
+
+                </f:else>
+            </f:if>
+        </f:for>
+
+        <f:if condition="{pagination.hasMorePages}">
+            <li>…</li>
+        </f:if>
+        <f:if condition="{pagination.nextPageNumber} && {pagination.nextPageNumber} <= {pagination.lastPageNumber}">
+            <f:then>
+                <li class="page-item next">
+                    <a href="{f:uri.action(action:actionName, arguments:{currentPage: pagination.nextPageNumber},addQueryString:1)}" class="page-link" title="{f:translate(key:'pagination.next')}">
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </li>
+            </f:then>
+        </f:if>
+    </ul>
+</div>
+</f:if>
