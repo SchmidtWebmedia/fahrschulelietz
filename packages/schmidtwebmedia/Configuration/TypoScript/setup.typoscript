@@ -13,13 +13,6 @@
 @import 'EXT:schmidtwebmedia/Configuration/TypoScript/Menu'
 #@import 'EXT:schmidtwebmedia/Configuration/TypoScript/Pages'
 
-lib.copyright = TEXT
-lib.copyright {
-	data = date : U
-	strftime = %Y
-	noTrimWrap = |
-}
-
 lib.footercontent = COA
 lib.footercontent {
     10 = CONTENT
