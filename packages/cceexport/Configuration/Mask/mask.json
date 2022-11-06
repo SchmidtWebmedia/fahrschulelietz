@@ -1,471 +1,547 @@
 {
-    "tt_content": {
-        "elements": {
-            "city_sign": {
-                "key": "city_sign",
-                "label": "Ortseingangsschild",
-                "description": "Zeige ein Ortseingangsschild an",
-                "shortLabel": "Ortsschild",
-                "color": "#000000",
-                "icon": "fa-map-signs",
-                "columns": [
-                    "header"
-                ],
-                "labels": [
-                    "Text"
-                ],
-                "descriptions": [
-                    ""
-                ],
-                "sorting": 0
+    "version": "0.1.0",
+    "tables": {
+        "mask_export": {
+            "elements": {
+                "configuration": {
+                    "color": "",
+                    "colorOverlay": "",
+                    "columns": [
+                        "city_sign",
+                        "driving_license_class",
+                        "dsgvo",
+                        "font_awesome",
+                        "gallery",
+                        "header_image",
+                        "map",
+                        "teaser",
+                        "usp"
+                    ],
+                    "description": "",
+                    "descriptions": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "icon": "",
+                    "iconOverlay": "",
+                    "key": "configuration",
+                    "label": "cceexport",
+                    "labels": [],
+                    "shortLabel": "schmidtwebmedia",
+                    "sorting": 0
+                }
             },
-            "driving_license_class": {
-                "key": "driving_license_class",
-                "label": "F\u00fchrerscheinklasse",
-                "description": "Detailinformation zu der F\u00fchrerscheinklasse",
-                "shortLabel": "F\u00fchrerscheinklasse",
-                "color": "#000000",
-                "icon": "fa-th-list",
-                "columns": [
-                    "header",
-                    "header_layout",
-                    "bodytext",
-                    "tx_mask_age",
-                    "tx_mask_previous_ownership",
-                    "tx_mask_comment"
-                ],
-                "labels": [
-                    "",
-                    "",
-                    "Fahrzeug",
-                    "Alter",
-                    "Vorbesitz",
-                    "Bemerkung"
-                ],
-                "descriptions": {
-                    "3": "",
-                    "5": "",
-                    "4": "",
-                    "0": "",
-                    "1": "",
-                    "2": ""
+            "tca": {
+                "city_sign": {
+                    "coreField": 1,
+                    "fullKey": "city_sign",
+                    "key": "city_sign"
                 },
-                "sorting": 0,
-                "options": {
-                    "2": "rte",
-                    "5": "rte"
-                }
-            },
-            "dsgvo": {
-                "key": "dsgvo",
-                "label": "DSGVO Opt Out",
-                "description": "Buttons f\u00fcr den DGVO Opt Out",
-                "shortLabel": "DSGVO",
-                "color": "#000000",
-                "icon": "fa-eye-slash",
-                "columns": [],
-                "labels": [],
-                "descriptions": [],
-                "sorting": 0
-            },
-            "font_awesome": {
-                "key": "font_awesome",
-                "label": "Font Awesome",
-                "description": "F\u00fcge ein Font Aweseome Icon hinzu",
-                "shortLabel": "Font Awesome Icon",
-                "color": "#000000",
-                "icon": "fa-font-awesome",
-                "columns": [
-                    "tx_mask_fa_icon"
-                ],
-                "labels": [
-                    "Icon Klasse"
-                ],
-                "descriptions": [
-                    "Entweder ein Bilder oder ein Icon"
-                ],
-                "sorting": 0
-            },
-            "gallery": {
-                "key": "gallery",
-                "label": "Bilder Galerie",
-                "description": "Eine Galerie bestehend aus mehreren Bildern, sauber in einem Raster angeordnet ",
-                "shortLabel": "Galerie",
-                "color": "#000000",
-                "icon": "fa-th",
-                "columns": [
-                    "header",
-                    "header_layout",
-                    "imagecols",
-                    "image"
-                ],
-                "labels": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "descriptions": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "sorting": 0
-            },
-            "header_image": {
-                "key": "header_image",
-                "label": "Header Bild",
-                "description": "Zeige ein gro\u00dfes Headerbild an",
-                "shortLabel": "Header",
-                "color": "#000000",
-                "icon": "fa-image",
-                "columns": [
-                    "image",
-                    "tx_mask_large_image"
-                ],
-                "labels": [
-                    "Bild",
-                    "Gro\u00dfes Bild"
-                ],
-                "descriptions": {
-                    "1": "Zeige das Bild \u00fcber die gesamte Bildschirmgr\u00f6\u00dfe an",
-                    "0": ""
+                "driving_license_class": {
+                    "coreField": 1,
+                    "fullKey": "driving_license_class",
+                    "key": "driving_license_class"
                 },
-                "sorting": 0
-            },
-            "map": {
-                "key": "map",
-                "label": "Karte",
-                "description": "Darstellung einer OpenStreet Map",
-                "shortLabel": "Karte",
-                "color": "#000000",
-                "icon": "fa-map",
-                "columns": [
-                    "header",
-                    "tx_mask_lat",
-                    "tx_mask_lng"
-                ],
-                "labels": [
-                    "",
-                    "Lat",
-                    "Lng"
-                ],
-                "descriptions": {
-                    "1": "",
-                    "2": "",
-                    "0": ""
+                "dsgvo": {
+                    "coreField": 1,
+                    "fullKey": "dsgvo",
+                    "key": "dsgvo"
                 },
-                "sorting": 0
-            },
-            "teaser": {
-                "key": "teaser",
-                "label": "Teaser",
-                "description": "Teaser mit \u00dcberschrift, Bild, Beschreibung und Link",
-                "shortLabel": "Teaser",
-                "color": "#000000",
-                "icon": "fa-link",
-                "columns": [
-                    "header",
-                    "image",
-                    "tx_mask_fa_icon",
-                    "bodytext",
-                    "header_link",
-                    "tx_mask_url_title"
-                ],
-                "labels": [
-                    "",
-                    "",
-                    "FontAwesome Icon Klasse",
-                    "",
-                    "",
-                    "URL Titel"
-                ],
-                "descriptions": {
-                    "2": "Entweder ein Bilder oder ein Icon",
-                    "5": "Titel f\u00fcr den Link",
-                    "0": "",
-                    "3": "",
-                    "1": "",
-                    "4": ""
+                "font_awesome": {
+                    "coreField": 1,
+                    "fullKey": "font_awesome",
+                    "key": "font_awesome"
                 },
-                "sorting": 0,
-                "options": {
-                    "3": "rte"
-                }
-            },
-            "usp": {
-                "key": "usp",
-                "label": "USP Auflistung",
-                "description": "Auflistung mehrere USP in Spalten",
-                "shortLabel": "USPs",
-                "color": "#000000",
-                "icon": "fa-list-ul",
-                "columns": [
-                    "tx_mask_usplist"
-                ],
-                "labels": [
-                    "USPs"
-                ],
-                "descriptions": [
-                    "Auflistung aller USPs"
-                ],
-                "sorting": 0
-            }
-        },
-        "sql": {
-            "tx_mask_age": {
-                "tt_content": {
-                    "tx_mask_age": "tinytext"
-                }
-            },
-            "tx_mask_comment": {
-                "tt_content": {
-                    "tx_mask_comment": "mediumtext"
-                }
-            },
-            "tx_mask_fa_icon": {
-                "tt_content": {
-                    "tx_mask_fa_icon": "tinytext"
-                }
-            },
-            "tx_mask_large_image": {
-                "tt_content": {
-                    "tx_mask_large_image": "int(11) DEFAULT '0' NOT NULL"
-                }
-            },
-            "tx_mask_lat": {
-                "tt_content": {
-                    "tx_mask_lat": "double(11,2) DEFAULT '0.00' NOT NULL"
-                }
-            },
-            "tx_mask_lng": {
-                "tt_content": {
-                    "tx_mask_lng": "double(11,2) DEFAULT '0.00' NOT NULL"
-                }
-            },
-            "tx_mask_previous_ownership": {
-                "tt_content": {
-                    "tx_mask_previous_ownership": "tinytext"
-                }
-            },
-            "tx_mask_url_title": {
-                "tt_content": {
-                    "tx_mask_url_title": "tinytext"
-                }
-            },
-            "tx_mask_usplist": {
-                "tt_content": {
-                    "tx_mask_usplist": "int(11) unsigned DEFAULT '0' NOT NULL"
+                "gallery": {
+                    "coreField": 1,
+                    "fullKey": "gallery",
+                    "key": "gallery"
+                },
+                "header_image": {
+                    "coreField": 1,
+                    "fullKey": "header_image",
+                    "key": "header_image"
+                },
+                "map": {
+                    "coreField": 1,
+                    "fullKey": "map",
+                    "key": "map"
+                },
+                "teaser": {
+                    "coreField": 1,
+                    "fullKey": "teaser",
+                    "key": "teaser"
+                },
+                "usp": {
+                    "coreField": 1,
+                    "fullKey": "usp",
+                    "key": "usp"
                 }
             }
         },
-        "tca": {
-            "tx_mask_age": {
-                "config": {
-                    "autocomplete": "0",
-                    "behaviour": {
-                        "allowLanguageSynchronization": "0"
-                    },
-                    "type": "input"
+        "tt_content": {
+            "elements": {
+                "city_sign": {
+                    "color": "#000000",
+                    "colorOverlay": "",
+                    "columns": [
+                        "header"
+                    ],
+                    "description": "Zeige ein Ortseingangsschild an",
+                    "descriptions": [
+                        ""
+                    ],
+                    "icon": "fa-map-signs",
+                    "iconOverlay": "",
+                    "key": "city_sign",
+                    "label": "Ortseingangsschild",
+                    "labels": [
+                        "Text"
+                    ],
+                    "shortLabel": "Ortsschild",
+                    "sorting": 0
                 },
-                "key": "age",
-                "fullKey": "tx_mask_age",
-                "type": "string"
-            },
-            "tx_mask_comment": {
-                "config": {
-                    "behaviour": {
-                        "allowLanguageSynchronization": "0"
-                    },
-                    "enableRichtext": "1",
-                    "type": "text"
+                "driving_license_class": {
+                    "color": "#000000",
+                    "colorOverlay": "",
+                    "columns": [
+                        "header",
+                        "header_layout",
+                        "bodytext",
+                        "tx_mask_age",
+                        "tx_mask_previous_ownership",
+                        "tx_mask_comment"
+                    ],
+                    "description": "Detailinformation zu der F\u00fchrerscheinklasse",
+                    "descriptions": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "icon": "fa-th-list",
+                    "iconOverlay": "",
+                    "key": "driving_license_class",
+                    "label": "F\u00fchrerscheinklasse",
+                    "labels": [
+                        "",
+                        "",
+                        "Fahrzeug",
+                        "Alter",
+                        "Vorbesitz",
+                        "Bemerkung"
+                    ],
+                    "shortLabel": "F\u00fchrerscheinklasse",
+                    "sorting": 0
                 },
-                "key": "comment",
-                "fullKey": "tx_mask_comment",
-                "type": "richtext"
-            },
-            "tx_mask_fa_icon": {
-                "config": {
-                    "autocomplete": "0",
-                    "behaviour": {
-                        "allowLanguageSynchronization": "0"
-                    },
-                    "eval": "trim,lower",
-                    "type": "input"
+                "dsgvo": {
+                    "color": "#000000",
+                    "colorOverlay": "",
+                    "columns": [],
+                    "description": "Buttons f\u00fcr den DGVO Opt Out",
+                    "descriptions": [],
+                    "icon": "fa-eye-slash",
+                    "iconOverlay": "",
+                    "key": "dsgvo",
+                    "label": "DSGVO Opt Out",
+                    "labels": [],
+                    "shortLabel": "DSGVO",
+                    "sorting": 0
                 },
-                "key": "fa_icon",
-                "fullKey": "tx_mask_fa_icon",
-                "type": "string"
+                "font_awesome": {
+                    "color": "#000000",
+                    "colorOverlay": "",
+                    "columns": [
+                        "tx_mask_fa_icon"
+                    ],
+                    "description": "F\u00fcge ein Font Aweseome Icon hinzu",
+                    "descriptions": [
+                        "Entweder ein Bilder oder ein Icon"
+                    ],
+                    "icon": "fa-font-awesome",
+                    "iconOverlay": "",
+                    "key": "font_awesome",
+                    "label": "Font Awesome",
+                    "labels": [
+                        "Icon Klasse"
+                    ],
+                    "shortLabel": "Font Awesome Icon",
+                    "sorting": 0
+                },
+                "gallery": {
+                    "color": "#000000",
+                    "colorOverlay": "",
+                    "columns": [
+                        "header",
+                        "header_layout",
+                        "imagecols",
+                        "image"
+                    ],
+                    "description": "Eine Galerie bestehend aus mehreren Bildern, sauber in einem Raster angeordnet ",
+                    "descriptions": [
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "icon": "fa-th",
+                    "iconOverlay": "",
+                    "key": "gallery",
+                    "label": "Bilder Galerie",
+                    "labels": [
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "shortLabel": "Galerie",
+                    "sorting": 0
+                },
+                "header_image": {
+                    "color": "#000000",
+                    "colorOverlay": "",
+                    "columns": [
+                        "image",
+                        "tx_mask_large_image"
+                    ],
+                    "description": "Zeige ein gro\u00dfes Headerbild an",
+                    "descriptions": [
+                        "",
+                        "Zeige das Bild \u00fcber die gesamte Bildschirmgr\u00f6\u00dfe an"
+                    ],
+                    "icon": "fa-image",
+                    "iconOverlay": "",
+                    "key": "header_image",
+                    "label": "Header Bild",
+                    "labels": [
+                        "Bild",
+                        "Gro\u00dfes Bild"
+                    ],
+                    "shortLabel": "Header",
+                    "sorting": 0
+                },
+                "map": {
+                    "color": "#000000",
+                    "colorOverlay": "",
+                    "columns": [
+                        "header",
+                        "tx_mask_lat",
+                        "tx_mask_lng"
+                    ],
+                    "description": "Darstellung einer OpenStreet Map",
+                    "descriptions": [
+                        "",
+                        "",
+                        ""
+                    ],
+                    "icon": "fa-map",
+                    "iconOverlay": "",
+                    "key": "map",
+                    "label": "Karte",
+                    "labels": [
+                        "",
+                        "Lat",
+                        "Lng"
+                    ],
+                    "shortLabel": "Karte",
+                    "sorting": 0
+                },
+                "teaser": {
+                    "color": "#000000",
+                    "colorOverlay": "",
+                    "columns": [
+                        "header",
+                        "image",
+                        "tx_mask_fa_icon",
+                        "bodytext",
+                        "header_link",
+                        "tx_mask_url_title"
+                    ],
+                    "description": "Teaser mit \u00dcberschrift, Bild, Beschreibung und Link",
+                    "descriptions": [
+                        "",
+                        "",
+                        "Entweder ein Bilder oder ein Icon",
+                        "",
+                        "",
+                        "Titel f\u00fcr den Link"
+                    ],
+                    "icon": "fa-link",
+                    "iconOverlay": "",
+                    "key": "teaser",
+                    "label": "Teaser",
+                    "labels": [
+                        "",
+                        "",
+                        "FontAwesome Icon Klasse",
+                        "",
+                        "",
+                        "URL Titel"
+                    ],
+                    "shortLabel": "Teaser",
+                    "sorting": 0
+                },
+                "usp": {
+                    "color": "#000000",
+                    "colorOverlay": "",
+                    "columns": [
+                        "tx_mask_usplist"
+                    ],
+                    "description": "Auflistung mehrere USP in Spalten",
+                    "descriptions": [
+                        "Auflistung aller USPs"
+                    ],
+                    "icon": "fa-list-ul",
+                    "iconOverlay": "",
+                    "key": "usp",
+                    "label": "USP Auflistung",
+                    "labels": [
+                        "USPs"
+                    ],
+                    "shortLabel": "USPs",
+                    "sorting": 0
+                }
             },
-            "tx_mask_large_image": {
-                "config": {
-                    "behaviour": {
-                        "allowLanguageSynchronization": "0"
+            "sql": {
+                "tx_mask_age": {
+                    "tt_content": {
+                        "tx_mask_age": "tinytext"
+                    }
+                },
+                "tx_mask_comment": {
+                    "tt_content": {
+                        "tx_mask_comment": "mediumtext"
+                    }
+                },
+                "tx_mask_fa_icon": {
+                    "tt_content": {
+                        "tx_mask_fa_icon": "tinytext"
+                    }
+                },
+                "tx_mask_large_image": {
+                    "tt_content": {
+                        "tx_mask_large_image": "int(11) DEFAULT '0' NOT NULL"
+                    }
+                },
+                "tx_mask_lat": {
+                    "tt_content": {
+                        "tx_mask_lat": "double(11,2) DEFAULT '0.00' NOT NULL"
+                    }
+                },
+                "tx_mask_lng": {
+                    "tt_content": {
+                        "tx_mask_lng": "double(11,2) DEFAULT '0.00' NOT NULL"
+                    }
+                },
+                "tx_mask_previous_ownership": {
+                    "tt_content": {
+                        "tx_mask_previous_ownership": "tinytext"
+                    }
+                },
+                "tx_mask_url_title": {
+                    "tt_content": {
+                        "tx_mask_url_title": "tinytext"
+                    }
+                },
+                "tx_mask_usplist": {
+                    "tt_content": {
+                        "tx_mask_usplist": "int(11) unsigned DEFAULT '0' NOT NULL"
+                    }
+                }
+            },
+            "tca": {
+                "bodytext": {
+                    "coreField": 1,
+                    "fullKey": "bodytext",
+                    "key": "bodytext",
+                    "type": "richtext"
+                },
+                "header": {
+                    "coreField": 1,
+                    "fullKey": "header",
+                    "key": "header"
+                },
+                "header_layout": {
+                    "coreField": 1,
+                    "fullKey": "header_layout",
+                    "key": "header_layout"
+                },
+                "header_link": {
+                    "coreField": 1,
+                    "fullKey": "header_link",
+                    "key": "header_link"
+                },
+                "image": {
+                    "coreField": 1,
+                    "fullKey": "image",
+                    "key": "image"
+                },
+                "imagecols": {
+                    "coreField": 1,
+                    "fullKey": "imagecols",
+                    "key": "imagecols"
+                },
+                "tx_mask_age": {
+                    "config": {
+                        "autocomplete": "0",
+                        "behaviour": {
+                            "allowLanguageSynchronization": "0"
+                        },
+                        "type": "input"
                     },
+                    "fullKey": "tx_mask_age",
+                    "key": "age",
+                    "type": "string"
+                },
+                "tx_mask_comment": {
+                    "config": {
+                        "behaviour": {
+                            "allowLanguageSynchronization": "0"
+                        },
+                        "enableRichtext": 1,
+                        "type": "text"
+                    },
+                    "fullKey": "tx_mask_comment",
+                    "key": "comment",
+                    "type": "richtext"
+                },
+                "tx_mask_fa_icon": {
+                    "config": {
+                        "autocomplete": "0",
+                        "behaviour": {
+                            "allowLanguageSynchronization": "0"
+                        },
+                        "eval": "trim,lower",
+                        "type": "input"
+                    },
+                    "fullKey": "tx_mask_fa_icon",
+                    "key": "fa_icon",
+                    "type": "string"
+                },
+                "tx_mask_large_image": {
+                    "config": {
+                        "behaviour": {
+                            "allowLanguageSynchronization": "0"
+                        },
+                        "type": "check"
+                    },
+                    "fullKey": "tx_mask_large_image",
+                    "key": "large_image",
                     "type": "check"
                 },
-                "key": "large_image",
-                "fullKey": "tx_mask_large_image",
-                "type": "check"
-            },
-            "tx_mask_lat": {
-                "config": {
-                    "autocomplete": "0",
-                    "behaviour": {
-                        "allowLanguageSynchronization": "0"
-                    },
-                    "eval": "double2",
-                    "type": "input"
-                },
-                "key": "lat",
-                "fullKey": "tx_mask_lat",
-                "type": "float"
-            },
-            "tx_mask_lng": {
-                "config": {
-                    "autocomplete": "0",
-                    "behaviour": {
-                        "allowLanguageSynchronization": "0"
-                    },
-                    "eval": "double2",
-                    "type": "input"
-                },
-                "key": "lng",
-                "fullKey": "tx_mask_lng",
-                "type": "float"
-            },
-            "tx_mask_previous_ownership": {
-                "config": {
-                    "autocomplete": "0",
-                    "behaviour": {
-                        "allowLanguageSynchronization": "0"
-                    },
-                    "type": "input"
-                },
-                "key": "previous_ownership",
-                "fullKey": "tx_mask_previous_ownership",
-                "type": "string"
-            },
-            "tx_mask_url_title": {
-                "config": {
-                    "autocomplete": "0",
-                    "behaviour": {
-                        "allowLanguageSynchronization": "0"
-                    },
-                    "type": "input"
-                },
-                "key": "url_title",
-                "fullKey": "tx_mask_url_title",
-                "type": "string"
-            },
-            "tx_mask_usplist": {
-                "config": {
-                    "appearance": {
-                        "collapseAll": "0",
-                        "enabledControls": {
-                            "dragdrop": "1"
+                "tx_mask_lat": {
+                    "config": {
+                        "autocomplete": "0",
+                        "behaviour": {
+                            "allowLanguageSynchronization": "0"
                         },
-                        "expandSingle": "0",
-                        "levelLinksPosition": "top",
-                        "showAllLocalizationLink": "1",
-                        "showPossibleLocalizationRecords": "1",
-                        "showSynchronizationLink": "0",
-                        "useSortable": "0"
+                        "eval": "double2",
+                        "type": "input"
                     },
-                    "behaviour": {
-                        "allowLanguageSynchronization": "0"
-                    },
-                    "foreign_field": "parentid",
-                    "foreign_sortby": "sorting",
-                    "foreign_table": "--inlinetable--",
-                    "foreign_table_field": "parenttable",
-                    "type": "inline"
+                    "fullKey": "tx_mask_lat",
+                    "key": "lat",
+                    "type": "float"
                 },
-                "key": "usplist",
-                "fullKey": "tx_mask_usplist",
-                "type": "inline"
-            },
-            "header": {
-                "key": "header",
-                "fullKey": "header",
-                "coreField": 1
-            },
-            "header_layout": {
-                "key": "header_layout",
-                "fullKey": "header_layout",
-                "coreField": 1
-            },
-            "bodytext": {
-                "key": "bodytext",
-                "fullKey": "bodytext",
-                "type": "richtext",
-                "coreField": 1
-            },
-            "imagecols": {
-                "key": "imagecols",
-                "fullKey": "imagecols",
-                "coreField": 1
-            },
-            "image": {
-                "key": "image",
-                "fullKey": "image",
-                "coreField": 1
-            },
-            "header_link": {
-                "key": "header_link",
-                "fullKey": "header_link",
-                "coreField": 1
-            }
-        },
-        "palettes": []
-    },
-    "tx_mask_usplist": {
-        "elements": [],
-        "sql": {
-            "tx_mask_usp": {
+                "tx_mask_lng": {
+                    "config": {
+                        "autocomplete": "0",
+                        "behaviour": {
+                            "allowLanguageSynchronization": "0"
+                        },
+                        "eval": "double2",
+                        "type": "input"
+                    },
+                    "fullKey": "tx_mask_lng",
+                    "key": "lng",
+                    "type": "float"
+                },
+                "tx_mask_previous_ownership": {
+                    "config": {
+                        "autocomplete": "0",
+                        "behaviour": {
+                            "allowLanguageSynchronization": "0"
+                        },
+                        "type": "input"
+                    },
+                    "fullKey": "tx_mask_previous_ownership",
+                    "key": "previous_ownership",
+                    "type": "string"
+                },
+                "tx_mask_url_title": {
+                    "config": {
+                        "autocomplete": "0",
+                        "behaviour": {
+                            "allowLanguageSynchronization": "0"
+                        },
+                        "type": "input"
+                    },
+                    "fullKey": "tx_mask_url_title",
+                    "key": "url_title",
+                    "type": "string"
+                },
                 "tx_mask_usplist": {
-                    "tx_mask_usp": "tinytext"
+                    "config": {
+                        "appearance": {
+                            "collapseAll": "0",
+                            "enabledControls": {
+                                "dragdrop": "1"
+                            },
+                            "expandSingle": "0",
+                            "levelLinksPosition": "top",
+                            "showAllLocalizationLink": "1",
+                            "showPossibleLocalizationRecords": "1",
+                            "showSynchronizationLink": "0",
+                            "useSortable": "0"
+                        },
+                        "behaviour": {
+                            "allowLanguageSynchronization": "0"
+                        },
+                        "foreign_field": "parentid",
+                        "foreign_sortby": "sorting",
+                        "foreign_table": "--inlinetable--",
+                        "foreign_table_field": "parenttable",
+                        "type": "inline"
+                    },
+                    "fullKey": "tx_mask_usplist",
+                    "key": "usplist",
+                    "type": "inline"
                 }
             }
         },
-        "tca": {
-            "tx_mask_usp": {
-                "config": {
-                    "autocomplete": "0",
-                    "behaviour": {
-                        "allowLanguageSynchronization": "0"
+        "tx_mask_usplist": {
+            "sql": {
+                "tx_mask_usp": {
+                    "tx_mask_usplist": {
+                        "tx_mask_usp": "tinytext"
+                    }
+                }
+            },
+            "tca": {
+                "tx_mask_usp": {
+                    "config": {
+                        "autocomplete": "0",
+                        "behaviour": {
+                            "allowLanguageSynchronization": "0"
+                        },
+                        "type": "input"
                     },
-                    "type": "input"
-                },
-                "description": "USP Text",
-                "label": "USP",
-                "key": "usp",
-                "fullKey": "tx_mask_usp",
-                "type": "string",
-                "inlineParent": "tx_mask_usplist",
-                "order": 1
-            }
-        },
-        "palettes": []
-    },
-    "mask_export": {
-        "elements": {
-            "configuration": {
-                "key": "configuration",
-                "label": "cceexport",
-                "shortLabel": "schmidtwebmedia",
-                "columns": [
-                    "city_sign",
-                    "driving_license_class",
-                    "dsgvo",
-                    "font_awesome",
-                    "gallery",
-                    "header_image",
-                    "map",
-                    "teaser",
-                    "usp"
-                ]
+                    "description": "USP Text",
+                    "fullKey": "tx_mask_usp",
+                    "inlineParent": "tx_mask_usplist",
+                    "key": "usp",
+                    "label": "USP",
+                    "order": 1,
+                    "type": "string"
+                }
             }
         }
     }
