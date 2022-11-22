@@ -4,17 +4,19 @@
 			<i class="fas fa-map-signs"></i>
 		</li>
 		<f:for each="{menuBreadcrumb}" as="item">
-			<f:if condition="{item.current}">
-				<f:then>
-					<li class="breadcrumb-item active" aria-current="page">
-						{item.data.title}
-					</li>
-				</f:then>
-				<f:else>
-					<li class="breadcrumb-item">
-						<f:render partial="Elements/BreadcrumbLink" arguments="{item: item}"/>
-					</li>
-				</f:else>
+			<f:if condition="{item.data.uid} != 16">
+				<f:if condition="{item.current}">
+					<f:then>
+						<li class="breadcrumb-item active" aria-current="page">
+							{item.data.title}
+						</li>
+					</f:then>
+					<f:else>
+						<li class="breadcrumb-item">
+							<f:render partial="Elements/BreadcrumbLink" arguments="{item: item}"/>
+						</li>
+					</f:else>
+				</f:if>
 			</f:if>
 		</f:for>
 	</ol>
