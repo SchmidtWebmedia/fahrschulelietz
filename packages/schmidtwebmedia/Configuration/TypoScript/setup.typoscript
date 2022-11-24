@@ -69,6 +69,7 @@ page {
     }
 
     meta {
+        data-monitor = T3_UP
         viewport = width=device-width, initial-scale=1, shrink-to-fit=no
         robots = {$schmidtwebmedia.page.meta.robots}
         apple-mobile-web-app-capable = {$schmidtwebmedia.page.meta.apple-mobile-web-app-capable}
