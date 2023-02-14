@@ -10,7 +10,7 @@ cd $SCRIPT_DIR
 
 rm -rv rollback.zip
 
-zip -r rollback.zip vendor/ var/ config/ packages/ public/
+zip -r -q rollback.zip vendor/ var/ config/ packages/ public/
 
 RemoveDir $PWD"/vendor"
 RemoveDir $PWD"/var"
@@ -20,7 +20,7 @@ RemoveDir $PWD"/public/typo3"
 RemoveDir $PWD"/public/typo3temp"
 RemoveDir $PWD"/public/typo3conf/ext"
 
-unzip -o dist.zip
+unzip -o -q dist.zip
 
 rm -rv dist.zip
 
