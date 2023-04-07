@@ -19,7 +19,7 @@
 		"b13/container": "^2",
 		"georgringer/news": "^10",
 		"helhum/typo3-console": "^7.0.2",
-		"lavitto/typo3-form-to-database": "^2.1",
+		"lavitto/typo3-form-to-database": "dev-v11-support-refactor",
 		"marco-schmidt-webmedia/schmidtwebmedia": "@dev",
 		"schliesser/sitecrawler": "^2.0",
 		"schmidtwebmedia/cceexport": "@dev",

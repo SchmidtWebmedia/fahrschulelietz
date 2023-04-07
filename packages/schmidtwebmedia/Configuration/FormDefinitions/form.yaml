@@ -1,11 +1,6 @@
 TYPO3:
   CMS:
     Form:
-      persistenceManager:
-        allowedExtensionPaths:
-          10: EXT:schmidtwebmedia/Configuration/FormDefinitions/
-        allowSaveToExtensionPaths: true
-        allowDeleteFromExtensionPaths: true
       prototypes:
         standard:
           formElementsDefinition:
