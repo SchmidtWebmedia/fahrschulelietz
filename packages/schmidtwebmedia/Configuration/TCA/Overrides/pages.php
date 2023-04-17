@@ -21,7 +21,8 @@ $fields = array(
         'label' => 'Seite highlighten',
         'config' => array(
             'type' => 'check',
-            'default' => 0
+            'default' => 0,
+            'renderType' => 'checkboxToggle'
         )
     )
 );
@@ -32,6 +33,8 @@ $fields = array(
 // Make fields visible in the TCEforms:
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
     'pages',
-    'tx_schmidtwebmedia_is_highlighted'
+    'tx_schmidtwebmedia_is_highlighted',
+    1,
+    'after:nav_hide'
 );
 
