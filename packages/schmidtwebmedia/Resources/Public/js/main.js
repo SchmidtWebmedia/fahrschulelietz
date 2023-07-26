@@ -38,16 +38,16 @@ let Map = function() {
 
 			let routeURL = 'https://maps.google.com/?q=' + lat + ',' + lng;
 
-			var osmUrl='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-			var osmAttrib='Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors';
-			var osm = new L.TileLayer(osmUrl, {minZoom: 8, maxZoom: 20, attribution: osmAttrib});
+			let osmUrl='https://maps.geoapify.com/v1/tile/osm-carto/{z}/{x}/{y}.png?apiKey=f22dc93b56ba4dd99263e7612b07050d';
+			let osmAttrib='Powered by <a href="https://www.geoapify.com/" target="_blank">Geoapify</a> | © OpenStreetMap <a href="https://www.openstreetmap.org/copyright" target="_blank">contributors</a>';
+			let osm = new L.TileLayer(osmUrl, {minZoom: 8, maxZoom: 20, attribution: osmAttrib});
 
 			console.log('MapID >> ' + mapId);
 
 			map = new L.Map(mapId);
 			map.setView([lat, lng], 16);
 			map.addLayer(osm);
-			var marker = L.marker([lat, lng]).addTo(map);
+			let marker = L.marker([lat, lng]).addTo(map);
 			marker.bindPopup(title + '<br><br><a href="' + routeURL + '" target="_blank">Routenplaner</a>').openPopup();
 		});
 	}
