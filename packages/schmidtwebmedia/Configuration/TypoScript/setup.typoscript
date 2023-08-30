@@ -149,11 +149,11 @@ page {
 
     includeJSFooterlibs {
         leaflet = EXT:schmidtwebmedia/Resources/Public/Library/leaflet/js/leaflet.min.js
-        baguetteBox = EXT:schmidtwebmedia/Resources/Public/js/baguetteBox.js
+        baguetteBox = EXT:schmidtwebmedia/Resources/Public/JavaScript/Frontend/baguetteBox.js
     }
 
     includeJSFooter {
-        schmidtwebmedia_scripts = EXT:schmidtwebmedia/Resources/Public/js/main.js
+        schmidtwebmedia_scripts = EXT:schmidtwebmedia/Resources/Public/JavaScript/Frontend/main.js
     }
 
     headerData {
