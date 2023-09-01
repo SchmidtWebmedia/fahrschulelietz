@@ -19,7 +19,7 @@ languages:
     websiteTitle: Fahrschule-Lietz
 rootPageId: 1
 routeEnhancers:
-  NewsPlugin:
+  News:
     type: Extbase
     LimitToPages:
       - 3
@@ -27,24 +27,14 @@ routeEnhancers:
     extension: News
     plugin: Pi1
     routes:
-      -
-        routePath: '/{page}'
+      - routePath: '/{page}'
         _controller: 'News::list'
         _arguments:
-          page: '@widget_0/currentPage'
-      -
-        routePath: '/tag/{tag_name}'
-        _controller: 'News::list'
-        _arguments:
-          tag_name: overwriteDemand/tags
-      -
-        routePath: '/{news_title}'
+          page: 'currentPage'
+      - routePath: '/{news_title}'
         _controller: 'News::detail'
         _arguments:
           news_title: news
-      -
-        routePath: '/archiv/{year}/{month}'
-        _controller: 'News::archive'
     defaultController: 'News::list'
     defaults:
       page: '0'
@@ -54,9 +44,7 @@ routeEnhancers:
         start: '1'
         end: '100'
       news_title:
-        type: PersistedAliasMapper
-        tableName: tx_news_domain_model_news
-        routeFieldName: path_segment
+        type: NewsTitle
     requirements:
       page: \d+
   PageTypeSuffix:

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0a7c977d67cee158e6e1f7dec6cad549",
+    "content-hash": "7935d6adf606b43b490cfb49ba3b1eae",
     "packages": [
         {
             "name": "b13/container",
@@ -909,20 +909,21 @@
         },
         {
             "name": "georgringer/news",
-            "version": "10.0.3",
+            "version": "11.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/georgringer/news.git",
-                "reference": "5325ea6a7bf490a9deabdf1f86372ad128a5e205"
+                "reference": "86e87a18da77da46dae48dba708a30248ca7c036"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/georgringer/news/zipball/5325ea6a7bf490a9deabdf1f86372ad128a5e205",
-                "reference": "5325ea6a7bf490a9deabdf1f86372ad128a5e205",
+                "url": "https://api.github.com/repos/georgringer/news/zipball/86e87a18da77da46dae48dba708a30248ca7c036",
+                "reference": "86e87a18da77da46dae48dba708a30248ca7c036",
                 "shasum": ""
             },
             "require": {
-                "typo3/cms-core": "^10.4 || ^11"
+                "php": ">= 7.4 < 8.3",
+                "typo3/cms-core": "^11.5.24 || ^12.3"
             },
             "conflict": {
                 "symfony/finder": "2.7.44 || 2.8.37 || 3.4.7 || 4.0.7"
@@ -931,8 +932,12 @@
                 "typo3-ter/news": "self.version"
             },
             "require-dev": {
-                "php-coveralls/php-coveralls": "^2.1",
-                "typo3/cms-install": "^10.4 || ^11"
+                "friendsofphp/php-cs-fixer": "^3.13.0",
+                "phpunit/phpunit": "^9",
+                "typo3/cms-composer-installers": "^3.1.3 || 4.0.0-RC1 || ^5.0",
+                "typo3/coding-standards": "^0.5.3",
+                "typo3/testing-framework": "^7.0.1",
+                "webmozart/assert": "^1.11.0"
             },
             "suggest": {
                 "georgringer/news-tagsuggest": "On the fly creation of tag records within a news record",
@@ -944,7 +949,7 @@
                 "typo3/cms": {
                     "extension-key": "news",
                     "app-dir": ".Build",
-                    "web-dir": ".Build/public"
+                    "web-dir": ".Build/Web"
                 }
             },
             "autoload": {
@@ -994,7 +999,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2022-11-21T12:32:44+00:00"
+            "time": "2023-08-30T15:04:27+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",

@@ -17,7 +17,7 @@
 	},
 	"require": {
 		"b13/container": "^2",
-		"georgringer/news": "^10",
+		"georgringer/news": "^11",
 		"helhum/typo3-console": "^7.0.2",
 		"lavitto/typo3-form-to-database": "^3",
 		"marco-schmidt-webmedia/schmidtwebmedia": "@dev",
