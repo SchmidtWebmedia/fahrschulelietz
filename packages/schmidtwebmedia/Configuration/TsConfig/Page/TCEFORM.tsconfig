@@ -27,9 +27,11 @@ TCEFORM {
         }
         layout {
             altLabels {
+                0 = As Card
                 1 = Grey Background
+                2 = As Banner
             }
-            removeItems = 2,3,4
+            removeItems = 3,4
         }
     }
 }

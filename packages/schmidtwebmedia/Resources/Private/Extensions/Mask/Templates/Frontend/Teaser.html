@@ -1,7 +1,10 @@
 <f:layout name="Default"/>
 <f:section name="Maskcontent">
 <div class="card">
-
+    <f:debug>{_all}</f:debug>
+    <f:if condition="{data.header} && {data.layout} === 2">
+        <span class="card-title"> {data.header}</span>
+    </f:if>
     <f:if condition="{data_image}">
         <f:then>
             <f:alias map="{file: data_image.0}">
@@ -39,7 +42,7 @@
     </f:if>
 
     <div class="card-body">
-        <f:if condition="{data.header}">
+        <f:if condition="{data.header} && {data.layout} !== 2">
             <span class="card-title"> {data.header}</span>
         </f:if>
         <f:if condition="{data.bodytext}">
@@ -50,7 +53,7 @@
 
         <f:if condition="{data.header_link} && {data.tx_cceexport_url_title}">
             <div class="card-link">
-                 <f:link.typolink class="card-link--link" parameter="{data.header_link}"><i class="fas fa-chevron-circle-right"></i> {data.tx_cceexport_url_title}</f:link.typolink>
+                <f:link.typolink class="card-link--link" parameter="{data.header_link}"><i class="fas fa-chevron-circle-right"></i> {data.tx_cceexport_url_title}</f:link.typolink>
             </div>
         </f:if>
     </div>
