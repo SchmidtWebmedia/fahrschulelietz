@@ -8,9 +8,11 @@ RemoveDir() {
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 cd $SCRIPT_DIR
 
-rm -rv rollback.zip
+RemoveDir $PWD"/_backup"
+mkdir $PWD"/_backup"
 
-zip -r -q rollback.zip vendor/ var/ config/ packages/ public/
+/usr/bin/php vendor/bin/typo3cms database:export > "$PWD/_backup/db.sql"
+zip -r -q "$PWD/_backup/rollback.zip" backup.sql vendor/ var/ config/ packages/ public/ -x "./public/fileadmin/_processed_/**"
 
 RemoveDir $PWD"/vendor"
 RemoveDir $PWD"/var"
