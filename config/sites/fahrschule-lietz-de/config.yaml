@@ -3,6 +3,11 @@ baseVariants:
   -
     base: 'https://lietz.ddev.site/'
     condition: 'getenv("IS_DDEV_PROJECT") == "true"'
+errorHandling:
+  -
+    errorCode: 404
+    errorHandler: Page
+    errorContentSource: 't3://page?uid=23'
 languages:
   -
     title: Deutsch
@@ -21,17 +26,19 @@ rootPageId: 1
 routeEnhancers:
   News:
     type: Extbase
-    LimitToPages:
+    limitToPages:
       - 3
       - 16
     extension: News
     plugin: Pi1
     routes:
-      - routePath: '/{page}'
+      -
+        routePath: '/{page}'
         _controller: 'News::list'
         _arguments:
-          page: 'currentPage'
-      - routePath: '/{news_title}'
+          page: currentPage
+      -
+        routePath: '/{news_title}'
         _controller: 'News::detail'
         _arguments:
           news_title: news
