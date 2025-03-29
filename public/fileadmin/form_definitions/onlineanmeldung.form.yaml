@@ -224,8 +224,52 @@ identifier: onlineanmeldung
 label: Onlineanmeldung
 prototypeName: standard
 finishers:
-  -
-    identifier: FormToDatabase
+  - identifier: SaveToDatabase
+    options:
+      table: tx_schmidtwebmedia_domain_model_online_registration
+      elements:
+        text-1:
+          mapOnDatabaseColumn: name
+        text-9:
+          mapOnDatabaseColumn: birth_name
+        date-1:
+          mapOnDatabaseColumn: birth_date
+          dateFormat: 'd.m.Y'
+        text-2:
+          mapOnDatabaseColumn: birth_location
+        text-3:
+          mapOnDatabaseColumn: nationality
+        text-5:
+          mapOnDatabaseColumn: driver_licence_since
+        multicheckbox-1:
+          mapOnDatabaseColumn: requested_driver_licence
+        text-6:
+          mapOnDatabaseColumn: street
+        text-7:
+          mapOnDatabaseColumn: post_code
+        text-8:
+          mapOnDatabaseColumn: location
+        email-1:
+          mapOnDatabaseColumn: email
+        telephone-1:
+          mapOnDatabaseColumn: phone
+        telephone-2:
+          mapOnDatabaseColumn: mobile_phone
+        text-10:
+          mapOnDatabaseColumn: age
+        text-11:
+          mapOnDatabaseColumn: accessibility
+        textarea-1:
+          mapOnDatabaseColumn: message
+        radiobutton-1:
+          mapOnDatabaseColumn: optical_aid
+      databaseColumnMappings:
+        pid:
+          value: 8
+        tstamp:
+          value: '{__currentTimestamp}'
+        crdate:
+          value: '{__currentTimestamp}'
   -
     options:
       subject: 'Vielen Dank für Ihre Nachricht'

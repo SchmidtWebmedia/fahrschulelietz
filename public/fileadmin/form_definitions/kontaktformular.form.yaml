@@ -126,8 +126,34 @@ identifier: kontaktformular
 label: Kontaktformular
 prototypeName: standard
 finishers:
-  -
-    identifier: FormToDatabase
+  - identifier: SaveToDatabase
+    options:
+      table: tx_schmidtwebmedia_domain_model_contact_form
+      elements:
+        text-3:
+          mapOnDatabaseColumn: firstname
+        text-1:
+          mapOnDatabaseColumn: lastname
+        date-1:
+          mapOnDatabaseColumn: birth_date
+          dateFormat: 'd.m.Y'
+        text-2:
+          mapOnDatabaseColumn: location
+        email-1:
+          mapOnDatabaseColumn: email
+        multicheckbox-1:
+          mapOnDatabaseColumn: requested_driver_licence
+        singleselect-1:
+          mapOnDatabaseColumn: existing_driver_licence
+        textarea-1:
+          mapOnDatabaseColumn: message
+      databaseColumnMappings:
+        pid:
+          value: 7
+        tstamp:
+          value: '{__currentTimestamp}'
+        crdate:
+          value: '{__currentTimestamp}'
   -
     options:
       subject: 'Vielen Dank für Ihre Nachricht'
