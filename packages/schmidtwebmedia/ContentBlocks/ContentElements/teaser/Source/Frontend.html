@@ -1,0 +1,63 @@
+<f:layout/>
+
+<f:section name="Header"/>
+
+<f:section name="Main">
+	<div class="card">
+		<f:if condition="{data.header} && {data.layout} === 2">
+			<span class="card-title"> {data.header}</span>
+		</f:if>
+		<f:if condition="{data.image}">
+			<f:then>
+				<f:alias map="{file: data.image.0}">
+					<div class="card-image">
+						<f:if condition="{data.header_link}">
+							<f:then>
+								<f:link.typolink parameter="{data.header_link}">
+									<f:image image="{file}" alt="{file.alternative}" title="{file.title}" class="img-fluid" maxWidth="350" />
+								</f:link.typolink>
+							</f:then>
+							<f:else>
+								<f:image image="{file}" alt="{file.alternative}" title="{file.title}" class="img-fluid" maxWidth="350" />
+							</f:else>
+						</f:if>
+
+					</div>
+				</f:alias>
+			</f:then>
+			<f:else>
+				<f:if condition="{data.fa_icon}">
+					<div class="fa-icon">
+						<f:if condition="{data.header_link}">
+							<f:then>
+								<f:link.typolink parameter="{data.header_link}">
+									<i class="{data.fa_icon}"></i>
+								</f:link.typolink>
+							</f:then>
+							<f:else>
+								<i class="{data.fa_icon}"></i>
+							</f:else>
+						</f:if>
+					</div>
+				</f:if>
+			</f:else>
+		</f:if>
+
+		<div class="card-body">
+			<f:if condition="{data.header} && {data.layout} !== 2">
+				<span class="card-title"> {data.header}</span>
+			</f:if>
+			<f:if condition="{data.bodytext}">
+				<div class="card-text">
+					<f:format.html>{data.bodytext}</f:format.html>
+				</div>
+			</f:if>
+
+			<f:if condition="{data.header_link} && {data.subheader}">
+				<div class="card-link">
+					<f:link.typolink class="card-link--link" parameter="{data.header_link}"><i class="fas fa-chevron-circle-right"></i> {data.subheader}</f:link.typolink>
+				</div>
+			</f:if>
+		</div>
+	</div>
+</f:section>

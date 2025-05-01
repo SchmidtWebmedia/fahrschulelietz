@@ -1,0 +1,34 @@
+<f:layout/>
+
+<f:section name="Header"/>
+
+<f:section name="Main">
+
+	<div class="driving-licence-class">
+		<f:render partial="Header/All" arguments="{_all}" />
+		<f:if condition="{data.bodytext}">
+			<div class="row-label-value">
+				<div class="col-label">Fahrzeug</div>
+				<div class="col-value"><f:format.html>{data.bodytext}</f:format.html></div>
+			</div>
+		</f:if>
+		<f:if condition="{data.age}">
+			<div class="row-label-value">
+				<div class="col-label">Alter</div>
+				<div class="col-value">{data.age}</div>
+			</div>
+		</f:if>
+		<f:if condition="{dataprevious_ownership}">
+			<div class="row-label-value">
+				<div class="col-label">Vorbesitz</div>
+				<div class="col-value">{data.previous_ownership}</div>
+			</div>
+		</f:if>
+		<f:if condition="{data.comment}">
+			<div class="row-label-value">
+				<div class="col-label">Bemerkung</div>
+				<div class="col-value"><f:format.html>{data.comment}</f:format.html></div>
+			</div>
+		</f:if>
+	</div>
+</f:section>

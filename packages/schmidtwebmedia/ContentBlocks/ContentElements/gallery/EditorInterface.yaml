@@ -1,0 +1,18 @@
+name: marco-schmidt-webmedia/gallery
+typeName: marcoschmidtwebmedia_gallery
+group: common
+prefixFields: true
+prefixType: full
+basics:
+  - TYPO3/Appearance
+  - TYPO3/Links
+fields:
+  - identifier: TYPO3/Header
+    type: Basic
+  - identifier: imagecols
+    type:
+    useExistingField: true
+  - identifier: image
+    type: File
+    useExistingField: true
+    allowed: common-image-types

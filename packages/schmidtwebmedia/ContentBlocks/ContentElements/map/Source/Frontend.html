@@ -1,0 +1,11 @@
+<f:layout/>
+
+<f:section name="Header"/>
+
+<f:section name="Main">
+	<f:if condition="{data.latitude} && {data.longitude}">
+		<div class="map-wrapper">
+			<div class="interactive-map" id="map{data.uid}" data-lat="{data.latitude}" data-lng="{data.longitude}" data-title="{data.header}"></div>
+		</div>
+	</f:if>
+</f:section>

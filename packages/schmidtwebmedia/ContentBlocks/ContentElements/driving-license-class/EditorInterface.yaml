@@ -1,0 +1,25 @@
+name: marco-schmidt-webmedia/driving-license-class
+typeName: marcoschmidtwebmedia_drivinglicenseclass
+group: common
+prefixFields: true
+prefixType: full
+basics:
+  - TYPO3/Appearance
+  - TYPO3/Links
+fields:
+  - identifier: TYPO3/Header
+    type: Basic
+  - identifier: bodytext
+    useExistingField: true
+    enableRichtext: true
+    label: Fahrzeug
+  - identifier: age
+    label: Alter
+    type: Text
+  - identifier: previous_ownership
+    label: Vorbesitz
+    type: Text
+  - identifier: comment
+    label: Bemerkung
+    type: Textarea
+    enableRichtext: true

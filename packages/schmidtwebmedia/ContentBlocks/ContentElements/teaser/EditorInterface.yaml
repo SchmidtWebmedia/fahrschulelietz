@@ -1,0 +1,27 @@
+name: marco-schmidt-webmedia/teaser
+typeName: marcoschmidtwebmedia_teaser
+group: common
+prefixFields: true
+prefixType: full
+basics:
+  - TYPO3/Appearance
+  - TYPO3/Links
+fields:
+  - identifier: TYPO3/Header
+    type: Basic
+  - identifier: image
+    type: File
+    useExistingField: true
+    allowed: common-image-types
+    maxitems: 1
+  - identifier: fa_icon
+    type: Text
+    label: FontAwesome Icon Klasse
+  - identifier: bodytext
+    useExistingField: true
+    enableRichtext: true
+  - identifier: header_link
+    useExistingField: true
+  - identifier: subheader
+    useExistingField: true
+    label: URL Titel

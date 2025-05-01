@@ -1,0 +1,15 @@
+<f:layout/>
+
+<f:section name="Header"/>
+
+<f:section name="Main">
+	<f:if condition="{data.image}">
+		<f:variable name="cssClass">
+			<f:if condition="{data.layout} == 90">big-header-image</f:if>
+		</f:variable>
+		<f:alias map="{file: data.image.0}">
+			<div id="js-big-header-image" class="header-image {cssClass}" style="background-image: url({f:uri.image(image:'{file}',treatIdAsReference:'1', maxWidth: '1920')});"></div>
+		</f:alias>
+	</f:if>
+
+</f:section>

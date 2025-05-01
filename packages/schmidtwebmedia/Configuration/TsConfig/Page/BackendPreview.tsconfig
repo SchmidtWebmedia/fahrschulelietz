@@ -1,3 +1,11 @@
 mod.web_layout.tt_content.preview.cceexport.templateRootPath = EXT:schmidtwebmedia/Resources/Private/Extensions/Mask/Templates/Backend/
 mod.web_layout.tt_content.preview.cceexport.layoutRootPath = EXT:schmidtwebmedia/Resources/Private/Extensions/Mask/Layouts/Backend/
 mod.web_layout.tt_content.preview.cceexport.partialRootPath = EXT:schmidtwebmedia/Resources/Private/Extensions/Mask/Partials/Backend/
+
+tx_content_blocks {
+	view {
+		partialRootPaths {
+			10 = EXT:schmidtwebmedia/Resources/Private/Extensions/ContentBlocks/Partials/
+		}
+	}
+}

@@ -1,0 +1,37 @@
+<f:layout/>
+
+<f:section name="Header"/>
+
+<f:section name="Main">
+	<f:if condition="{data.image}">
+		<f:variable name="columnClass">
+			<f:switch expression="{data.imagecols}">
+				<f:case value="1">col-12</f:case>
+				<f:case value="2">col-12 col-md-6</f:case>
+				<f:case value="3">col-12 col-md-4</f:case>
+				<f:case value="4">col-12 col-md-3</f:case>
+				<f:defaultCase>col-12 col-md-4</f:defaultCase>
+			</f:switch>
+		</f:variable>
+
+		<div class="gallery-container gallery-layout-{data.imagecols}">
+			<div class="row">
+				<f:for each="{data.image}" as="mediaElement" iteration="iteration">
+					<div class="{columnClass}">
+						<div class="gallery">
+							<a href="{f:uri.image(image:'{mediaElement}',treatIdAsReference:'1', maxWidth: '1440')}" rel="gallery" title="{mediaElement.title}">
+								<div class="gallery-background-image"
+									 style="background-image: url({f:uri.image(image:'{mediaElement}',treatIdAsReference:'1', maxWidth: '512')});"></div>
+							</a>
+						</div>
+						<f:if condition="{data.uploads_description}">
+                        <span class="figcaption">
+                            {mediaElement.description}
+                        </span>
+						</f:if>
+					</div>
+				</f:for>
+			</div>
+		</div>
+	</f:if>
+</f:section>

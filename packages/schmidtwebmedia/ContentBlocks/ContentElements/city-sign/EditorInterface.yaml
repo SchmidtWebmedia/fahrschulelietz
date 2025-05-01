@@ -1,0 +1,11 @@
+name: marco-schmidt-webmedia/city-sign
+typeName: marcoschmidtwebmedia_citysign
+group: common
+prefixFields: true
+prefixType: full
+basics:
+  - TYPO3/Appearance
+  - TYPO3/Links
+fields:
+  - identifier: TYPO3/Header
+    type: Basic

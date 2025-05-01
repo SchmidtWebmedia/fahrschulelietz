@@ -1,0 +1,17 @@
+name: marco-schmidt-webmedia/usp
+typeName: marcoschmidtwebmedia_usp
+group: common
+prefixFields: true
+prefixType: full
+basics:
+  - TYPO3/Appearance
+  - TYPO3/Links
+fields:
+  - identifier: TYPO3/Header
+    type: Basic
+  - identifier: usps
+    type: Collection
+    fields:
+      - identifier: usp
+        type: Text
+        label: USP Text

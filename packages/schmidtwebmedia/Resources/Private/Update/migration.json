@@ -1,0 +1,10 @@
+{
+    "cceexport_gallery": {
+        "contentBlock": "marcoschmidtwebmedia_gallery",
+        "mask": "cceexport_gallery"
+    },
+    "cceexport_header_image": {
+        "contentBlock": "marcoschmidtwebmedia_header",
+        "mask": "cceexport_header_image"
+    }
+}

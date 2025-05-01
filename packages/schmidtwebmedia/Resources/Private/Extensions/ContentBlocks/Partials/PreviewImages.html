@@ -1,0 +1,21 @@
+<html
+		xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+		xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers"
+		data-namespace-typo3-fluid="true"
+>
+
+<div class="preview-thumbnails" style="--preview-thumbnails-size: 64px">
+
+	<f:if condition="{image}">
+		<f:then>
+			<f:alias map="{file: image}">
+				<f:render partial="Element/PreviewImage" arguments="{_all}"></f:render>
+			</f:alias>
+		</f:then>
+		<f:else>
+			<f:for as="file" each="{images}">
+				<f:render partial="Element/PreviewImage" arguments="{_all}"></f:render>
+			</f:for>
+		</f:else>
+	</f:if>
+</div>

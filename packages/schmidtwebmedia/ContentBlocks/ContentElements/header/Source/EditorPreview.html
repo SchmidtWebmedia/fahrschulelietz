@@ -1,0 +1,18 @@
+<html
+		xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+		xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers"
+		data-namespace-typo3-fluid="true"
+>
+
+<f:if condition="{data.image}">
+	<f:alias map="{image: data.image.0}">
+		<f:render partial="PreviewImages" arguments="{_all}" />
+	</f:alias>
+</f:if>
+
+<f:if condition="{data.bodytext}">
+	<strong>Text</strong>
+	<div>
+		<f:format.raw>{data.bodytext}</f:format.raw>
+	</div>
+</f:if>

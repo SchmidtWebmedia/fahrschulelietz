@@ -153,12 +153,17 @@ $border-gap: -10px;
    Layouts
    ========================================================================== */
 
-.frame {
-  /** Grey Background **/
-  &.frame-layout-1 {
-	background-color: $light-grey;
-	border: 1px solid $grey;
-	padding: 0.5rem;
+.frame-type- {
+  &onecol,
+  &twocol {
+	&.frame {
+	  /** Grey Background **/
+	  &.frame-layout-1 {
+		background-color: $light-grey;
+		border: 1px solid $grey;
+		padding: 0.5rem;
+	  }
+	}
   }
 }
 
@@ -947,7 +952,7 @@ fieldset.form-group {
    Card
    ========================================================================== */
 
-.frame-type-cceexport_teaser {
+.frame-type-marcoschmidtwebmedia_teaser {
   height: 100%;
 
   @include media-breakpoint-down(lg) {

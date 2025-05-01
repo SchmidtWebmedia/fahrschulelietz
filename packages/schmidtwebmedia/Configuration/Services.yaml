@@ -1,0 +1,12 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  MarcoSchmidtWebmedia\Schmidtwebmedia\:
+    resource: '../Classes/*'
+    exclude: '../Classes/Domain/Model/*'
+
+  MarcoSchmidtWebmedia\Schmidtwebmedia\DataProcessing\MenuProcessor:
+    public: true

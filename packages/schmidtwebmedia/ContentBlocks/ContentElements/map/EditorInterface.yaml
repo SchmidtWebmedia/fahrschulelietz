@@ -1,0 +1,17 @@
+name: marco-schmidt-webmedia/map
+typeName: marcoschmidtwebmedia_map
+group: common
+prefixFields: true
+prefixType: full
+basics:
+  - TYPO3/Appearance
+  - TYPO3/Links
+fields:
+  - identifier: TYPO3/Header
+    type: Basic
+  - identifier: longitude
+    type: Number
+    label: Longitude (Länge)
+  - identifier: latitude
+    type: Number
+    label: Latitude (Breite)

@@ -1,0 +1,16 @@
+name: marco-schmidt-webmedia/header
+typeName: marcoschmidtwebmedia_header
+group: common
+prefixFields: true
+prefixType: full
+basics:
+  - TYPO3/Appearance
+  - TYPO3/Links
+fields:
+  - identifier: TYPO3/Header
+    type: Basic
+  - identifier: image
+    type: File
+    useExistingField: true
+    allowed: common-image-types
+    maxitems: 1

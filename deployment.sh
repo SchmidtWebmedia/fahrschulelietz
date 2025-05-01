@@ -5,14 +5,19 @@ RemoveDir() {
   fi
 }
 
+BackupDir() {
+  today=$(date +%Y-%m)
+  backupDir = $PWD"/_backup/"$today
+  mkdir -p $backupDir
+
+  /usr/bin/php vendor/bin/typo3cms database:export > $backupDir"/db.sql"
+  zip -r -q $backupDir"/rollback.zip" backup.sql vendor/ var/ config/ packages/ public/ -x "./public/fileadmin/_processed_/**"
+}
+
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 cd $SCRIPT_DIR
 
-RemoveDir $PWD"/_backup"
-mkdir $PWD"/_backup"
-
-/usr/bin/php vendor/bin/typo3cms database:export > "$PWD/_backup/db.sql"
-zip -r -q "$PWD/_backup/rollback.zip" backup.sql vendor/ var/ config/ packages/ public/ -x "./public/fileadmin/_processed_/**"
+BackupDir
 
 RemoveDir $PWD"/vendor"
 RemoveDir $PWD"/var"

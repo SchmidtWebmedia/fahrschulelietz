@@ -44,7 +44,7 @@ class FormElementLinkResolverHook
      */
     public function beforeRendering(FormRuntime $formRuntime, RootRenderableInterface $renderable)
     {
-        $label = $this->translate($renderable, 'label', $formRuntime);
+        $label = $this->translate($renderable, ['label'], $formRuntime);
 
         // Only process linkText parsing if $renderable matches given type
         // and form element label contains any argument flags such as %s.
@@ -61,7 +61,7 @@ class FormElementLinkResolverHook
 
         $properties = $renderable->getProperties();
         $pageUid = (int) $properties['pageUid'];
-        $translatedLinkText = $this->translate($renderable, 'linkText', $formRuntime);
+        $translatedLinkText = $this->translate($renderable, ['linkText'], $formRuntime);
 
         // Build link if pageUid is valid
         if ($pageUid) {
@@ -101,13 +101,21 @@ class FormElementLinkResolverHook
      * Translate form element property.
      *
      * @param RootRenderableInterface $renderable
-     * @param string $property
-     * @param FormRuntime $formRuntime
+     * @param array                   $property
+     * @param FormRuntime             $formRuntime
+     *
      * @return string
      */
-    protected function translate(RootRenderableInterface $renderable, string $property, FormRuntime $formRuntime): string
+    protected function translate(RootRenderableInterface $renderable, array $property, FormRuntime $formRuntime): string
     {
-        return (string) TranslationService::getInstance()->translateFormElementValue($renderable, [$property], $formRuntime);
+        $translationService = GeneralUtility::makeInstance(TranslationService::class);
+        $value = $translationService->translateFormElementValue($renderable, $property, $formRuntime);
+
+        if (!is_string($value)) {
+            return '';
+        }
+
+        return $value;
     }
 
     /**
