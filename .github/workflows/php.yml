@@ -1,0 +1,124 @@
+name: Build, Test & Deploy PHP Project
+
+on:
+  push:
+    branches:
+      - master  # Passe dies an deinen Branch an
+
+jobs:
+  build-php:
+    name: Build & Test PHP Project
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🚀 Repository auschecken
+        uses: actions/checkout@v4
+
+      - name: ⚙️ Set up PHP mit Composer
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          tools: composer
+          extensions: mbstring, xml, ctype, json, iconv, pdo_mysql
+
+      - name: 📦 Installiere Composer-Abhängigkeiten
+        run: composer install --no-dev --prefer-dist --no-progress --no-interaction
+
+      - name: 📦 Zip Vendor folder
+        run: tar -czf vendor.tar.gz vendor
+
+      - name: 📁 Artefakte speichern
+        uses: actions/upload-artifact@v4
+        with:
+          name: vendor
+          retention-days: 1
+          path: vendor.tar.gz
+
+  build-assets:
+    name: Build assets
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🚀 Repository auschecken
+        uses: actions/checkout@v4
+
+      - name: ⚙️ Set up Node.js & npm
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: 📦 Install NPM-dependencies
+        run: npm ci
+
+      - name: 🎨 Build Assets (CSS & JavaScript)
+        run: |
+          npm run build-sass 
+          npm run build-sass-ckeditor 
+          npm run optimize-css 
+          npm run css-minify
+          npm run css-minify-ckeditor
+
+      - name: 📁 Artefakte speichern
+        uses: actions/upload-artifact@v4
+        with:
+          name: assets-css
+          retention-days: 1
+          path: |
+            packages/schmidtwebmedia/Resources/Public/css/style.min.css
+            packages/schmidtwebmedia/Resources/Public/css/ckeditor.min.css
+
+  deploy:
+    name: Deployment
+    needs: [ build-php, build-assets ]
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🚀 Repository auschecken
+        uses: actions/checkout@v4
+
+      - name: 📥 Artefakte herunterladen
+        uses: actions/download-artifact@v4
+        with:
+          name: assets-css
+          path: packages/schmidtwebmedia/Resources/Public/css/
+
+      - name: 📥 Artefakte herunterladen
+        uses: actions/download-artifact@v4
+        with:
+          name: vendor
+          path: ./
+
+      - name: FTP Upload
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.HOST }}
+          username: ${{ secrets.SSH_USER }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          protocol: "ftp"
+          server-dir: ${{ secrets.PATH }}
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            package.json
+            package-lock.json
+            **/*.scss
+            **/_fontawesome/**
+            .gitignore
+            **/vendor/**
+            *.config.js
+
+      - name: 📂 Extract and Deploy to Server
+        uses: appleboy/ssh-action@v0.1.7
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.SSH_USER }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          port: 22
+          script: |
+            cd ${{ secrets.SSH_PATH }}
+            rm -rv vendor
+            tar -xzf vendor.tar.gz
+            rm vendor.tar.gz
+            ./deployment.sh
+
