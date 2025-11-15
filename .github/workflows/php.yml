@@ -88,6 +88,17 @@ jobs:
           name: vendor
           path: ./
 
+      - name: 📂 Backup Remote
+        uses: appleboy/ssh-action@v0.1.7
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.SSH_USER }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          port: 22
+          script: |
+            cd ${{ secrets.SSH_PATH }}
+            ./backup.sh
+
       - name: FTP Upload
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
