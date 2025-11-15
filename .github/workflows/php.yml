@@ -17,7 +17,7 @@ jobs:
       - name: ⚙️ Set up PHP mit Composer
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.2'
+          php-version: '8.3'
           tools: composer
           extensions: mbstring, xml, ctype, json, iconv, pdo_mysql
 
@@ -117,7 +117,7 @@ jobs:
           port: 22
           script: |
             cd ${{ secrets.SSH_PATH }}
-            rm -rv vendor
+            rm -r vendor
             tar -xzf vendor.tar.gz
             rm vendor.tar.gz
             ./deployment.sh
