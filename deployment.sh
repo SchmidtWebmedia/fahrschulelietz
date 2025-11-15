@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+KEYHELP_PHP="/usr/bin/keyhelp-php83"
+
 RemoveDir() {
   if [ -d "$1" ]; then
     rm -rv $1
@@ -10,8 +12,8 @@ cd $SCRIPT_DIR
 
 RemoveDir $PWD"/public/_assets"
 
-/usr/bin/keyhelp-php83 /usr/local/bin/composer dumpautoload
+$KEYHELP_PHP /usr/local/bin/composer dumpautoload
 
-/usr/bin/keyhelp-php83 vendor/bin/typo3 database:updateschema
-/usr/bin/keyhelp-php83 vendor/bin/typo3 cache:flush
-/usr/bin/keyhelp-php83 vendor/bin/typo3 language:update
+$KEYHELP_PHP vendor/bin/typo3 database:updateschema
+$KEYHELP_PHP vendor/bin/typo3 cache:flush
+$KEYHELP_PHP vendor/bin/typo3 language:update
