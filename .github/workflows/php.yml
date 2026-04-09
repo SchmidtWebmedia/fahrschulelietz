@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: 🚀 Repository auschecken
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: ⚙️ Set up PHP mit Composer
         uses: shivammathur/setup-php@v2
@@ -28,7 +28,7 @@ jobs:
         run: tar -czf vendor.tar.gz vendor
 
       - name: 📁 Artefakte speichern
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: vendor
           retention-days: 1
@@ -40,10 +40,10 @@ jobs:
 
     steps:
       - name: 🚀 Repository auschecken
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: ⚙️ Set up Node.js & npm
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: '22'
 
@@ -59,7 +59,7 @@ jobs:
           npm run css-minify-ckeditor
 
       - name: 📁 Artefakte speichern
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: assets-css
           retention-days: 1
@@ -74,10 +74,10 @@ jobs:
 
     steps:
       - name: 🚀 Repository auschecken
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: 📥 Artefakte herunterladen
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v6
         with:
           name: assets-css
           path: packages/schmidtwebmedia/Resources/Public/css/
