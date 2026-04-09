@@ -9,14 +9,14 @@ $EM_CONF[$_EXTKEY] = [
     'category' => 'templates',
     'constraints' => [
         'depends' => [
-            'typo3' => '9.5.0-11.99.99'
+            'typo3' => '12.4.0-13.99.99'
         ],
         'conflicts' => [
         ],
     ],
     'autoload' => [
         'psr-4' => [
-            'SchmidtWebmedia\\Schmidtwebmedia\\' => 'Classes'
+            'MarcoSchmidtWebmedia\\Schmidtwebmedia\\' => 'Classes'
         ],
     ],
     'state' => 'stable',

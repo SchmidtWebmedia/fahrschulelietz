@@ -14,12 +14,12 @@ TCEFORM {
         table_class {
             removeItems = striped,bordered
             addItems {
-                table-footer = Footer Table
+                100 = Footer Table
             }
         }
         header_layout {
             addItems {
-                footer-title = Footer Titel
+                100 = Footer Titel
             }
         }
         imagecols {

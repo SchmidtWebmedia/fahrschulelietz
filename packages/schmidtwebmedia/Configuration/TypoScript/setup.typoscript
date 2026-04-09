@@ -93,7 +93,7 @@ page {
         }
         og:site_name {
             attribute = property
-            data = TSFE:tmpl|setup|sitetitle
+            data = siteLanguage:websiteTitle // site:websiteTitle
         }
         og:description = {$page.meta.description}
         og:description {
