@@ -28,7 +28,7 @@ jobs:
         run: tar -czf vendor.tar.gz vendor
 
       - name: 📁 Artefakte speichern
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: vendor
           retention-days: 1
@@ -59,7 +59,7 @@ jobs:
           npm run css-minify-ckeditor
 
       - name: 📁 Artefakte speichern
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: assets-css
           retention-days: 1
@@ -83,7 +83,7 @@ jobs:
           path: packages/schmidtwebmedia/Resources/Public/css/
 
       - name: 📥 Artefakte herunterladen
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: vendor
           path: ./
