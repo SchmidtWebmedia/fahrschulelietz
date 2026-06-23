@@ -45,7 +45,7 @@ lib.breadcrumb {
 	}
 }
 
-[traverse(pages, 'uid') == 1]
+[page["uid"] == 1]
 	plugin.tx_news {
 		settings {
 			isLatest = 1
